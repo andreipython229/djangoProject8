@@ -1,0 +1,60 @@
+{
+  "name": "djangoProject8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start --openssl-legacy-provider",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "custom-test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andreipython229/PycharmProjects.git"
+  },
+  "private": true,
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "@jridgewell/sourcemap-codec": "^1.5.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@svgr/plugin-svgo": "^6.0.0-alpha.1",
+    "axios": "^1.7.9",
+    "body-parser": "^1.19.1",
+    "bootstrap": "^5.3.3",
+    "css-select": "^4.1.0",
+    "debug": "^4.3.4",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nice-try": "^3.0.1",
+    "nth-check": "^2.1.1",
+    "postcss": "^8.5.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.1.5",
+    "renderkid": "^3.0.0",
+    "resolve-url-loader": "^5.0.0",
+    "svgo": "^2.8.0",
+    "workbox-background-sync": "^7.1.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "eslint-plugin-import": "^2.31.0",
+    "react-scripts": "^5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

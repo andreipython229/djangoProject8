@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-{{ nonce }}' https://cdn.jsdelivr.net; style-src 'self' 'nonce-{{ nonce }}' https://cdn.jsdelivr.net; img-src 'self' data:;">
+    <title>Register</title>
+    <!-- Подключение стилей с nonce -->
+    <link rel="stylesheet" href="{% static 'rest_framework/css/bootstrap.min.css' %}" nonce="{{ nonce }}">
+    <link rel="stylesheet" href="{% static 'rest_framework/css/bootstrap-tweaks.css' %}" nonce="{{ nonce }}">
+    <link rel="stylesheet" href="{% static 'rest_framework/css/prettify.css' %}" nonce="{{ nonce }}">
+    <link rel="stylesheet" href="{% static 'rest_framework/css/default.css' %}" nonce="{{ nonce }}">
+    <style nonce="{{ nonce }}">
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin: 20px 0;
+        }
+    </style>
+    <!-- Подключение скриптов с nonce -->
+    <script src="{% static 'rest_framework/js/jquery-3.7.1.min.js' %}" nonce="{{ nonce }}"></script>
+    <script src="{% static 'rest_framework/js/ajax-form.js' %}" nonce="{{ nonce }}"></script>
+    <script src="{% static 'rest_framework/js/csrf.js' %}" nonce="{{ nonce }}"></script>
+    <script src="{% static 'rest_framework/js/bootstrap.min.js' %}" nonce="{{ nonce }}"></script>
+    <script src="{% static 'rest_framework/js/prettify-min.js' %}" nonce="{{ nonce }}"></script>
+    <script src="{% static 'rest_framework/js/default.js' %}" nonce="{{ nonce }}"></script>
+    <script src="{% static 'rest_framework/js/load-ajax-form.js' %}" nonce="{{ nonce }}"></script>
+</head>
+<body>
+    <h1>Register Page</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <label for="username">Имя пользователя:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button id="submit-btn" type="submit">Зарегистрироваться</button>
+
+        <!-- Inline-скрипт для обработки кнопки отправки -->
+        <script nonce="{{ nonce }}">
+            document.getElementById('submit-btn').addEventListener('click', function() {
+                console.log("Форма была отправлена!");
+            });
+        </script>
+    </form>
+
+    <!-- Пример скрипта в конце страницы -->
+    <script nonce="{{ nonce }}">
+        console.log("Страница успешно загружена!");
+    </script>
+</body>
+</html>
