@@ -1,4 +1,4 @@
-Metadata-Version: 2.4
+Metadata-Version: 2.1
 Name: python-dotenv
 Version: 1.0.1
 Summary: Read key-value pairs from a .env file and set them as environment variables
@@ -28,18 +28,6 @@ Description-Content-Type: text/markdown
 License-File: LICENSE
 Provides-Extra: cli
 Requires-Dist: click>=5.0; extra == "cli"
-Dynamic: author
-Dynamic: author-email
-Dynamic: classifier
-Dynamic: description
-Dynamic: description-content-type
-Dynamic: home-page
-Dynamic: keywords
-Dynamic: license
-Dynamic: license-file
-Dynamic: provides-extra
-Dynamic: requires-python
-Dynamic: summary
 
 # python-dotenv
 

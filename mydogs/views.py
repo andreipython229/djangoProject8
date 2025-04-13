@@ -1,5 +1,5 @@
-from django.forms import model_to_dict
-from django.http import JsonResponse, HttpResponse
+#from django.forms import model_to_dict
+from django.http import JsonResponse
 from django.shortcuts import render
 import requests
 from rest_framework import generics, viewsets
@@ -9,11 +9,19 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.utils.crypto import get_random_string
 import logging
-import os
+#import os
 from django.conf import settings
 
 # Настройка логирования
 logger = logging.getLogger(__name__)
+
+# Утилита для формирования заголовка Content-Security-Policy
+def add_csp_header(response, nonce):
+    response['Content-Security-Policy'] = (
+        f"default-src 'self'; script-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
+        f"style-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; img-src 'self' data:;"
+    )
+    return response
 
 # Функция для обработки CSP-отчётов
 def csp_report_view(request):
@@ -25,14 +33,9 @@ def csp_report_view(request):
 # Главная страница
 def index_view(request):
     try:
-        # Генерация nonce
         nonce = get_random_string(16)
         response = render(request, 'index.html', {'exception_notes': 'Нет ошибок', 'nonce': nonce})
-        response['Content-Security-Policy'] = (
-            f"default-src 'self'; script-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
-            f"style-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; img-src 'self' data:;"
-        )
-        return response
+        return add_csp_header(response, nonce)
     except Exception as e:
         logger.error(f"Exception in index_view: {str(e)}")
         return JsonResponse({'error': 'Ошибка на главной странице'}, status=500)
@@ -40,15 +43,10 @@ def index_view(request):
 # Регистрация пользователя
 def register(request):
     try:
-        # Генерация nonce
         nonce = get_random_string(16)
         if request.method == "GET":
             response = render(request, 'register.html', {'exception_notes': 'Нет ошибок', 'nonce': nonce})
-            response['Content-Security-Policy'] = (
-                f"default-src 'self'; script-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
-                f"style-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; img-src 'self' data:;"
-            )
-            return response
+            return add_csp_header(response, nonce)
         elif request.method == "POST":
             return JsonResponse({'message': 'User registered successfully'})
         else:
@@ -90,105 +88,74 @@ class MydogsAPIView(APIView):
             return Response({'error': 'Ошибка при создании записи'}, status=500)
 
     def put(self, request, *args, **kwargs):
+        # Получаем идентификатор (pk) из аргументов
+        pk = kwargs.get('pk', None)
+
+        # Проверка: если pk отсутствует, возвращаем ошибку
+        if not pk:
+            logger.error("PUT request received without an ID (pk)")
+            return Response({'error': 'ID is required for this request'}, status=400)
+
+        # Попытка получить объект
+        instance = self.get_instance(pk)
+        if not instance:
+            logger.error(f"Instance with ID {pk} not found.")
+            return Response({'error': 'Object with provided ID does not exist'}, status=404)
+
+        # Попытка обновить объект
+        try:
+            # Создаем сериализатор с объектом и новыми данными
+            serializer = MydogsSerializer(instance=instance, data=request.data)
+
+            # Проверяем валидность данных
+            serializer.is_valid(raise_exception=True)
+
+            # Сохраняем изменения
+            serializer.save()
+
+            # Возвращаем успешный ответ
+            return Response({'post': serializer.data}, status=200)
+
+        except Exception as e:
+            # Логируем и возвращаем ошибку при исключении
+            logger.error(f"Exception in MydogsAPIView PUT: {str(e)}")
+            return Response({'error': 'An error occurred while updating the record'}, status=500)
+
+
+    def delete(self, request, *args, **kwargs):
         pk = kwargs.get('pk', None)
         if not pk:
-            return Response({'error': 'Method PUT not allowed'}, status=400)
-
+            return Response({'error': 'Method DELETE not allowed'}, status=400)
         instance = self.get_instance(pk)
         if not instance:
             return Response({'error': 'Object does not exist'}, status=404)
         try:
-            serializer = MydogsSerializer(data=request.data, instance=instance)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-            return Response({'post': serializer.data})
+            instance.delete()
+            return Response({'deleted': True})
         except Exception as e:
-            logger.error(f"Exception in MydogsAPIView PUT: {str(e)}")
-            return Response({'error': 'Ошибка при обновлении записи'}, status=500)
+            logger.error(f"Exception in MydogsAPIView DELETE: {str(e)}")
+            return Response({'error': 'Ошибка при удалении записи'}, status=500)
 
-        def delete(self, request, *args, **kwargs):
-            pk = kwargs.get('pk', None)
-            if not pk:
-                return Response({'error': 'Method DELETE not allowed'}, status=400)
+# ViewSet для Mydogs
+class MydogsViewSet(viewsets.ModelViewSet):
+    queryset = Mydogs.objects.all()
+    serializer_class = MydogsSerializer
 
-            instance = self.get_instance(pk)
-            if not instance:
-                return Response({'error': 'Object does not exist'}, status=404)
-
-            try:
-                instance.delete()
-                return Response({'deleted': True})
-            except Exception as e:
-                logger.error(f"Exception in MydogsAPIView DELETE: {str(e)}")
-                return Response({'error': 'Ошибка при удалении записи'}, status=500)
-
-        # ViewSet для Mydogs
-        class MydogsViewSet(viewsets.ModelViewSet):
-            queryset = Mydogs.objects.all()
-            serializer_class = MydogsSerializer
-
-        # Получение списка собак
-        def fetch_dogs(request):
-            """
-            Функция для получения данных из API и рендеринга шаблона places.html.
-            """
-            try:
-                # Генерация nonce
-                nonce = get_random_string(16)
-                api_url = f"{settings.API_BASE_URL}/api/v1/mydogslist/"
-                api_response = requests.get(api_url)
-                if api_response.status_code == 200:
-                    data = api_response.json()
-                    exception_notes = 'Данные успешно получены'
-                else:
-                    data = []
-                    exception_notes = f"Ошибка при запросе к API: {api_response.status_code}"
-
-                # Рендер шаблона places.html
-                response = render(request, 'places.html',
-                                  {'dogs': data, 'exception_notes': exception_notes, 'nonce': nonce})
-                response['Content-Security-Policy'] = (
-                    f"default-src 'self'; script-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
-                    f"style-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; img-src 'self' data:;"
-                )
-                return response
-            except Exception as e:
-                logger.error(f"Exception in fetch_dogs: {str(e)}")
-                return JsonResponse({'error': 'Ошибка при получении данных'}, status=500)
-        # Динамическая обработка файлов из папки public
-        def serve_public_file_with_nonce(request, file_name):
-            nonce = get_random_string(16)
-            file_path = os.path.join('public', file_name)
-
-            try:
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    content = f.read()
-
-                content = content.replace('{{ nonce }}', nonce)
-                response = HttpResponse(content)
-                response['Content-Security-Policy'] = (
-                    f"default-src 'self'; script-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
-                    f"style-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; img-src 'self' data:;"
-                )
-                return response
-            except FileNotFoundError:
-                return HttpResponse("Файл не найден", status=404)
-
-        # Динамическая обработка файлов из папки build
-        def serve_build_file_with_nonce(request, file_name):
-            nonce = get_random_string(16)
-            file_path = os.path.join('build', file_name)
-
-            try:
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    content = f.read()
-
-                content = content.replace('{{ nonce }}', nonce)
-                response = HttpResponse(content)
-                response['Content-Security-Policy'] = (
-                    f"default-src 'self'; script-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
-                    f"style-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; img-src 'self' data:;"
-                )
-                return response
-            except FileNotFoundError:
-                return HttpResponse("Файл не найден", status=404)
+# Получение списка собак
+def fetch_dogs(request):
+    try:
+        nonce = get_random_string(16)
+        api_url = f"{settings.API_BASE_URL}/api/v1/mydogslist/"
+        api_response = requests.get(api_url)
+        if api_response.status_code == 200:
+            data = api_response.json()
+            exception_notes = 'Данные успешно получены'
+        else:
+            data = []
+            exception_notes = f"Ошибка при запросе к API: {api_response.status_code}"
+        response = render(request, 'places.html',
+                          {'dogs': data, 'exception_notes': exception_notes, 'nonce': nonce})
+        return add_csp_header(response, nonce)
+    except Exception as e:
+        logger.error(f"Exception in fetch_dogs: {str(e)}")
+        return JsonResponse({'error': 'Ошибка при получении данных'}, status=500)

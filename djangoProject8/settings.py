@@ -15,20 +15,14 @@ from pathlib import Path
 import os
 from logging.handlers import RotatingFileHandler
 
-from django.conf.global_settings import INTERNAL_IPS
 from dotenv import load_dotenv
-#import environ
+import environ
 #import psycopg
 
 load_dotenv(".venv/.env")
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Печатает путь к файлу django.log для проверки
+# Выводит путь к файлу django.log для проверки
 print(Path(__file__).resolve().parent.parent / 'django.log')
 
 env = environ.Env(DEBUG=(bool, False))
@@ -100,9 +94,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-INTERNAL_IPS = [
-    '127.0.0.1'
-]
+INTERNAL_IPS = ['127.0.0.1']
 
 CSP_DEFAULT_SRC = ("'self'",)
 CSP_SCRIPT_SRC = ("'self'", "https://cdn.jsdelivr.net")
@@ -128,24 +120,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djangoProject8.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
-        'OPTIONS': {
-            'client_encoding': 'UTF-8',
-        }
-    }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
