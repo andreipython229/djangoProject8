@@ -1,9 +1,8 @@
-import io
+#import io
 from rest_framework import serializers
-from rest_framework.parsers import JSONParser
-from rest_framework.renderers import JSONRenderer
-
-from. models import Mydogs
+from .models import Mydogs
+# from rest_framework.parsers import JSONParser
+# from rest_framework.renderers import JSONRenderer
 
 
 #class Mydogsmodel:
@@ -13,8 +12,6 @@ from. models import Mydogs
 #        self.age = age
 #       self.price = price
 #        self.category = category
-
-
 
 class MydogsSerializer(serializers.ModelSerializer):
     category = serializers.StringRelatedField()
