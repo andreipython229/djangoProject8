@@ -22,8 +22,10 @@ from mydogs.test_static import serve_static
 router = DefaultRouter()
 router.register(r'mydogs', MydogsViewSet, basename='mydogs')
 
+
 # Основные маршруты
 urlpatterns = [
+
     # Админка
     path('admin/', admin.site.urls),
 
@@ -48,12 +50,11 @@ urlpatterns = [
     path('v1/mydogslist/', mydogs_list_view, name='mydogslist'),  # Дополнительный список
     path('csp-violation-report-endpoint/', csp_report_view, name='csp-violation-report-endpoint'),  # Отчёты CSP
 ]
-
 # Маршруты для отладки (Debug Toolbar)
-if settings.DEBUG:
-    urlpatterns += [
-        path('debug/', include(debug_toolbar.urls)),  # Стандартный путь для отладочной панели
-    ]
+#if settings.DEBUG:
+  #  urlpatterns += [
+   #     path('debug/', include(debug_toolbar.urls)),  # Стандартный путь для отладочной панели
+    #     ]
 
 # Подключение статических файлов
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

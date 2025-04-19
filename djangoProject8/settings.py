@@ -58,6 +58,7 @@ DATABASES = {
 # Application definition
 
 INSTALLED_APPS = [
+ #   'debug_toolbar',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,7 +69,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'mydogs.apps.MydogsConfig',
     'rest_framework',
-    'debug_toolbar',
 ]
 
 REST_FRAMEWORK = {
@@ -83,6 +83,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+  #  'debug_toolbar.middleware.DebugToolbarMiddleware',
     'mydogs.middleware.csp_middleware.CSPMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -90,7 +91,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -114,6 +114,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.static',
             ],
         },
     },
@@ -188,3 +189,7 @@ LOGGING = {
 
 # Custom settings for the project
 API_BASE_URL = "http://127.0.0.1:8000"
+
+#DEBUG_TOOLBAR_CONFIG = {
+ #   'SHOW_TOOLBAR_CALLBACK': lambda request: True,
+#}
