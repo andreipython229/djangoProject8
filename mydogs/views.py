@@ -1,4 +1,4 @@
-#from django.forms import model_to_dict
+from django.forms import model_to_dict
 from django.http import JsonResponse
 from django.shortcuts import render
 import requests
@@ -9,7 +9,6 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.utils.crypto import get_random_string
 import logging
-#import os
 from django.conf import settings
 
 # Настройка логирования
@@ -88,39 +87,24 @@ class MydogsAPIView(APIView):
             return Response({'error': 'Ошибка при создании записи'}, status=500)
 
     def put(self, request, *args, **kwargs):
-        # Получаем идентификатор (pk) из аргументов
         pk = kwargs.get('pk', None)
-
-        # Проверка: если pk отсутствует, возвращаем ошибку
         if not pk:
             logger.error("PUT request received without an ID (pk)")
             return Response({'error': 'ID is required for this request'}, status=400)
 
-        # Попытка получить объект
         instance = self.get_instance(pk)
         if not instance:
             logger.error(f"Instance with ID {pk} not found.")
             return Response({'error': 'Object with provided ID does not exist'}, status=404)
 
-        # Попытка обновить объект
         try:
-            # Создаем сериализатор с объектом и новыми данными
             serializer = MydogsSerializer(instance=instance, data=request.data)
-
-            # Проверяем валидность данных
             serializer.is_valid(raise_exception=True)
-
-            # Сохраняем изменения
             serializer.save()
-
-            # Возвращаем успешный ответ
             return Response({'post': serializer.data}, status=200)
-
         except Exception as e:
-            # Логируем и возвращаем ошибку при исключении
             logger.error(f"Exception in MydogsAPIView PUT: {str(e)}")
             return Response({'error': 'An error occurred while updating the record'}, status=500)
-
 
     def delete(self, request, *args, **kwargs):
         pk = kwargs.get('pk', None)
@@ -154,7 +138,7 @@ def fetch_dogs(request):
             data = []
             exception_notes = f"Ошибка при запросе к API: {api_response.status_code}"
         response = render(request, 'places.html',
-                          {'dogs': data, 'exception_notes': exception_notes, 'nonce': nonce})
+                         {'dogs': data, 'exception_notes': exception_notes, 'nonce': nonce})
         return add_csp_header(response, nonce)
     except Exception as e:
         logger.error(f"Exception in fetch_dogs: {str(e)}")

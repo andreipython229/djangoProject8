@@ -10,11 +10,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   overflow-x: auto;
   padding: 0.5em;
   color: #333;
-  /* Используем свойства для максимальной совместимости */
-  -webkit-text-size-adjust: none; /* Для старых версий браузеров на базе WebKit */
-  -moz-text-size-adjust: none; /* Для Firefox */
-  -ms-text-size-adjust: none; /* Для Internet Explorer и Edge */
-  text-size-adjust: none; /* Для стандартных браузеров */
+  -webkit-text-size-adjust: none;
 }
 
 .hljs-comment,
