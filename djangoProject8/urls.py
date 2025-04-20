@@ -17,6 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from mydogs.views import MydogsAPIView
+from mydogs.views import (
+    csp_report_view,
+    register,
+    MydogsAPIList,
+    MydogsAPIView,
+    fetch_dogs,
+    MydogsViewSet
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
