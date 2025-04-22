@@ -9,56 +9,52 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+"""
+Django settings for djangoProject8 project.
+"""
+
 from datetime import timedelta
-#from email.policy import default
 from pathlib import Path
 import os
 from logging.handlers import RotatingFileHandler
-
 from dotenv import load_dotenv
 import environ
-#import psycopg
 
 load_dotenv(".venv/.env")
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Выводит путь к файлу django.log для проверки
 print(Path(__file__).resolve().parent.parent / 'django.log')
 
 env = environ.Env(DEBUG=(bool, False))
 env.read_env(BASE_DIR / '.env')
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY', default='your-fallback-secret-key')
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', default=False)
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS настройки
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:8000",
+]
+CORS_ALLOW_CREDENTIALS = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '[::1]', '*']
 
-# Настройки базы данных, значения берутся из переменных .env
+# Настройки базы данных
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',  # Движок базы данных PostgreSQL
-        'NAME': env('DB_NAME'),  # Имя базы данных
-        'USER': env('DB_USER'),  # Пользователь базы данных
-        'PASSWORD': env('DB_PASSWORD'),  # Пароль для базы данных
-        'HOST': env('DB_HOST', default='localhost'),  # Хост базы данных (по умолчанию localhost)
-        'PORT': env('DB_PORT', default='5432'),  # Порт базы данных (по умолчанию 5432)
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST', default='localhost'),
+        'PORT': env('DB_PORT', default='5432'),
         'OPTIONS': {
-            'client_encoding': 'UTF-8',  # Кодировка соединения с базой
+            'client_encoding': 'UTF-8',
         }
     }
 }
 
-# Application definition
-
 INSTALLED_APPS = [
- #   'debug_toolbar',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -71,19 +67,8 @@ INSTALLED_APPS = [
     'rest_framework',
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
-    ],
-    'DEFAULT_PARSER_CLASSES': [
-        'rest_framework.parsers.JSONParser',
-    ],
-}
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-  #  'debug_toolbar.middleware.DebugToolbarMiddleware',
     'mydogs.middleware.csp_middleware.CSPMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -96,17 +81,25 @@ MIDDLEWARE = [
 
 INTERNAL_IPS = ['127.0.0.1']
 
+# CSP настройки
 CSP_DEFAULT_SRC = ("'self'",)
-CSP_SCRIPT_SRC = ("'self'", "https://cdn.jsdelivr.net")
-CSP_STYLE_SRC = ("'self'", "https://cdn.jsdelivr.net")
-CSP_IMG_SRC = ("'self'", "data:")
+CSP_SCRIPT_SRC = ("'self'", "https://cdn.jsdelivr.net", "http://localhost:3000")
+CSP_STYLE_SRC = ("'self'", "https://cdn.jsdelivr.net", "'unsafe-inline'")
+CSP_IMG_SRC = ("'self'", "data:", "http://localhost:3000")
+CSP_FONT_SRC = ("'self'", "https://cdn.jsdelivr.net")
+CSP_CONNECT_SRC = ("'self'", "http://localhost:3000", "http://127.0.0.1:8000")
 CSP_INCLUDE_NONE_IN = ['script-src', 'style-src']
+
 ROOT_URLCONF = 'djangoProject8.urls'
 
+# Настройки шаблонов
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR /  'templates'],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'build'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,9 +115,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djangoProject8.wsgi.application'
 
-# Password validation
-# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
+# Настройки REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
+}
 
+# Настройки паролей
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -140,32 +149,27 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/5.1/topics/i18n/
-
+# Локализация
 LANGUAGE_CODE = 'ru'
-
 TIME_ZONE = 'Europe/Minsk'
-
 USE_I18N = True
-
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
+# Настройки статических файлов
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'build'),
+    os.path.join(BASE_DIR, 'build/static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
+# Настройки React
+REACT_APP_DIR = os.path.join(BASE_DIR, 'build')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Настройки логирования
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -179,7 +183,7 @@ LOGGING = {
         }
     },
     'loggers': {
-        'django':{
+        'django': {
             'handlers': ['file'],
             'level': 'DEBUG',
             'propagate': True,
@@ -187,9 +191,5 @@ LOGGING = {
     },
 }
 
-# Custom settings for the project
+# Пользовательские настройки
 API_BASE_URL = "http://127.0.0.1:8000"
-
-#DEBUG_TOOLBAR_CONFIG = {
- #   'SHOW_TOOLBAR_CALLBACK': lambda request: True,
-#}

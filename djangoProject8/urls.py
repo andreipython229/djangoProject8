@@ -14,21 +14,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
-from mydogs.views import MydogsAPIView
-from mydogs.views import (
-    csp_report_view,
-    register,
-    MydogsAPIList,
-    MydogsAPIView,
-    fetch_dogs,
-    MydogsViewSet
-)
+from django.conf import settings
+from django.conf.urls.static import static
+from mydogs.views import index_view, places_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/mydogslist/',MydogsAPIView.as_view(), name='mydogs-list'),
-   # path('dogs/', fetch_dogs, name='fetch-dogs'),
-    path('', MydogsAPIView.as_view(), name='home'),
+    path('api/', include('mydogs.urls')),
+    path('', index_view, name='home'),
+    path('places/', places_view, name='places'),  # Добавляем маршрут для places
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

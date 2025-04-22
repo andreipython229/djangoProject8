@@ -33,7 +33,7 @@ def csp_report_view(request):
 def index_view(request):
     try:
         nonce = get_random_string(16)
-        response = render(request, 'index.html', {'exception_notes': 'Нет ошибок', 'nonce': nonce})
+        response = render(request, 'public/index.html', {'exception_notes': 'Нет ошибок', 'nonce': nonce})
         return add_csp_header(response, nonce)
     except Exception as e:
         logger.error(f"Exception in index_view: {str(e)}")
@@ -137,7 +137,7 @@ def fetch_dogs(request):
         else:
             data = []
             exception_notes = f"Ошибка при запросе к API: {api_response.status_code}"
-        response = render(request, 'places.html',
+        response = render(request, 'public/places.html',
                          {'dogs': data, 'exception_notes': exception_notes, 'nonce': nonce})
         return add_csp_header(response, nonce)
     except Exception as e:
