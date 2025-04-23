@@ -19,13 +19,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from mydogs.views import index_view, places_view
+from mydogs.views import index_view, register  # Импортировали функцию register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('mydogs.urls')),
+    path('api/register/', register, name='register'),  # Добавлен новый маршрут для api/register/
+    path('api/', include('mydogs.urls')),  # Подключаем urls из приложения mydogs
     path('', index_view, name='home'),
-    path('places/', places_view, name='places'),  # Добавляем маршрут для places
 ]
 
+# Подключение статических файлов
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
