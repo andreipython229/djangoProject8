@@ -16,9 +16,9 @@ router.register(r'mydogs', MydogsViewSet, basename='mydogs')
 
 urlpatterns = [
     # API endpoints
-    path('api/register/', register, name='register'),
+    path('register/', register, name='register'),
     path('mydogs/', include(router.urls)),
-    path('api/mydogs/<int:pk>/', MydogsAPIView.as_view(), name='mydogs-detail'),
+    path('mydogs/<int:pk>/', MydogsAPIView.as_view(), name='mydogs-detail'),
 
     # Страницы
     path('', index_view, name='home'),
@@ -26,5 +26,5 @@ urlpatterns = [
     path('test/', TemplateView.as_view(template_name="test.html"), name='test'),
 
     # CSP endpoint
-    path('api/csp-violation-report/', csp_report_view, name='csp-violation-report'),
+    path('csp-violation-report/', csp_report_view, name='csp-violation-report'),
 ]
