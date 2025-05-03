@@ -37,7 +37,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
 ]
 CORS_ALLOW_CREDENTIALS = True
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '[::1]', '*']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '[::1]']
 
 # Настройки базы данных
 DATABASES = {
@@ -158,12 +158,12 @@ USE_TZ = True
 
 # Настройки статических файлов
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'build'),
-    os.path.join(BASE_DIR, 'build/static'),
+    os.path.join(BASE_DIR, 'static'),  # Исходная директория для статических файлов
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Финальная папка для collectstatic
 
 # Настройки React
 REACT_APP_DIR = os.path.join(BASE_DIR, 'build')
