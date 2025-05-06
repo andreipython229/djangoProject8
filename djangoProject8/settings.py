@@ -39,6 +39,20 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_CREDENTIALS = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '[::1]']
 
+# Настройки безопасности
+SECURE_SSL_REDIRECT = True  # Перенаправлять все HTTP запросы на HTTPS
+SECURE_HSTS_SECONDS = 31536000  # Включить HSTS на 1 год
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+# SECURITY SETTINGS
+SESSION_COOKIE_SECURE = False     # Отправлять куки только по HTTPS
+CSRF_COOKIE_SECURE = True         # Отправлять CSRF куки только по HTTPS
+SESSION_COOKIE_SAMESITE = 'Lax'   # Ограничить кросс-сайтовые запросы
+CSRF_COOKIE_SAMESITE = 'Lax'      # Ограничить кросс-сайтовые запросы
+SESSION_COOKIE_HTTPONLY = True    # Запретить доступ к куки через JavaScript
+CSRF_COOKIE_HTTPONLY = True       # Запретить доступ к CSRF куки через JavaScript
+
 # Настройки базы данных
 DATABASES = {
     'default': {
@@ -160,7 +174,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Исходная директория для статических файлов
+    os.path.join(BASE_DIR, 'static'),# Исходная директория для статических файлов
+    os.path.join(BASE_DIR, 'build/static'),# Добавляем статистические файлы React
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Финальная папка для collectstatic
