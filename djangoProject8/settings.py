@@ -40,18 +40,22 @@ CORS_ALLOW_CREDENTIALS = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '[::1]']
 
 # Настройки безопасности
-SECURE_SSL_REDIRECT = True  # Перенаправлять все HTTP запросы на HTTPS
-SECURE_HSTS_SECONDS = 31536000  # Включить HSTS на 1 год
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+SECURE_SSL_REDIRECT = False  # Отключаем принудительное перенаправление на HTTPS
+SECURE_HSTS_SECONDS = 0  # Отключаем HSTS в режиме разработки
+SECURE_HSTS_INCLUDE_SUBDOMAINS = False  # Отключаем HSTS для поддоменов
+SECURE_HSTS_PRELOAD = False  # Отключаем предзагрузку HSTS
+SECURE_PROXY_SSL_HEADER = None  # Отключаем проверку SSL-заголовков
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Запрещаем браузеру угадывать MIME-типы
+SECURE_BROWSER_XSS_FILTER = True  # Включаем XSS-фильтр браузера
+X_FRAME_OPTIONS = 'DENY'  # Запрещаем встраивание сайта в iframe
 
-# SECURITY SETTINGS
-SESSION_COOKIE_SECURE = False     # Отправлять куки только по HTTPS
-CSRF_COOKIE_SECURE = True         # Отправлять CSRF куки только по HTTPS
-SESSION_COOKIE_SAMESITE = 'Lax'   # Ограничить кросс-сайтовые запросы
-CSRF_COOKIE_SAMESITE = 'Lax'      # Ограничить кросс-сайтовые запросы
-SESSION_COOKIE_HTTPONLY = True    # Запретить доступ к куки через JavaScript
-CSRF_COOKIE_HTTPONLY = True       # Запретить доступ к CSRF куки через JavaScript
+# Настройки куки
+SESSION_COOKIE_SECURE = False  # Разрешаем куки без HTTPS
+CSRF_COOKIE_SECURE = False  # Разрешаем CSRF куки без HTTPS
+SESSION_COOKIE_SAMESITE = 'Lax'  # Ограничиваем кросс-сайтовые запросы
+CSRF_COOKIE_SAMESITE = 'Lax'  # Ограничиваем кросс-сайтовые запросы
+SESSION_COOKIE_HTTPONLY = True  # Запрещаем доступ к куки через JavaScript
+CSRF_COOKIE_HTTPONLY = True  # Запрещаем доступ к CSRF куки через JavaScript
 
 # Настройки базы данных
 DATABASES = {
@@ -86,11 +90,11 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'mydogs.middleware.csp_middleware.CSPMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # Перемещаем CORS middleware выше
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -98,7 +102,7 @@ INTERNAL_IPS = ['127.0.0.1']
 
 # CSP настройки
 CSP_DEFAULT_SRC = ("'self'",)
-CSP_SCRIPT_SRC = ("'self'", "https://cdn.jsdelivr.net", "http://localhost:3000")
+CSP_SCRIPT_SRC = ("'self'", "https://cdn.jsdelivr.net", "http://localhost:3000", "'unsafe-inline'")
 CSP_STYLE_SRC = ("'self'", "https://cdn.jsdelivr.net", "'unsafe-inline'")
 CSP_IMG_SRC = ("'self'", "data:", "http://localhost:3000")
 CSP_FONT_SRC = ("'self'", "https://cdn.jsdelivr.net")
@@ -138,6 +142,8 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PARSER_CLASSES': [
         'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
@@ -172,13 +178,11 @@ USE_TZ = True
 
 # Настройки статических файлов
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),# Исходная директория для статических файлов
-    os.path.join(BASE_DIR, 'build/static'),# Добавляем статистические файлы React
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'build/static'),
 ]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Финальная папка для collectstatic
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Настройки React
 REACT_APP_DIR = os.path.join(BASE_DIR, 'build')
@@ -189,6 +193,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
     'handlers': {
         'file': {
             'level': 'DEBUG',
@@ -196,13 +210,24 @@ LOGGING = {
             'filename': os.path.join(BASE_DIR, 'django.log'),
             'maxBytes': 5242880,
             'backupCount': 5,
-        }
+            'formatter': 'verbose',
+        },
+        'console': {
+            'level': 'INFO',  # Changed from DEBUG to INFO
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',  # Changed to simple formatter
+        },
     },
     'loggers': {
         'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
+            'handlers': ['file', 'console'],
+            'level': 'INFO',  # Changed from DEBUG to INFO
             'propagate': True,
+        },
+        'django.server': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
         },
     },
 }
