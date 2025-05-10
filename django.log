@@ -12728,3 +12728,13 @@ INFO 2025-05-08 14:47:04,769 autoreload 10300 17716 C:\Users\Andrei2\PycharmProj
 INFO 2025-05-08 14:48:12,830 autoreload 9964 11540 Watching for file changes with StatReloader
 INFO 2025-05-08 15:01:41,199 autoreload 1744 396 Watching for file changes with StatReloader
 INFO 2025-05-08 15:17:34,625 autoreload 2520 9508 Watching for file changes with StatReloader
+WARNING 2025-05-09 11:20:27,112 log 2520 5828 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-09 11:20:35,833 log 2520 5828 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-09 11:21:41,896 log 2520 5828 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-09 11:24:51,336 log 2520 5828 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2025-05-09 11:35:36,591 autoreload 2520 9508 C:\Users\Andrei2\PycharmProjects\djangoProject8\djangoProject8\urls.py changed, reloading.
+INFO 2025-05-09 11:35:38,833 autoreload 21236 16464 Watching for file changes with StatReloader
+INFO 2025-05-09 11:37:59,527 autoreload 21236 16464 C:\Users\Andrei2\PycharmProjects\djangoProject8\mydogs\urls.py changed, reloading.
+INFO 2025-05-09 11:38:01,445 autoreload 9452 8792 Watching for file changes with StatReloader
+INFO 2025-05-09 11:42:20,787 autoreload 2672 2964 Watching for file changes with StatReloader
+INFO 2025-05-10 17:53:39,951 autoreload 37936 20472 Watching for file changes with StatReloader

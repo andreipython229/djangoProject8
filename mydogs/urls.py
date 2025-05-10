@@ -9,6 +9,8 @@ from .views import (
 )
 from rest_framework.routers import DefaultRouter
 from django.views.generic import TemplateView
+from django.conf import settings
+from django.conf.urls.static import static
 
 # Настраиваем DefaultRouter
 router = DefaultRouter()
@@ -28,3 +30,6 @@ urlpatterns = [
     # CSP endpoint
     path('csp-violation-report/', csp_report_view, name='csp-violation-report'),
 ]
+
+# Подключение статических файлов
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -45,7 +45,8 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "eslint-plugin-import": "^2.31.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "webpack-cli": "^6.0.1"
   },
   "browserslist": {
     "production": [

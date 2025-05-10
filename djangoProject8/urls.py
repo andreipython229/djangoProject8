@@ -19,14 +19,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from mydogs.views import index_view, register  # Импортировали функцию register
+from django.http import HttpResponse
+from mydogs.views import index_view, register
+
+def devtools_json(request):
+    return HttpResponse('{}', content_type='application/json')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/register/', register, name='register'),  # Добавлен новый маршрут для api/register/
-    path('api/', include('mydogs.urls')),  # Подключаем urls из приложения mydogs
+    path('api/register/', register, name='register'),
+    path('api/', include('mydogs.urls')),
     path('', index_view, name='home'),
-]
-
-# Подключение статических файлов
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('.well-known/appspecific/com.chrome.devtools.json', devtools_json),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
