@@ -12751,3 +12751,30 @@ INFO 2025-05-13 14:40:46,324 autoreload 21304 23972 C:\Users\Andrei2\PycharmProj
 INFO 2025-05-13 14:40:47,196 autoreload 13496 24324 Watching for file changes with StatReloader
 INFO 2025-05-13 14:47:44,221 autoreload 13496 24324 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
 INFO 2025-05-13 18:38:56,400 autoreload 52316 38876 Watching for file changes with StatReloader
+ERROR 2025-05-13 18:39:08,049 log 52316 18760 Internal Server Error: /
+WARNING 2025-05-13 18:39:08,355 log 52316 18760 Not Found: /favicon.ico
+ERROR 2025-05-13 18:53:59,501 log 52316 32680 Internal Server Error: /
+ERROR 2025-05-13 18:54:00,793 log 52316 32680 Internal Server Error: /
+ERROR 2025-05-13 18:54:01,391 log 52316 32680 Internal Server Error: /
+ERROR 2025-05-13 18:54:01,661 log 52316 32680 Internal Server Error: /
+ERROR 2025-05-13 18:54:01,918 log 52316 32680 Internal Server Error: /
+INFO 2025-05-14 14:09:07,778 autoreload 68508 25624 Watching for file changes with StatReloader
+ERROR 2025-05-14 14:10:57,236 log 68508 19712 Internal Server Error: /
+WARNING 2025-05-14 14:10:57,813 log 68508 34652 Not Found: /favicon.ico
+INFO 2025-05-14 17:20:31,695 autoreload 2848 39568 Watching for file changes with StatReloader
+ERROR 2025-05-14 17:25:00,865 log 2848 24528 Internal Server Error: /
+ERROR 2025-05-14 17:25:00,869 log 2848 24528 Internal Server Error: /
+ERROR 2025-05-14 17:25:00,871 log 2848 24528 Internal Server Error: /
+WARNING 2025-05-14 17:25:02,068 log 2848 38356 Not Found: /favicon.ico
+INFO 2025-05-14 18:03:14,935 autoreload 2848 39568 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-05-14 18:03:15,930 autoreload 48800 59848 Watching for file changes with StatReloader
+INFO 2025-05-14 18:04:25,808 autoreload 48800 59848 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-05-14 18:04:26,784 autoreload 32592 47956 Watching for file changes with StatReloader
+WARNING 2025-05-14 19:32:00,796 log 32592 2112 Not Found: /api/v1/mydogs/
+WARNING 2025-05-14 19:32:01,230 log 32592 2112 Not Found: /favicon.ico
+INFO 2025-05-14 19:44:56,031 autoreload 32592 47956 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-14 19:44:57,109 autoreload 38832 28404 Watching for file changes with StatReloader
+INFO 2025-05-14 19:55:47,811 autoreload 38832 28404 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-14 19:55:48,694 autoreload 40588 28480 Watching for file changes with StatReloader
+INFO 2025-05-14 19:56:23,934 autoreload 40588 28480 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-14 19:56:24,938 autoreload 48396 55340 Watching for file changes with StatReloader

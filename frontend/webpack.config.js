@@ -38,6 +38,10 @@ module.exports = {
     },
     compress: true,
     port: 9000,
+    setupMiddlewares: (middlewares, server) => {
+      // Добавлено новое API вместо устаревших параметров
+      return middlewares;
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
