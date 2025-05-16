@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-{{ nonce }}' https://cdn.jsdelivr.net; style-src 'self' 'nonce-{{ nonce }}' https://cdn.jsdelivr.net; img-src 'self' data:;">
+    <title>Вход</title>
+    <!-- Стили -->
+    <link rel="stylesheet" href="{% static 'rest_framework/css/bootstrap.min.css' %}" nonce="{{ nonce }}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}" nonce="{{ nonce }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Вход в систему</h2>
+
+        {% if exception_notes %}
+            <div class="alert alert-danger">{{ exception_notes }}</div>
+        {% endif %}
+
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary" id="login-btn">Войти</button>
+        </form>
+
+        <script nonce="{{ nonce }}">
+            document.getElementById('login-btn').addEventListener('click', function() {
+                console.log("Форма логина отправлена.");
+            });
+        </script>
+    </div>
+</body>
+</html>
+
