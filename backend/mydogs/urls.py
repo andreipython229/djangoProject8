@@ -5,6 +5,7 @@ from .views import (
     register,
     fetch_dogs,
     csp_report_view,
+    login_view,
     MydogsAPIView,
     MydogsViewSet,
 )
@@ -18,6 +19,7 @@ router.register(r'', MydogsViewSet, basename='mydogs')
 
 urlpatterns = [
     # API endpoints
+    path('login/', login_view, name='login'),
     path('register/', register, name='register'),
     path('mydogs/', include(router.urls)),  # ← даст /api/mydogs/ и /api/mydogs/<pk>/
     path('mydogs/<int:pk>/', MydogsAPIView.as_view(), name='mydogs-detail'),  # ← опционально, если ты используешь кастомный APIView
