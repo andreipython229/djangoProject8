@@ -13,28 +13,29 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 Django settings for djangoProject8 project.
 """
 
-from datetime import timedelta
 from pathlib import Path
 import os
-from logging.handlers import RotatingFileHandler
 from dotenv import load_dotenv
 import environ
+from datetime import timedelta
 
+# Загрузка .env переменных
 load_dotenv(".venv/.env")
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-
 env = environ.Env(DEBUG=(bool, False))
 env.read_env(BASE_DIR / 'backend' / '.env')
 
 SECRET_KEY = env('SECRET_KEY', default='your-fallback-secret-key')
 DEBUG = env.bool('DEBUG', default=False)
 
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '[::1]']
+INTERNAL_IPS = ['127.0.0.1']
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:8000",
 ]
 CORS_ALLOW_CREDENTIALS = True
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '[::1]']
 
 SECURE_SSL_REDIRECT = False
 SECURE_HSTS_SECONDS = 0
@@ -73,11 +74,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'django_extensions',
     'csp',
     'corsheaders',
     'mydogs.apps.MydogsConfig',
+
     'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',  # добавлено
 ]
 
 MIDDLEWARE = [
@@ -91,16 +95,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-INTERNAL_IPS = ['127.0.0.1']
-
-CSP_DEFAULT_SRC = ("'self'",)
-CSP_SCRIPT_SRC = ("'self'", "https://cdn.jsdelivr.net", "http://localhost:3000", "'unsafe-inline'")
-CSP_STYLE_SRC = ("'self'", "https://cdn.jsdelivr.net", "'unsafe-inline'")
-CSP_IMG_SRC = ("'self'", "data:", "http://localhost:3000")
-CSP_FONT_SRC = ("'self'", "https://cdn.jsdelivr.net")
-CSP_CONNECT_SRC = ("'self'", "http://localhost:3000", "http://127.0.0.1:8000")
-CSP_INCLUDE_NONE_IN = ['script-src', 'style-src']
 
 ROOT_URLCONF = 'djangoProject8.urls'
 
@@ -137,6 +131,7 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.MultiPartParser',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ],
@@ -145,19 +140,21 @@ REST_FRAMEWORK = {
     ],
 }
 
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_BLACKLIST_SERIALIZER': 'rest_framework_simplejwt.token_blacklist.serializers.TokenBlacklistSerializer',
+}
+
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
 LANGUAGE_CODE = 'ru'
@@ -171,12 +168,18 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend', 'build', 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend', 'build')
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-print(f"BASE_DIR: {BASE_DIR}")
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_SCRIPT_SRC = ("'self'", "https://cdn.jsdelivr.net", "http://localhost:3000", "'unsafe-inline'")
+CSP_STYLE_SRC = ("'self'", "https://cdn.jsdelivr.net", "'unsafe-inline'")
+CSP_IMG_SRC = ("'self'", "data:", "http://localhost:3000")
+CSP_FONT_SRC = ("'self'", "https://cdn.jsdelivr.net")
+CSP_CONNECT_SRC = ("'self'", "http://localhost:3000", "http://127.0.0.1:8000")
+CSP_INCLUDE_NONE_IN = ['script-src', 'style-src']
+
+API_BASE_URL = "http://127.0.0.1:8000"
 
 LOGGING = {
     'version': 1,
@@ -191,22 +194,21 @@ LOGGING = {
             'style': '{',
         },
     },
-'handlers': {
-    'file': {
-        'level': 'DEBUG',
-        'class': 'logging.handlers.RotatingFileHandler',
-        'filename': str(BASE_DIR / 'backend' / 'logs' / 'django.log'),
-        'maxBytes': 5242880,
-        'backupCount': 5,
-        'formatter': 'verbose',
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': str(BASE_DIR / 'backend' / 'logs' / 'django.log'),
+            'maxBytes': 5242880,
+            'backupCount': 5,
+            'formatter': 'verbose',
+        },
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
     },
-    'console': {
-        'level': 'INFO',
-        'class': 'logging.StreamHandler',
-        'formatter': 'simple',
-    },
-},
-
     'loggers': {
         'django': {
             'handlers': ['file', 'console'],
@@ -221,4 +223,4 @@ LOGGING = {
     },
 }
 
-API_BASE_URL = "http://127.0.0.1:8000"
+print(f"BASE_DIR: {BASE_DIR}")

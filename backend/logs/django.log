@@ -12967,3 +12967,18 @@ Traceback (most recent call last):
     )
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 9: 'static'. Did you forget to register or load this tag?
 INFO 2025-05-17 10:31:37,249 autoreload 14368 21312 Watching for file changes with StatReloader
+INFO 2025-05-21 19:31:55,298 autoreload 9036 2008 Watching for file changes with StatReloader
+INFO 2025-05-21 19:43:35,641 autoreload 9036 2008 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-05-21 19:43:36,803 autoreload 66412 61168 Watching for file changes with StatReloader
+WARNING 2025-05-21 19:44:20,141 log 66412 69612 Not Found: /favicon.ico
+INFO 2025-05-21 20:59:27,224 autoreload 66412 61168 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-05-21 20:59:29,066 autoreload 7796 58760 Watching for file changes with StatReloader
+INFO 2025-05-21 21:00:05,915 autoreload 53840 51952 Watching for file changes with StatReloader
+WARNING 2025-05-21 21:00:15,724 log 53840 28492 Not Found: /api/v1/mydogslist/
+ERROR 2025-05-21 21:00:15,731 log 53840 52644 Internal Server Error: /api/places/
+INFO 2025-05-21 21:23:22,248 autoreload 53840 51952 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-05-21 21:23:23,180 autoreload 83636 52396 Watching for file changes with StatReloader
+INFO 2025-05-21 21:40:43,230 autoreload 83636 52396 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-05-21 21:40:44,362 autoreload 83048 38372 Watching for file changes with StatReloader
+INFO 2025-05-21 21:53:31,911 autoreload 83048 38372 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-21 21:53:33,230 autoreload 13780 46468 Watching for file changes with StatReloader

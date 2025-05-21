@@ -1,9 +1,11 @@
 import logging
 import requests
+from functools import wraps
+
 from django.conf import settings
 from django.forms import model_to_dict
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.utils.crypto import get_random_string
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import authenticate, login, logout
@@ -21,10 +23,23 @@ logger = logging.getLogger(__name__)
 # CSP-заголовок
 def add_csp_header(response, nonce):
     response['Content-Security-Policy'] = (
-        f"default-src 'self'; script-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
-        f"style-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; img-src 'self' data:;"
+        f"default-src 'self'; "
+        f"script-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
+        f"style-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
+        f"img-src 'self' data:;"
     )
     return response
+
+
+# Декоратор для генерации nonce и добавления CSP
+def with_nonce(view_func):
+    @wraps(view_func)
+    def _wrapped_view(request, *args, **kwargs):
+        nonce = get_random_string(16)
+        request.nonce = nonce  # сохранить nonce в объект запроса
+        response = view_func(request, *args, **kwargs)
+        return add_csp_header(response, nonce)
+    return _wrapped_view
 
 
 # CSP отчёт
@@ -36,14 +51,13 @@ def csp_report_view(request):
 
 
 # Главная страница
+@with_nonce
 def index_view(request):
     try:
-        nonce = get_random_string(16)
-        response = render(request, 'mydogs/index.html', {
+        return render(request, 'mydogs/index.html', {
             'exception_notes': 'Нет ошибок',
-            'nonce': nonce
+            'nonce': request.nonce
         })
-        return add_csp_header(response, nonce)
     except Exception as e:
         logger.error(f"Exception in index_view: {str(e)}")
         return JsonResponse({'error': 'Ошибка на главной странице'}, status=500)
@@ -51,17 +65,16 @@ def index_view(request):
 
 # Регистрация
 @csrf_protect
+@with_nonce
 def register(request):
     try:
-        nonce = get_random_string(16)
         if request.method == "GET":
-            response = render(request, 'mydogs/register.html', {
+            return render(request, 'mydogs/register.html', {
                 'exception_notes': 'Нет ошибок',
-                'nonce': nonce
+                'nonce': request.nonce
             })
-            return add_csp_header(response, nonce)
         elif request.method == "POST":
-            # Простейшая заглушка: можно доработать под создание пользователя
+            # TODO: Реализовать создание пользователя
             return JsonResponse({'message': 'User registered successfully'})
         else:
             return JsonResponse({'error': 'Invalid request method'}, status=405)
@@ -72,14 +85,13 @@ def register(request):
 
 # Логин
 @csrf_protect
+@with_nonce
 def login_view(request):
-    nonce = get_random_string(16)
     if request.method == "GET":
-        response = render(request, 'mydogs/login.html', {
+        return render(request, 'mydogs/login.html', {
             'exception_notes': '',
-            'nonce': nonce
+            'nonce': request.nonce
         })
-        return add_csp_header(response, nonce)
 
     elif request.method == "POST":
         username = request.POST.get('username')
@@ -90,11 +102,10 @@ def login_view(request):
             login(request, user)
             return JsonResponse({'message': 'Успешный вход'}, status=200)
         else:
-            response = render(request, 'mydogs/login.html', {
+            return render(request, 'mydogs/login.html', {
                 'exception_notes': 'Неверное имя пользователя или пароль',
-                'nonce': nonce
+                'nonce': request.nonce
             })
-            return add_csp_header(response, nonce)
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=405)
 
@@ -114,12 +125,6 @@ class MydogsAPIList(generics.ListCreateAPIView):
 
 # API - GET/POST/PUT/DELETE по id
 class MydogsAPIView(APIView):
-    def get_instance(self, pk):
-        try:
-            return Mydogs.objects.get(pk=pk)
-        except Mydogs.DoesNotExist:
-            logger.error(f"Mydogs object with id {pk} does not exist")
-            return None
 
     def get(self, request, *args, **kwargs):
         try:
@@ -143,12 +148,9 @@ class MydogsAPIView(APIView):
     def put(self, request, *args, **kwargs):
         pk = kwargs.get('pk')
         if not pk:
-            logger.error("PUT request without pk")
             return Response({'error': 'ID is required'}, status=400)
 
-        instance = self.get_instance(pk)
-        if not instance:
-            return Response({'error': 'Object not found'}, status=404)
+        instance = get_object_or_404(Mydogs, pk=pk)
 
         try:
             serializer = MydogsSerializer(instance=instance, data=request.data)
@@ -164,9 +166,7 @@ class MydogsAPIView(APIView):
         if not pk:
             return Response({'error': 'ID is required'}, status=400)
 
-        instance = self.get_instance(pk)
-        if not instance:
-            return Response({'error': 'Object not found'}, status=404)
+        instance = get_object_or_404(Mydogs, pk=pk)
 
         try:
             instance.delete()
@@ -183,9 +183,9 @@ class MydogsViewSet(viewsets.ModelViewSet):
 
 
 # Получение списка собак (с API)
+@with_nonce
 def fetch_dogs(request):
     try:
-        nonce = get_random_string(16)
         api_url = f"{settings.API_BASE_URL}/api/v1/mydogslist/"
         try:
             api_response = requests.get(api_url, timeout=5)
@@ -199,12 +199,11 @@ def fetch_dogs(request):
             data = []
             exception_notes = f"Ошибка соединения: {str(e)}"
 
-        response = render(request, 'public/places.html', {
+        return render(request, 'public/places.html', {
             'dogs': data,
             'exception_notes': exception_notes,
-            'nonce': nonce
+            'nonce': request.nonce
         })
-        return add_csp_header(response, nonce)
     except Exception as e:
         logger.error(f"Exception in fetch_dogs: {str(e)}")
         return JsonResponse({'error': 'Ошибка при получении данных'}, status=500)

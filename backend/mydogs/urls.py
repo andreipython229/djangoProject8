@@ -1,38 +1,74 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import (
-    index_view,
-    register,
-    fetch_dogs,
-    csp_report_view,
-    login_view,
-    MydogsAPIView,
-    MydogsViewSet,
-)
-from django.views.generic import TemplateView
-from django.conf import settings
-from django.conf.urls.static import static
+from django.shortcuts import render
+from django.http import JsonResponse, HttpResponse
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status, permissions, viewsets
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.exceptions import TokenError
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+from .models import Mydog
+from .serializers import MydogSerializer
+from rest_framework.generics import RetrieveAPIView
 
-# Роутер без префикса (чтобы было /api/mydogs/)
-router = DefaultRouter()
-router.register(r'', MydogsViewSet, basename='mydogs')
+# Главная страница — отдаёт React приложение или что-то простое
+def index_view(request):
+    return render(request, 'index.html')
 
-urlpatterns = [
-    # API endpoints
-    path('login/', login_view, name='login'),
-    path('register/', register, name='register'),
-    path('mydogs/', include(router.urls)),  # ← даст /api/mydogs/ и /api/mydogs/<pk>/
-    path('mydogs/<int:pk>/', MydogsAPIView.as_view(), name='mydogs-detail'),  # ← опционально, если ты используешь кастомный APIView
 
-    # Статические страницы
-    path('', index_view, name='home'),
-    path('places/', fetch_dogs, name='places'),
-    path('test/', TemplateView.as_view(template_name="test.html"), name='test'),
+# Регистрация — если у тебя кастомная регистрация через DRF, можно тут сделать
+@api_view(['POST'])
+@permission_classes([permissions.AllowAny])
+def register(request):
+    # пример простой заглушки — сделай свою логику создания пользователя
+    return JsonResponse({"detail": "Регистрация не реализована"}, status=501)
 
-    # CSP отчёт
-    path('csp-violation-report/', csp_report_view, name='csp-violation-report'),
-]
 
-# Раздача статики в режиме разработки
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# Пример для выдачи списка собак
+@api_view(['GET'])
+@permission_classes([IsAuthenticatedOrReadOnly])
+def fetch_dogs(request):
+    dogs = Mydog.objects.all()
+    serializer = MydogSerializer(dogs, many=True)
+    return Response(serializer.data)
+
+
+# CSP отчет (оставлю как есть)
+@api_view(['POST'])
+@permission_classes([permissions.AllowAny])
+def csp_report_view(request):
+    print('CSP violation report:', request.data)
+    return Response(status=204)
+
+
+# Вью для конкретной собаки, используя APIView
+class MydogsAPIView(RetrieveAPIView):
+    queryset = Mydog.objects.all()
+    serializer_class = MydogSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
+
+# ViewSet для CRUD Mydog
+class MydogsViewSet(viewsets.ModelViewSet):
+    queryset = Mydog.objects.all()
+    serializer_class = MydogSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
+
+# Вход (логин) — если нужен, можно реализовать или использовать SimpleJWT views
+
+
+# Logout с blacklist токенов
+class LogoutView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request):
+        try:
+            refresh_token = request.data["refresh"]
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            return Response({"detail": "Logout successful"}, status=status.HTTP_205_RESET_CONTENT)
+        except KeyError:
+            return Response({"error": "Refresh token is required"}, status=status.HTTP_400_BAD_REQUEST)
+        except TokenError:
+            return Response({"error": "Invalid or expired token"}, status=status.HTTP_400_BAD_REQUEST)
