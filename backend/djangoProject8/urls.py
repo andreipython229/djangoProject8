@@ -41,7 +41,9 @@ urlpatterns = [
     path('api/register/', register, name='register'),
 
     # Вызовы API из приложения mydogs
-    path('api/', include('mydogs.urls')),
+    path("api/v1/", include("mydogs.urls")),  # для запросов /api/v1/...
+    path("api/", include("mydogs.urls")),     # для запросов /api/...
+
 
     # Главная страница
     path('', index_view, name='home'),
