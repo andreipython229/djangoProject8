@@ -15,6 +15,7 @@
     "url": "https://github.com/andreipython229/PycharmProjects.git"
   },
   "private": true,
+  "proxy": "http://localhost:8000",
   "author": "",
   "license": "ISC",
   "keywords": [],

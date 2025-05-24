@@ -3,7 +3,6 @@ import requests
 from functools import wraps
 
 from django.conf import settings
-from django.forms import model_to_dict
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.utils.crypto import get_random_string
@@ -14,13 +13,13 @@ from rest_framework import generics, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Mydogs
-from .serializers import MydogsSerializer
+from .models import Mydogs, Client
+from .serializers import MydogsSerializer, ClientSerializer
 
 logger = logging.getLogger(__name__)
 
 
-# CSP-заголовок
+# Функция добавления CSP заголовка
 def add_csp_header(response, nonce):
     response['Content-Security-Policy'] = (
         f"default-src 'self'; "
@@ -36,13 +35,13 @@ def with_nonce(view_func):
     @wraps(view_func)
     def _wrapped_view(request, *args, **kwargs):
         nonce = get_random_string(16)
-        request.nonce = nonce  # сохранить nonce в объект запроса
+        request.nonce = nonce
         response = view_func(request, *args, **kwargs)
         return add_csp_header(response, nonce)
     return _wrapped_view
 
 
-# CSP отчёт
+# CSP отчёт (логирование)
 def csp_report_view(request):
     if request.method == 'POST':
         logger.info(f"CSP Report: {request.body}")
@@ -63,7 +62,7 @@ def index_view(request):
         return JsonResponse({'error': 'Ошибка на главной странице'}, status=500)
 
 
-# Регистрация
+# Страница регистрации
 @csrf_protect
 @with_nonce
 def register(request):
@@ -74,7 +73,7 @@ def register(request):
                 'nonce': request.nonce
             })
         elif request.method == "POST":
-            # TODO: Реализовать создание пользователя
+            # TODO: логика создания пользователя
             return JsonResponse({'message': 'User registered successfully'})
         else:
             return JsonResponse({'error': 'Invalid request method'}, status=405)
@@ -83,7 +82,7 @@ def register(request):
         return JsonResponse({'error': 'Ошибка во время регистрации'}, status=500)
 
 
-# Логин
+# Страница логина
 @csrf_protect
 @with_nonce
 def login_view(request):
@@ -110,20 +109,20 @@ def login_view(request):
         return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 
-# Logout
+# Выход из системы
 @login_required
 def logout_view(request):
     logout(request)
     return JsonResponse({'message': 'Вы вышли из системы'}, status=200)
 
 
-# API - Список / создание
+# API для списка и создания собак
 class MydogsAPIList(generics.ListCreateAPIView):
     queryset = Mydogs.objects.all()
     serializer_class = MydogsSerializer
 
 
-# API - GET/POST/PUT/DELETE по id
+# API для CRUD операций по ID
 class MydogsAPIView(APIView):
 
     def get(self, request, *args, **kwargs):
@@ -176,10 +175,16 @@ class MydogsAPIView(APIView):
             return Response({'error': 'Ошибка при удалении записи'}, status=500)
 
 
-# ViewSet для DRF
+# ViewSet для Mydogs
 class MydogsViewSet(viewsets.ModelViewSet):
     queryset = Mydogs.objects.all()
     serializer_class = MydogsSerializer
+
+
+# ViewSet для клиентов (React форма)
+class ClientViewSet(viewsets.ModelViewSet):
+    queryset = Client.objects.all()
+    serializer_class = ClientSerializer
 
 
 # Получение списка собак (с API)

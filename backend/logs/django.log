@@ -13029,3 +13029,32 @@ INFO 2025-05-23 21:57:37,168 autoreload 52796 19432 C:\Users\Andrei2\PycharmProj
 INFO 2025-05-23 21:57:38,561 autoreload 8488 37020 Watching for file changes with StatReloader
 WARNING 2025-05-23 22:01:08,918 log 8488 60916 Not Found: /mydogs/
 INFO 2025-05-23 22:15:39,595 autoreload 58892 20652 Watching for file changes with StatReloader
+INFO 2025-05-24 14:03:11,167 autoreload 12032 23292 Watching for file changes with StatReloader
+WARNING 2025-05-24 14:03:41,988 log 12032 22508 Not Found: /favicon.ico
+INFO 2025-05-24 19:24:47,317 autoreload 37316 11620 Watching for file changes with StatReloader
+INFO 2025-05-24 20:03:31,901 autoreload 38896 26812 Watching for file changes with StatReloader
+WARNING 2025-05-24 20:05:47,288 log 38896 13920 Not Found: /favicon.ico
+WARNING 2025-05-24 20:06:39,990 log 38896 30048 Not Found: /api/clients/
+INFO 2025-05-24 20:08:52,281 autoreload 53812 22980 Watching for file changes with StatReloader
+INFO 2025-05-24 20:15:49,097 autoreload 45864 15324 Watching for file changes with StatReloader
+WARNING 2025-05-24 20:18:46,543 log 45864 44000 Not Found: /api/clients/
+INFO 2025-05-24 20:22:51,905 autoreload 10288 54736 Watching for file changes with StatReloader
+INFO 2025-05-24 20:34:29,260 autoreload 42772 37532 Watching for file changes with StatReloader
+WARNING 2025-05-24 20:38:21,504 log 42772 37880 Not Found: /api/clients/
+INFO 2025-05-24 20:41:17,065 autoreload 4548 37928 Watching for file changes with StatReloader
+INFO 2025-05-24 20:57:15,127 autoreload 56276 34092 Watching for file changes with StatReloader
+INFO 2025-05-24 20:58:11,442 autoreload 16972 19792 Watching for file changes with StatReloader
+INFO 2025-05-24 21:37:16,468 autoreload 16972 19792 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-05-24 21:37:17,874 autoreload 35584 15340 Watching for file changes with StatReloader
+INFO 2025-05-24 21:55:42,975 autoreload 35584 15340 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\models.py changed, reloading.
+INFO 2025-05-24 21:55:44,682 autoreload 55572 19532 Watching for file changes with StatReloader
+INFO 2025-05-24 22:06:54,341 autoreload 55572 19532 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\serializers.py changed, reloading.
+INFO 2025-05-24 22:06:55,923 autoreload 19132 1180 Watching for file changes with StatReloader
+WARNING 2025-05-24 22:09:35,298 log 19132 55696 Not Found: /favicon.ico
+WARNING 2025-05-24 22:10:11,676 log 19132 44312 Not Found: /api/clients/
+WARNING 2025-05-24 22:10:46,602 log 19132 13956 Not Found: /api/clients/
+INFO 2025-05-24 22:25:33,891 autoreload 19132 1180 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-24 22:25:35,714 autoreload 41440 8988 Watching for file changes with StatReloader
+WARNING 2025-05-24 22:34:33,640 log 41440 48836 Not Found: /api/clients/
+WARNING 2025-05-24 22:35:05,937 log 41440 39744 Not Found: /api/clients/
+INFO 2025-05-24 22:36:50,765 autoreload 51520 23980 Watching for file changes with StatReloader

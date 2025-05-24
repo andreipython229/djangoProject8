@@ -1,9 +1,15 @@
 from django.db import models
 
+class Client(models.Model):
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=20, blank=True, null=True)
 
+    def __str__(self):
+        return self.name
+
+# уже есть твоя модель Mydogs и Category
 class Category(models.Model):
     name = models.CharField(max_length=100, db_index=True)
-
 
     def __str__(self):
         return self.name

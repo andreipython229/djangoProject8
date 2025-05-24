@@ -1,5 +1,17 @@
 from rest_framework import serializers
 from .models import Mydogs, Category
+from rest_framework import serializers
+from .models import Mydogs, Client  # Убедись, что Client уже есть в models.py
+
+class MydogsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Mydogs
+        fields = '__all__'
+
+class ClientSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Client
+        fields = ['id', 'name', 'phone']  # или '__all__', если хочешь все поля
 
 
 class CategorySerializer(serializers.ModelSerializer):
