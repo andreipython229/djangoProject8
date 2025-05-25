@@ -1,17 +1,6 @@
 from rest_framework import serializers
-from .models import Mydogs, Category
-from rest_framework import serializers
-from .models import Mydogs, Client  # Убедись, что Client уже есть в models.py
-
-class MydogsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Mydogs
-        fields = '__all__'
-
-class ClientSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Client
-        fields = ['id', 'name', 'phone']  # или '__all__', если хочешь все поля
+from .models import Mydogs, Category, Client
+from django.contrib.auth.models import User
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -20,12 +9,20 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ['id', 'name']
 
 
+class ClientSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Client
+        fields = ['id', 'name', 'phone']
+
+
 class MydogsSerializer(serializers.ModelSerializer):
     category = serializers.PrimaryKeyRelatedField(
         queryset=Category.objects.all(),
         help_text="ID категории"
     )
     category_data = CategorySerializer(source='category', read_only=True)
+
+    owner = serializers.ReadOnlyField(source='owner.username')  # 👈 только для чтения, будет видно имя владельца
 
     class Meta:
         model = Mydogs
@@ -37,8 +34,9 @@ class MydogsSerializer(serializers.ModelSerializer):
             'price',
             'category',
             'category_data',
+            'owner',
         ]
-        read_only_fields = ['id', 'category_data']
+        read_only_fields = ['id', 'category_data', 'owner']
 
     def validate_age(self, value):
         if value < 0:

@@ -13058,3 +13058,115 @@ INFO 2025-05-24 22:25:35,714 autoreload 41440 8988 Watching for file changes wit
 WARNING 2025-05-24 22:34:33,640 log 41440 48836 Not Found: /api/clients/
 WARNING 2025-05-24 22:35:05,937 log 41440 39744 Not Found: /api/clients/
 INFO 2025-05-24 22:36:50,765 autoreload 51520 23980 Watching for file changes with StatReloader
+INFO 2025-05-25 15:59:31,806 autoreload 47100 52408 Watching for file changes with StatReloader
+WARNING 2025-05-25 16:00:07,451 log 47100 55416 Not Found: /api/clients/
+WARNING 2025-05-25 16:00:07,812 log 47100 55416 Not Found: /favicon.ico
+INFO 2025-05-25 16:07:54,135 autoreload 47100 52408 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-25 16:07:55,875 autoreload 32604 23068 Watching for file changes with StatReloader
+ERROR 2025-05-25 16:09:29,587 log 32604 50220 Internal Server Error: /api/clients/
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\psycopg\cursor.py", line 97, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedTable: отношение "mydogs_client" не существует
+LINE 1: ...dogs_client"."name", "mydogs_client"."phone" FROM "mydogs_cl...
+                                                             ^
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+                                                   ^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\psycopg\cursor.py", line 97, in execute
+    raise ex.with_traceback(None)
+django.db.utils.ProgrammingError: отношение "mydogs_client" не существует
+LINE 1: ...dogs_client"."name", "mydogs_client"."phone" FROM "mydogs_cl...
+                                                             ^
+INFO 2025-05-25 16:18:48,294 autoreload 18720 39704 Watching for file changes with StatReloader
+WARNING 2025-05-25 16:26:42,470 log 18720 24000 Not Found: /favicon.ico
+WARNING 2025-05-25 16:30:32,230 log 18720 13584 Not Found: /favicon.ico
+WARNING 2025-05-25 16:31:29,422 log 18720 23452 Unauthorized: /api/clients/
+WARNING 2025-05-25 16:38:28,337 log 18720 27896 Unauthorized: /api/clients/
+INFO 2025-05-25 17:01:48,703 autoreload 18720 39704 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-05-25 17:01:50,443 autoreload 12844 33044 Watching for file changes with StatReloader
+INFO 2025-05-25 17:03:41,692 autoreload 12844 33044 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-05-25 17:03:42,766 autoreload 2744 5148 Watching for file changes with StatReloader
+WARNING 2025-05-25 18:08:36,828 log 2744 19432 Not Found: /api/places/
+WARNING 2025-05-25 18:08:36,919 log 2744 19432 Not Found: /favicon.ico
+WARNING 2025-05-25 18:08:41,716 log 2744 19432 Not Found: /api/places/
+WARNING 2025-05-25 18:12:59,762 log 2744 19056 Unauthorized: /api/clients/
+INFO 2025-05-25 18:23:09,177 autoreload 2744 5148 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-05-25 18:23:11,066 autoreload 41040 16096 Watching for file changes with StatReloader
+INFO 2025-05-25 18:27:57,542 autoreload 41040 16096 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-25 18:27:59,028 autoreload 26000 34844 Watching for file changes with StatReloader
+INFO 2025-05-25 18:28:50,666 autoreload 26000 34844 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-25 18:28:52,074 autoreload 34476 18544 Watching for file changes with StatReloader
+INFO 2025-05-25 18:43:04,885 autoreload 34476 18544 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\models.py changed, reloading.
+INFO 2025-05-25 18:43:06,423 autoreload 18148 50396 Watching for file changes with StatReloader
+INFO 2025-05-25 18:59:01,638 autoreload 18148 50396 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\serializers.py changed, reloading.
+INFO 2025-05-25 18:59:02,834 autoreload 32320 54256 Watching for file changes with StatReloader
+WARNING 2025-05-25 19:23:14,435 log 32320 32296 Unauthorized: /api/clients/
+INFO 2025-05-25 20:24:53,091 autoreload 18928 12740 Watching for file changes with StatReloader

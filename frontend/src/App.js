@@ -1,39 +1,53 @@
-import React, {useState} from "react";
-import Navbar from "./components/Navbar";
-import RegisterForm from "./components/RegisterForm";
+import React, {useState, useEffect} from "react";
+import LoginForm from "./components/LoginForm";
+import {fetchMyDogs} from "./api";
 
 function App() {
-  const [showRegisterForm, setShowRegisterForm] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    !!localStorage.getItem("accessToken")
+  );
+  const [dogs, setDogs] = useState([]);
+  const [error, setError] = useState(null);
 
-  const handleShowRegister = () => {
-    setShowRegisterForm(true);
+  const handleLoginSuccess = (accessToken) => {
+    localStorage.setItem("accessToken", accessToken);
+    setIsAuthenticated(true);
   };
 
-  const handleLogin = () => {
-    setLoggedIn(true);
-    setShowRegisterForm(false);
-  };
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchMyDogs()
+        .then((data) => {
+          setDogs(data);
+          setError(null);
+        })
+        .catch((err) => {
+          setError(err.message);
+          // можно по ошибке 401 очистить токен и выйти из аккаунта
+          if (err.message.includes("Неавторизован")) {
+            localStorage.removeItem("accessToken");
+            setIsAuthenticated(false);
+          }
+        });
+    }
+  }, [isAuthenticated]);
 
-  const handleLogout = () => {
-    setLoggedIn(false);
-    setShowRegisterForm(false);
-  };
+  if (!isAuthenticated) {
+    return <LoginForm onLoginSuccess={handleLoginSuccess} />;
+  }
 
   return (
-    <>
-      <Navbar
-        loggedIn={loggedIn}
-        onRegisterClick={handleShowRegister}
-        onLogoutClick={handleLogout}
-      />
-      <div className="container mt-4">
-        {!loggedIn && showRegisterForm && (
-          <RegisterForm onLogin={handleLogin} />
-        )}
-        {loggedIn && <h2>Добро пожаловать, вы вошли в систему!</h2>}
-      </div>
-    </>
+    <div>
+      <h1>Мои собаки</h1>
+      {error && <div style={{color: "red"}}>{error}</div>}
+      <ul>
+        {dogs.map((dog) => (
+          <li key={dog.id}>
+            {dog.name} ({dog.breed})
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
