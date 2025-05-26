@@ -1,52 +1,25 @@
-import React, {useState, useEffect} from "react";
-import LoginForm from "./components/LoginForm";
-import {fetchMyDogs} from "./api";
+import React, {useState} from "react";
+import MyDogsList from "./components/MyDogsList"; // путь правильный
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    !!localStorage.getItem("accessToken")
-  );
-  const [dogs, setDogs] = useState([]);
-  const [error, setError] = useState(null);
+  const [showDogs, setShowDogs] = useState(false); // состояние для показа
 
-  const handleLoginSuccess = (accessToken) => {
-    localStorage.setItem("accessToken", accessToken);
-    setIsAuthenticated(true);
+  const handleClick = () => {
+    setShowDogs(true); // показать список при клике
   };
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      fetchMyDogs()
-        .then((data) => {
-          setDogs(data);
-          setError(null);
-        })
-        .catch((err) => {
-          setError(err.message);
-          // можно по ошибке 401 очистить токен и выйти из аккаунта
-          if (err.message.includes("Неавторизован")) {
-            localStorage.removeItem("accessToken");
-            setIsAuthenticated(false);
-          }
-        });
-    }
-  }, [isAuthenticated]);
-
-  if (!isAuthenticated) {
-    return <LoginForm onLoginSuccess={handleLoginSuccess} />;
-  }
-
   return (
-    <div>
-      <h1>Мои собаки</h1>
-      {error && <div style={{color: "red"}}>{error}</div>}
-      <ul>
-        {dogs.map((dog) => (
-          <li key={dog.id}>
-            {dog.name} ({dog.breed})
-          </li>
-        ))}
-      </ul>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Добро пожаловать</h1>
+
+      <button
+        onClick={handleClick}
+        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+      >
+        Мои собаки
+      </button>
+
+      {showDogs && <MyDogsList />}
     </div>
   );
 }

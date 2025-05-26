@@ -13170,3 +13170,30 @@ INFO 2025-05-25 18:59:01,638 autoreload 18148 50396 C:\Users\Andrei2\PycharmProj
 INFO 2025-05-25 18:59:02,834 autoreload 32320 54256 Watching for file changes with StatReloader
 WARNING 2025-05-25 19:23:14,435 log 32320 32296 Unauthorized: /api/clients/
 INFO 2025-05-25 20:24:53,091 autoreload 18928 12740 Watching for file changes with StatReloader
+WARNING 2025-05-25 20:32:52,847 log 18928 23448 Unauthorized: /api/clients/
+WARNING 2025-05-25 20:33:01,649 log 18928 23448 Unauthorized: /api/clients/
+WARNING 2025-05-25 20:33:05,984 log 18928 23448 Unauthorized: /api/clients/
+WARNING 2025-05-25 20:33:08,322 log 18928 23448 Unauthorized: /api/clients/
+INFO 2025-05-26 10:48:14,084 autoreload 33296 2500 Watching for file changes with StatReloader
+WARNING 2025-05-26 10:53:36,969 log 33296 37568 Not Found: /api/token/
+
+WARNING 2025-05-26 11:04:33,604 log 33296 32000 Not Found: /api/token/
+
+WARNING 2025-05-26 11:15:58,970 log 33296 18280 Not Found: /api/token/
+
+
+WARNING 2025-05-26 14:05:48,163 log 33296 23624 Unauthorized: /api/mydogs/
+INFO 2025-05-26 14:11:29,663 autoreload 33296 2500 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-05-26 14:11:31,716 autoreload 24240 16264 Watching for file changes with StatReloader
+WARNING 2025-05-26 14:16:24,284 log 24240 42176 Bad Request: /api/token/refresh/
+WARNING 2025-05-26 15:38:13,545 log 24240 8656 Unauthorized: /api/mydogs/
+WARNING 2025-05-26 16:07:08,760 log 24240 13108 Unauthorized: /api/mydogs/
+WARNING 2025-05-26 16:07:08,764 log 24240 13108 Unauthorized: /api/mydogs/
+WARNING 2025-05-26 16:08:27,502 log 24240 13108 Unauthorized: /api/mydogs/
+INFO 2025-05-26 16:09:17,643 autoreload 35696 50868 Watching for file changes with StatReloader
+WARNING 2025-05-26 16:18:59,512 log 35696 2304 Not Found: /favicon.ico
+WARNING 2025-05-26 16:27:09,036 log 35696 55828 Unauthorized: /api/mydogs/
+WARNING 2025-05-26 16:31:05,382 log 35696 32320 Bad Request: /api/mydogs/
+WARNING 2025-05-26 16:31:10,260 log 35696 47596 Bad Request: /api/mydogs/
+WARNING 2025-05-26 16:40:38,803 log 35696 23592 Bad Request: /api/mydogs/
+INFO 2025-05-26 16:46:30,463 autoreload 52772 33892 Watching for file changes with StatReloader
