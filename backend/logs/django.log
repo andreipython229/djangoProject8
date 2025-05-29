@@ -13241,3 +13241,14 @@ WARNING 2025-05-27 18:02:51,424 log 46528 28440 Not Found: /api/places/
 WARNING 2025-05-27 18:20:26,327 log 46528 47908 Method Not Allowed: /api/token/
 WARNING 2025-05-28 08:25:57,265 log 46528 22764 Not Found: /favicon.ico
 INFO 2025-05-28 10:51:05,057 autoreload 14008 21160 Watching for file changes with StatReloader
+WARNING 2025-05-28 12:35:18,400 log 14008 39844 Not Found: /favicon.ico
+WARNING 2025-05-28 12:36:04,822 log 14008 45424 Not Found: /favicon.ico
+WARNING 2025-05-29 08:56:41,591 log 14008 8452 Not Found: /favicon.ico
+WARNING 2025-05-29 08:57:25,734 log 14008 37320 Not Found: /api/mydogs/
+WARNING 2025-05-29 09:00:27,570 log 14008 37320 Not Found: /api/mydogs/
+WARNING 2025-05-29 09:40:17,929 log 14008 54152 Not Found: /favicon.ico
+WARNING 2025-05-29 10:42:17,050 log 14008 7736 Not Found: /main.e671fc366136e0cd4d0c.hot-update.json
+WARNING 2025-05-29 10:42:17,059 log 14008 51772 Not Found: /main.6a54c8db7c2e35686b94.hot-update.json
+WARNING 2025-05-29 10:42:17,072 log 14008 31072 Not Found: /main.e671fc366136e0cd4d0c.hot-update.json
+WARNING 2025-05-29 10:42:17,112 log 14008 23120 Not Found: /main.e671fc366136e0cd4d0c.hot-update.json
+INFO 2025-05-29 12:02:07,276 autoreload 52116 48708 Watching for file changes with StatReloader
