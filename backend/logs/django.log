@@ -13197,3 +13197,47 @@ WARNING 2025-05-26 16:31:05,382 log 35696 32320 Bad Request: /api/mydogs/
 WARNING 2025-05-26 16:31:10,260 log 35696 47596 Bad Request: /api/mydogs/
 WARNING 2025-05-26 16:40:38,803 log 35696 23592 Bad Request: /api/mydogs/
 INFO 2025-05-26 16:46:30,463 autoreload 52772 33892 Watching for file changes with StatReloader
+INFO 2025-05-27 10:18:09,132 autoreload 24484 45504 Watching for file changes with StatReloader
+WARNING 2025-05-27 10:18:28,312 log 24484 22920 Not Found: /favicon.ico
+INFO 2025-05-27 10:49:55,809 autoreload 24484 45504 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\middleware\csp_middleware.py changed, reloading.
+INFO 2025-05-27 10:49:58,345 autoreload 36060 22048 Watching for file changes with StatReloader
+INFO 2025-05-27 11:15:34,923 autoreload 36060 22048 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\middleware\csp_middleware.py changed, reloading.
+INFO 2025-05-27 11:15:36,489 autoreload 24784 24732 Watching for file changes with StatReloader
+INFO 2025-05-27 11:16:00,560 autoreload 24784 24732 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\middleware\csp_middleware.py changed, reloading.
+INFO 2025-05-27 11:16:02,054 autoreload 32544 15876 Watching for file changes with StatReloader
+INFO 2025-05-27 11:17:48,620 autoreload 32544 15876 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\middleware\csp_middleware.py changed, reloading.
+INFO 2025-05-27 11:17:50,021 autoreload 16996 18460 Watching for file changes with StatReloader
+WARNING 2025-05-27 11:36:23,067 log 16996 48740 Not Found: /api/places/
+WARNING 2025-05-27 15:28:55,798 log 16996 13328 Not Found: /api/places/
+WARNING 2025-05-27 15:30:15,067 log 16996 56852 Not Found: /favicon.ico
+INFO 2025-05-27 15:53:57,214 autoreload 16996 18460 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-27 15:53:58,444 autoreload 14532 29780 Watching for file changes with StatReloader
+INFO 2025-05-27 15:54:30,673 autoreload 14532 29780 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-27 15:54:31,686 autoreload 16652 45600 Watching for file changes with StatReloader
+INFO 2025-05-27 15:56:08,901 autoreload 16652 45600 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-27 15:56:09,870 autoreload 18240 51348 Watching for file changes with StatReloader
+WARNING 2025-05-27 15:59:25,901 log 18240 44952 Not Found: /favicon.ico
+WARNING 2025-05-27 15:59:32,655 log 18240 7400 Unauthorized: /api/mydogs/
+INFO 2025-05-27 16:20:00,651 autoreload 18240 51348 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-05-27 16:20:02,327 autoreload 22424 9076 Watching for file changes with StatReloader
+INFO 2025-05-27 16:20:53,515 autoreload 22424 9076 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-27 16:20:54,422 autoreload 44924 23528 Watching for file changes with StatReloader
+WARNING 2025-05-27 16:39:15,098 log 44924 44672 Method Not Allowed: /api/token/
+WARNING 2025-05-27 16:39:15,328 log 44924 24276 Not Found: /favicon.ico
+WARNING 2025-05-27 16:40:08,000 log 44924 24276 Method Not Allowed: /api/token/
+WARNING 2025-05-27 16:47:47,531 log 44924 2188 Unauthorized: /api/v1/mydogs/
+WARNING 2025-05-27 16:56:49,994 log 44924 14996 Unauthorized: /api/v1/mydogs/
+WARNING 2025-05-27 16:58:31,490 log 44924 28256 Unauthorized: /api/v1/mydogs/
+WARNING 2025-05-27 17:21:29,001 log 44924 45420 Not Found: /api/clients/
+WARNING 2025-05-27 17:21:52,839 log 44924 45420 Not Found: /api/clients/
+WARNING 2025-05-27 17:21:55,374 log 44924 45420 Not Found: /api/clients/
+WARNING 2025-05-27 17:22:10,451 log 44924 45420 Not Found: /api/clients/
+WARNING 2025-05-27 17:51:35,262 log 44924 15176 Unauthorized: /api/token/refresh/
+INFO 2025-05-27 18:01:22,181 autoreload 44924 23528 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-05-27 18:02:24,763 autoreload 46528 50592 Watching for file changes with StatReloader
+WARNING 2025-05-27 18:02:40,782 log 46528 28440 Not Found: /api/places/
+WARNING 2025-05-27 18:02:40,878 log 46528 28440 Not Found: /favicon.ico
+WARNING 2025-05-27 18:02:51,424 log 46528 28440 Not Found: /api/places/
+WARNING 2025-05-27 18:20:26,327 log 46528 47908 Method Not Allowed: /api/token/
+WARNING 2025-05-28 08:25:57,265 log 46528 22764 Not Found: /favicon.ico
+INFO 2025-05-28 10:51:05,057 autoreload 14008 21160 Watching for file changes with StatReloader

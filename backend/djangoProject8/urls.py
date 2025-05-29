@@ -37,21 +37,19 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 
-    # Регистрация (можно заменить на include, если больше путей)
+    # Регистрация
     path('api/register/', register, name='register'),
 
-    # Вызовы API из приложения mydogs
-    path("api/v1/", include("mydogs.urls")),  # для запросов /api/v1/...
-    path("api/", include("mydogs.urls")),     # для запросов /api/...
-
+    # Подключаем API mydogs с префиксом api/v1/ (или api/)
+    path('api/v1/', include('mydogs.urls')),
 
     # Главная страница
     path('', index_view, name='home'),
 
-    # Для DevTools (специфичный путь)
+    # Специфичный путь для DevTools
     path('.well-known/appspecific/com.chrome.devtools.json', devtools_json),
 ]
 
-# Раздача статики в режиме разработки
+# Статика в режиме разработки
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

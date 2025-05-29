@@ -1,6 +1,7 @@
+from django.views.generic import RedirectView
+from django.templatetags.static import static
 from django.urls import path, include
 from rest_framework import routers
-from .views import MydogsProtectedView
 from .views import (
     index_view,
     register,
@@ -12,6 +13,7 @@ from .views import (
     MydogsAPIView,
     MydogsViewSet,
     ClientViewSet,
+    MydogsProtectedView,
 )
 
 router = routers.DefaultRouter()
@@ -19,8 +21,7 @@ router.register(r'mydogs', MydogsViewSet)
 router.register(r'clients', ClientViewSet)
 
 urlpatterns = [
-    path('api/mydogs/', MydogsProtectedView.as_view(), name='mydogs-protected'),
-    path('', index_view, name='index'),
+    path('mydogs-protected/', MydogsProtectedView.as_view(), name='mydogs-protected'),
     path('register/', register, name='register'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
@@ -31,6 +32,9 @@ urlpatterns = [
     path('mydogslist/', MydogsAPIList.as_view(), name='mydogs_list'),
     path('mydogs/<int:pk>/', MydogsAPIView.as_view(), name='mydogs_detail'),
 
-    # Подключаем router
-    path('', include(router.urls)),  # 👈 теперь /api/clients/ и /api/mydogs/ работают
+    # Подключаем router для /mydogs/ и /clients/
+    path('', include(router.urls)),
+
+    # favicon перенаправление
+    path('favicon.ico', RedirectView.as_view(url=static('img/icons8-favicon-50.png'), permanent=True)),
 ]

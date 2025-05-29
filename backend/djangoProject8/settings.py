@@ -12,18 +12,14 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 Django settings for djangoProject8 project.
 """
-
-from pathlib import Path
 import os
-from dotenv import load_dotenv
+from pathlib import Path
 import environ
 from datetime import timedelta
 
-# Загрузка .env переменных
-load_dotenv(".venv/.env")
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 env = environ.Env(DEBUG=(bool, False))
-env.read_env(BASE_DIR / 'backend' / '.env')
+env.read_env(BASE_DIR / '.env')  # без 'backend' — файл .env лежит прямо в BASE_DIR
 
 SECRET_KEY = env('SECRET_KEY', default='your-fallback-secret-key')
 DEBUG = env.bool('DEBUG', default=False)
@@ -143,7 +139,7 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=59),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
-    'ROTATE_REFRESH_TOKENS': True,
+    'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
     'AUTH_HEADER_TYPES': ('Bearer',),
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
