@@ -77,12 +77,12 @@ INSTALLED_APPS = [
     'mydogs.apps.MydogsConfig',
 
     'rest_framework',
-    'rest_framework_simplejwt.token_blacklist',  # добавлено
+    'rest_framework_simplejwt.token_blacklist',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'mydogs.middleware.csp_middleware.CSPMiddleware',
+    'csp.middleware.CSPMiddleware',   # если используешь django-csp, а не кастомный
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -167,12 +167,41 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend', 'build')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Content Security Policy (CSP) settings
 CSP_DEFAULT_SRC = ("'self'",)
-CSP_SCRIPT_SRC = ("'self'", "https://cdn.jsdelivr.net", "http://localhost:3000", "'unsafe-inline'")
-CSP_STYLE_SRC = ("'self'", "https://cdn.jsdelivr.net", "'unsafe-inline'")
-CSP_IMG_SRC = ("'self'", "data:", "http://localhost:3000")
-CSP_FONT_SRC = ("'self'", "https://cdn.jsdelivr.net")
-CSP_CONNECT_SRC = ("'self'", "http://localhost:3000", "http://127.0.0.1:8000")
+
+CSP_SCRIPT_SRC = (
+    "'self'",
+    "https://cdn.jsdelivr.net",
+    "http://localhost:3000",
+    "'nonce'",
+    # "'unsafe-inline'",  # Убрал для безопасности и чтобы nonce работал правильно
+)
+
+CSP_STYLE_SRC = (
+    "'self'",
+    "https://cdn.jsdelivr.net",
+    "'nonce'",
+    # "'unsafe-inline'",
+)
+
+CSP_IMG_SRC = (
+    "'self'",
+    "data:",
+    "http://localhost:3000",
+)
+
+CSP_FONT_SRC = (
+    "'self'",
+    "https://cdn.jsdelivr.net",
+)
+
+CSP_CONNECT_SRC = (
+    "'self'",
+    "http://localhost:3000",
+    "http://127.0.0.1:8000",
+)
+
 CSP_INCLUDE_NONE_IN = ['script-src', 'style-src']
 
 API_BASE_URL = "http://127.0.0.1:8000"

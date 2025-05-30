@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Mydogs, Category, Client
+from .models import Mydogs, Category, Client, Place
 from django.contrib.auth.models import User
 
 
@@ -21,8 +21,7 @@ class MydogsSerializer(serializers.ModelSerializer):
         help_text="ID категории"
     )
     category_data = CategorySerializer(source='category', read_only=True)
-
-    owner = serializers.ReadOnlyField(source='owner.username')  # 👈 только для чтения, будет видно имя владельца
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Mydogs
@@ -52,3 +51,9 @@ class MydogsSerializer(serializers.ModelSerializer):
         rep = super().to_representation(instance)
         rep['price'] = f"{rep['price']} ₽"
         return rep
+
+
+class PlaceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Place
+        fields = '__all__'

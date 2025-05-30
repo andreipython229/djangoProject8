@@ -67,20 +67,11 @@
     </div>
 </nav>
 
-<div class="container text-center my-5">
-    <div class="row">
-        <div class="col-lg-4 mx-auto">
-            <img class="rounded-img" src="{% static 'img/IMG_20231101_220024_kopiya.jpg' %}" alt="Bogdan" width="400" height="400" />
-            <h1 class="fw-light">Ni hao-my dog</h1>
-            <p class="lead text-muted">
-                Online shop selling dogs.
-            </p>
-            <a href="https://github.com/andreipython229" target="_blank" rel="noopener" class="btn btn-primary mt-3">
-                My github
-            </a>
-        </div>
-    </div>
-</div>
+<!-- React-приложение рендерится сюда -->
+<div id="root"></div>
+
+<!-- Подключаем собранный JS React-бандла -->
+<script nonce="{{ nonce }}" src="{% static 'js/main.c58acf83.js' %}"></script>
 
 </body>
 </html>

@@ -1,7 +1,8 @@
 from django.views.generic import RedirectView
 from django.templatetags.static import static
 from django.urls import path, include
-from rest_framework import routers
+from rest_framework.routers import DefaultRouter
+
 from .views import (
     index_view,
     register,
@@ -11,14 +12,18 @@ from .views import (
     csp_report_view,
     MydogsAPIList,
     MydogsAPIView,
-    MydogsViewSet,
-    ClientViewSet,
     MydogsProtectedView,
+    ClientViewSet,
+    CategoryViewSet,
+    MydogsViewSet,
+    PlaceViewSet,
 )
 
-router = routers.DefaultRouter()
-router.register(r'mydogs', MydogsViewSet)
+router = DefaultRouter()
 router.register(r'clients', ClientViewSet)
+router.register(r'categories', CategoryViewSet)
+router.register(r'mydogs', MydogsViewSet)
+router.register(r'places', PlaceViewSet)
 
 urlpatterns = [
     path('mydogs-protected/', MydogsProtectedView.as_view(), name='mydogs-protected'),
@@ -32,7 +37,7 @@ urlpatterns = [
     path('mydogslist/', MydogsAPIList.as_view(), name='mydogs_list'),
     path('mydogs/<int:pk>/', MydogsAPIView.as_view(), name='mydogs_detail'),
 
-    # Подключаем router для /mydogs/ и /clients/
+    # Автоматически подключаем viewsets
     path('', include(router.urls)),
 
     # favicon перенаправление

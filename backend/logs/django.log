@@ -13252,3 +13252,61 @@ WARNING 2025-05-29 10:42:17,059 log 14008 51772 Not Found: /main.6a54c8db7c2e356
 WARNING 2025-05-29 10:42:17,072 log 14008 31072 Not Found: /main.e671fc366136e0cd4d0c.hot-update.json
 WARNING 2025-05-29 10:42:17,112 log 14008 23120 Not Found: /main.e671fc366136e0cd4d0c.hot-update.json
 INFO 2025-05-29 12:02:07,276 autoreload 52116 48708 Watching for file changes with StatReloader
+WARNING 2025-05-29 12:02:18,967 log 52116 11028 Not Found: /api/places/
+WARNING 2025-05-29 12:02:19,055 log 52116 11028 Not Found: /favicon.ico
+INFO 2025-05-30 07:09:47,987 autoreload 46712 18656 Watching for file changes with StatReloader
+WARNING 2025-05-30 07:10:02,382 log 46712 35120 Not Found: /api/places/
+WARNING 2025-05-30 07:10:02,505 log 46712 35120 Not Found: /favicon.ico
+WARNING 2025-05-30 07:10:54,387 log 46712 35120 Not Found: /api/places/
+INFO 2025-05-30 07:35:16,939 autoreload 46712 18656 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\models.py changed, reloading.
+INFO 2025-05-30 07:35:18,946 autoreload 34108 44776 Watching for file changes with StatReloader
+INFO 2025-05-30 07:42:34,282 autoreload 34108 44776 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\serializers.py changed, reloading.
+INFO 2025-05-30 07:42:36,244 autoreload 11564 24244 Watching for file changes with StatReloader
+INFO 2025-05-30 07:46:23,227 autoreload 11564 24244 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-05-30 07:46:24,801 autoreload 41892 17332 Watching for file changes with StatReloader
+INFO 2025-05-30 07:51:44,165 autoreload 41892 17332 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-30 07:51:45,480 autoreload 8596 45104 Watching for file changes with StatReloader
+WARNING 2025-05-30 07:57:10,433 log 8596 47440 Not Found: /api/places/
+WARNING 2025-05-30 07:57:18,608 log 8596 47440 Not Found: /api/places/
+WARNING 2025-05-30 07:57:19,487 log 8596 47440 Not Found: /api/places/
+WARNING 2025-05-30 07:57:19,739 log 8596 47440 Not Found: /api/places/
+WARNING 2025-05-30 07:57:19,996 log 8596 47440 Not Found: /api/places/
+WARNING 2025-05-30 07:57:20,236 log 8596 47440 Not Found: /api/places/
+WARNING 2025-05-30 07:57:20,449 log 8596 47440 Not Found: /api/places/
+WARNING 2025-05-30 07:57:20,670 log 8596 47440 Not Found: /api/places/
+WARNING 2025-05-30 07:57:20,886 log 8596 47440 Not Found: /api/places/
+WARNING 2025-05-30 07:57:21,117 log 8596 47440 Not Found: /api/places/
+WARNING 2025-05-30 07:57:39,773 log 8596 47440 Not Found: /api/places/
+INFO 2025-05-30 07:59:09,528 autoreload 51496 9764 Watching for file changes with StatReloader
+WARNING 2025-05-30 07:59:20,889 log 51496 7788 Not Found: /api/places/
+WARNING 2025-05-30 08:01:27,031 log 51496 7788 Not Found: /api/places/
+WARNING 2025-05-30 08:02:14,077 log 51496 7788 Not Found: /api/v1/places/
+WARNING 2025-05-30 08:03:36,227 log 51496 7788 Not Found: /api/places/
+WARNING 2025-05-30 08:03:58,546 log 51496 7788 Not Found: /api/v1/places/
+INFO 2025-05-30 08:08:42,229 autoreload 51496 9764 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-30 08:08:44,622 autoreload 28428 37080 Watching for file changes with StatReloader
+INFO 2025-05-30 08:18:53,183 autoreload 28428 37080 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-05-30 08:18:55,230 autoreload 40808 56184 Watching for file changes with StatReloader
+INFO 2025-05-30 08:21:07,496 autoreload 40808 56184 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-05-30 08:21:08,409 autoreload 53512 19244 Watching for file changes with StatReloader
+WARNING 2025-05-30 08:23:42,554 log 53512 41072 Not Found: /api/places/
+WARNING 2025-05-30 08:24:28,814 log 53512 41072 Not Found: /api/places/
+WARNING 2025-05-30 08:26:02,220 log 53512 46892 Not Found: /api/places/
+WARNING 2025-05-30 08:34:04,467 log 53512 46892 Not Found: /api/places/
+INFO 2025-05-30 09:40:27,197 autoreload 11380 10844 Watching for file changes with StatReloader
+WARNING 2025-05-30 09:40:52,498 log 11380 6752 Not Found: /contacts
+WARNING 2025-05-30 09:41:11,110 log 11380 6752 Not Found: /about
+WARNING 2025-05-30 09:41:25,435 log 11380 6752 Not Found: /policy
+WARNING 2025-05-30 09:41:49,954 log 11380 6752 Not Found: /contacts
+WARNING 2025-05-30 09:42:05,165 log 11380 6752 Not Found: /api/places/
+WARNING 2025-05-30 09:42:08,737 log 11380 6752 Not Found: /api/places/
+WARNING 2025-05-30 09:43:50,445 log 11380 15348 Not Found: /api/places/
+WARNING 2025-05-30 09:44:47,866 log 11380 15348 Not Found: /api/places/
+INFO 2025-05-30 09:59:47,001 autoreload 11380 10844 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-05-30 09:59:48,324 autoreload 39864 4720 Watching for file changes with StatReloader
+INFO 2025-05-30 10:14:32,364 autoreload 39864 4720 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-05-30 10:14:33,816 autoreload 6992 55500 Watching for file changes with StatReloader
+INFO 2025-05-30 10:21:12,025 autoreload 6992 55500 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-05-30 10:21:13,950 autoreload 23828 53892 Watching for file changes with StatReloader
+INFO 2025-05-30 10:26:44,139 autoreload 23828 53892 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-05-30 10:26:46,282 autoreload 12756 49852 Watching for file changes with StatReloader

@@ -15,8 +15,13 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 
-from .models import Mydogs, Client
-from .serializers import MydogsSerializer, ClientSerializer
+from .models import Mydogs, Client, Category, Place
+from .serializers import (
+    MydogsSerializer,
+    ClientSerializer,
+    CategorySerializer,
+    PlaceSerializer,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -57,7 +62,7 @@ def csp_report_view(request):
 def index_view(request):
     return render(request, 'mydogs/index.html', {
         'exception_notes': 'Нет ошибок',
-        'nonce': request.nonce
+        'nonce': request.csp_nonce
     })
 
 @csrf_protect
@@ -143,31 +148,38 @@ class MydogsAPIView(APIView):
         return Response({'deleted': True})
 
 # -------------------------------
-# 🔒 Защищённый API для текущего пользователя (JWT required)
+# 🔒 Защищённый API для текущего пользователя
 # -------------------------------
 class MydogsProtectedView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        # Предполагаем, что у Mydogs есть поле "owner"
         dogs = Mydogs.objects.filter(owner=request.user)
         serializer = MydogsSerializer(dogs, many=True)
         return Response(serializer.data)
 
 # -------------------------------
-# ViewSets
+# ViewSets (для router)
 # -------------------------------
-class MydogsViewSet(viewsets.ModelViewSet):
-    queryset = Mydogs.objects.all()
-    serializer_class = MydogsSerializer
-
 class ClientViewSet(viewsets.ModelViewSet):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
     permission_classes = [IsAuthenticated]
 
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+class MydogsViewSet(viewsets.ModelViewSet):
+    queryset = Mydogs.objects.all()
+    serializer_class = MydogsSerializer
+
+class PlaceViewSet(viewsets.ModelViewSet):
+    queryset = Place.objects.all()
+    serializer_class = PlaceSerializer
+
 # -------------------------------
-# Страница с собаками (использует requests)
+# Страница с собаками
 # -------------------------------
 @with_nonce
 def fetch_dogs(request):

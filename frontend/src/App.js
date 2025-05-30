@@ -14,10 +14,10 @@ function App() {
         <h1 className="text-2xl font-bold mb-4">Добро пожаловать</h1>
 
         <button
-          onClick={() => setShowDogs(true)}
+          onClick={() => setShowDogs(prev => !prev)}
           className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
         >
-          Мои собаки
+          {showDogs ? "Скрыть собак" : "Мои собаки"}
         </button>
 
         {showDogs && <DogList />}
