@@ -16,19 +16,28 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import HttpResponse
+from django.shortcuts import redirect
+from django.conf import settings
+from django.conf.urls.static import static
+
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
     TokenVerifyView,
 )
-from django.conf import settings
-from django.conf.urls.static import static
-from django.http import HttpResponse
+
 from mydogs.views import index_view, register
 
+# Заглушка для DevTools
 def devtools_json(request):
-    return HttpResponse('{}', content_type='application/json')
+    return HttpResponse("{}", content_type="application/json")
 
+# Редирект /api/places/ → /api/v1/places/
+def redirect_places(request):
+    return redirect('/api/v1/places/')
+
+# Если React сам рендерит страницы (SPA), направляем их на index_view
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -40,16 +49,23 @@ urlpatterns = [
     # Регистрация
     path('api/register/', register, name='register'),
 
-    # Подключаем API mydogs с префиксом api/v1/ (или api/)
+    # Редирект со старого пути
+    path('api/places/', redirect_places),
+
+    # Страницы для React (если они рендерятся на клиенте)
+    path('contacts', index_view),
+    path('about', index_view),
+
+    # Основной API
     path('api/v1/', include('mydogs.urls')),
 
-    # Главная страница
+    # Главная
     path('', index_view, name='home'),
 
-    # Специфичный путь для DevTools
+    # DevTools путь
     path('.well-known/appspecific/com.chrome.devtools.json', devtools_json),
 ]
 
-# Статика в режиме разработки
+# Раздача статики в режиме DEBUG
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

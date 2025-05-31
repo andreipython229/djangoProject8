@@ -18,15 +18,11 @@ class CSPMiddleware:
         # Добавляем заголовок CSP только для HTML-ответов
         if 'text/html' in response.get('Content-Type', ''):
             if settings.DEBUG:
-                # В режиме разработки упрощенный CSP — чтобы не мешал inline-стилям и скриптам
                 response['Content-Security-Policy'] = (
-                    "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
-                    "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data:;"
+                    f"default-src 'self'; "
+                    f"script-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
+                    f"style-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
+                    f"img-src 'self' data:;"
                 )
-            else:
-                # В продакшене — строгий CSP с nonce
-                response['Content-Security-Policy'] = (
-                    f"default-src 'self'; script-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
-                    f"style-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; img-src 'self' data:;"
-            )
+
         return response

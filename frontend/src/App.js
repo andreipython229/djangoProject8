@@ -1,30 +1,37 @@
-import React, { useState } from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import DogList from "./components/DogList";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contacts from './pages/Contacts';
+import MyDogs from './pages/MyDogs';
+import FavoritePlaces from './pages/FavoritePlaces';
+import NotFound from './pages/NotFound';
 
 function App() {
-  const [showDogs, setShowDogs] = useState(false);
-
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
+    <Router>
+      <nav className="navbar navbar-expand-lg bg-dark px-3">
+        <Link className="navbar-brand text-white" to="/">🐶 BS</Link>
+        <div className="navbar-nav">
+          <Link className="nav-link text-white" to="/">Home</Link>
+          <Link className="nav-link text-white" to="/about">About</Link>
+          <Link className="nav-link text-white" to="/contacts">Contacts</Link>
+          <Link className="nav-link text-white" to="/mydogs">MyDogs</Link>
+          <Link className="nav-link text-white" to="/favorite-places">Favorite Places</Link>
+        </div>
+      </nav>
 
-      <main className="flex-grow p-4">
-        <h1 className="text-2xl font-bold mb-4">Добро пожаловать</h1>
-
-        <button
-          onClick={() => setShowDogs(prev => !prev)}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-        >
-          {showDogs ? "Скрыть собак" : "Мои собаки"}
-        </button>
-
-        {showDogs && <DogList />}
-      </main>
-
-      <Footer />
-    </div>
+      <div className="container mt-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/mydogs" element={<MyDogs />} />
+          <Route path="/favorite-places" element={<FavoritePlaces />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

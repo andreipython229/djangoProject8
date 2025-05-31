@@ -13310,3 +13310,19 @@ INFO 2025-05-30 10:21:12,025 autoreload 6992 55500 C:\Users\Andrei2\PycharmProje
 INFO 2025-05-30 10:21:13,950 autoreload 23828 53892 Watching for file changes with StatReloader
 INFO 2025-05-30 10:26:44,139 autoreload 23828 53892 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
 INFO 2025-05-30 10:26:46,282 autoreload 12756 49852 Watching for file changes with StatReloader
+INFO 2025-05-31 14:37:10,028 autoreload 12572 23620 Watching for file changes with StatReloader
+WARNING 2025-05-31 14:37:39,894 log 12572 35772 Not Found: /favicon.ico
+INFO 2025-05-31 15:26:16,461 autoreload 20936 38636 Watching for file changes with StatReloader
+WARNING 2025-05-31 15:27:31,634 log 20936 49536 Not Found: /contacts
+WARNING 2025-05-31 15:27:31,730 log 20936 49536 Not Found: /favicon.ico
+WARNING 2025-05-31 15:27:44,524 log 20936 49536 Not Found: /about
+WARNING 2025-05-31 15:27:51,341 log 20936 49536 Not Found: /policy
+WARNING 2025-05-31 15:28:50,078 log 20936 49536 Not Found: /api/places/
+WARNING 2025-05-31 15:38:49,603 log 20936 6488 Not Found: /favicon.ico
+WARNING 2025-05-31 16:53:07,445 log 20936 48280 Not Found: /favicon.ico
+INFO 2025-05-31 17:19:27,806 autoreload 26820 26736 Watching for file changes with StatReloader
+WARNING 2025-05-31 17:19:47,291 log 26820 21560 Not Found: /api/places/
+WARNING 2025-05-31 17:20:13,147 log 26820 21560 Not Found: /contacts
+WARNING 2025-05-31 17:20:20,260 log 26820 21560 Not Found: /about
+INFO 2025-05-31 17:40:30,761 autoreload 26820 26736 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-05-31 17:40:31,884 autoreload 32248 7032 Watching for file changes with StatReloader
