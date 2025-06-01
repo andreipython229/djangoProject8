@@ -1,0 +1,27 @@
+
+.about {
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #000; /* Фон, если нужно */
+}
+
+.about-title {
+  font-size: 2rem; /* стандартный размер */
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.about-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.about-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}

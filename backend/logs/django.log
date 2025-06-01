@@ -13326,3 +13326,10 @@ WARNING 2025-05-31 17:20:13,147 log 26820 21560 Not Found: /contacts
 WARNING 2025-05-31 17:20:20,260 log 26820 21560 Not Found: /about
 INFO 2025-05-31 17:40:30,761 autoreload 26820 26736 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
 INFO 2025-05-31 17:40:31,884 autoreload 32248 7032 Watching for file changes with StatReloader
+WARNING 2025-05-31 17:40:58,946 log 32248 9584 Not Found: /policy
+WARNING 2025-05-31 17:40:59,025 log 32248 9584 Not Found: /favicon.ico
+WARNING 2025-05-31 17:42:04,657 log 32248 45316 Not Found: /policy
+WARNING 2025-05-31 18:59:06,037 log 32248 5852 Not Found: /favicon.ico
+WARNING 2025-05-31 18:59:36,144 log 32248 5852 Not Found: /policy
+WARNING 2025-05-31 19:21:11,353 log 32248 24440 Not Found: /favicon.ico
+INFO 2025-06-01 14:21:04,029 autoreload 17492 52752 Watching for file changes with StatReloader
