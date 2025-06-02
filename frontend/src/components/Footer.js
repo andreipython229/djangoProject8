@@ -1,31 +1,32 @@
 // src/components/Footer.js
 
+import { Link } from 'react-router-dom';
 import { FaInstagram, FaTelegramPlane, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white text-sm py-6 mt-10">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
-        <p className="mb-2 sm:mb-0">© 2025 DogShop. Все права защищены.</p>
+    <footer className="bg-dark text-white py-4 mt-5">
+      <div className="container d-flex flex-column flex-sm-row justify-content-between align-items-center text-center text-sm-start">
+        <p className="mb-2 mb-sm-0">© 2025 DogShop. Все права защищены.</p>
 
-        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 text-center sm:text-left">
-          <div className="mb-2 sm:mb-0">
-            <a href="/contacts" className="hover:underline">Контакты</a> ·{" "}
-            <a href="/about" className="hover:underline">О нас</a> ·{" "}
-            <a href="/policy" className="hover:underline">Политика</a>
+        <div className="d-flex flex-column flex-sm-row align-items-center gap-3">
+          <div>
+            <Link to="/contacts" className="text-white text-decoration-none me-2">Контакты</Link>
+            <Link to="/about" className="text-white text-decoration-none me-2">О нас</Link>
+            <Link to="/policy" className="text-white text-decoration-none">Политика</Link>
           </div>
 
-          <div className="flex items-center justify-center space-x-4 mt-2 sm:mt-0">
-            <a href="tel:+79991234567" className="hover:text-blue-400" title="Позвонить">
+          <div className="d-flex align-items-center gap-3">
+            <a href="tel:+79991234567" className="text-white" title="Позвонить">
               <FaPhoneAlt />
             </a>
-            <a href="mailto:info@dogshop.ru" className="hover:text-blue-400" title="Написать email">
+            <a href="mailto:info@dogshop.ru" className="text-white" title="Email">
               <FaEnvelope />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500" title="Instagram">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white" title="Instagram">
               <FaInstagram />
             </a>
-            <a href="https://t.me/dogshop" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400" title="Telegram">
+            <a href="https://t.me/dogshop" target="_blank" rel="noopener noreferrer" className="text-white" title="Telegram">
               <FaTelegramPlane />
             </a>
           </div>
