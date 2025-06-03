@@ -13355,3 +13355,144 @@ WARNING 2025-06-02 16:24:46,222 log 49168 40988 Not Found: /favicon.ico
 WARNING 2025-06-02 16:25:18,292 log 49168 31252 Not Found: /policy
 WARNING 2025-06-02 16:41:30,820 log 49168 33920 Not Found: /favicon.ico
 INFO 2025-06-02 19:51:11,229 autoreload 32240 49508 Watching for file changes with StatReloader
+WARNING 2025-06-02 19:53:00,066 log 32240 21808 Not Found: /favicon.ico
+INFO 2025-06-03 15:25:59,185 autoreload 38184 4088 Watching for file changes with StatReloader
+WARNING 2025-06-03 15:26:07,647 log 38184 24932 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-03 15:27:09,743 log 38184 22216 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+INFO 2025-06-03 16:05:15,083 autoreload 38184 4088 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-03 16:05:16,141 autoreload 7336 50576 Watching for file changes with StatReloader
+ERROR 2025-06-03 16:05:26,378 log 7336 21776 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'get_react_bundle'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py", line 45, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py", line 63, in index_view
+    return render(request, 'mydogs/index.html', {
+        'exception_notes': 'Нет ошибок',
+        'nonce': request.csp_nonce
+    })
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 573, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 31: 'get_react_bundle'. Did you forget to register or load this tag?
+WARNING 2025-06-03 16:05:26,757 log 7336 21776 Not Found: /favicon.ico
+INFO 2025-06-03 16:20:34,556 autoreload 7336 50576 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\templatetags\react_bundle.py changed, reloading.
+INFO 2025-06-03 16:20:35,657 autoreload 14580 40144 Watching for file changes with StatReloader
+WARNING 2025-06-03 16:20:40,370 log 14580 42316 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-03 16:21:05,228 log 14580 42316 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+INFO 2025-06-03 18:04:07,999 autoreload 51224 11220 Watching for file changes with StatReloader
+ERROR 2025-06-03 18:04:55,664 log 51224 6612 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'get_react_bundle'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py", line 45, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py", line 63, in index_view
+    return render(request, 'mydogs/index.html', {
+        'exception_notes': 'Нет ошибок',
+        'nonce': request.csp_nonce
+    })
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 573, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 3: 'get_react_bundle'. Did you forget to register or load this tag?
+INFO 2025-06-03 18:21:00,993 autoreload 51224 11220 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\templatetags\react_bundle.py changed, reloading.
+INFO 2025-06-03 18:21:02,230 autoreload 33700 52672 Watching for file changes with StatReloader
+INFO 2025-06-03 18:29:55,440 autoreload 33700 52672 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-03 18:29:57,499 autoreload 38516 35924 Watching for file changes with StatReloader
+WARNING 2025-06-03 18:35:04,850 log 38516 50764 Not Found: /favicon.ico
+INFO 2025-06-03 18:44:07,165 autoreload 38516 35924 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\templatetags\react_bundle.py changed, reloading.
+INFO 2025-06-03 18:44:08,780 autoreload 45708 33096 Watching for file changes with StatReloader
+WARNING 2025-06-03 19:01:22,391 log 45708 55456 Not Found: /favicon.ico
+INFO 2025-06-03 19:04:39,927 autoreload 45708 33096 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-03 19:04:42,456 autoreload 45444 31864 Watching for file changes with StatReloader
+INFO 2025-06-03 19:07:23,112 autoreload 43936 2592 Watching for file changes with StatReloader
+WARNING 2025-06-03 19:07:44,843 log 43936 44608 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-03 19:07:44,850 log 43936 29332 Not Found: /favicon.ico
+INFO 2025-06-03 19:29:18,415 autoreload 43936 2592 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-06-03 19:29:20,481 autoreload 39244 54920 Watching for file changes with StatReloader

@@ -37,7 +37,6 @@ def devtools_json(request):
 def redirect_places(request):
     return redirect('/api/v1/places/')
 
-# Если React сам рендерит страницы (SPA), направляем их на index_view
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -59,13 +58,13 @@ urlpatterns = [
     # Основной API
     path('api/v1/', include('mydogs.urls')),
 
-    # Главная
+    # Главная страница
     path('', index_view, name='home'),
 
     # DevTools путь
     path('.well-known/appspecific/com.chrome.devtools.json', devtools_json),
 ]
 
-# Раздача статики в режиме DEBUG
+# В режиме разработки Django отдает статические файлы из STATIC_ROOT по STATIC_URL
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
