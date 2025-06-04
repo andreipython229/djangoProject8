@@ -13496,3 +13496,22 @@ WARNING 2025-06-03 19:07:44,843 log 43936 44608 Not Found: /img/IMG_20231101_220
 WARNING 2025-06-03 19:07:44,850 log 43936 29332 Not Found: /favicon.ico
 INFO 2025-06-03 19:29:18,415 autoreload 43936 2592 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
 INFO 2025-06-03 19:29:20,481 autoreload 39244 54920 Watching for file changes with StatReloader
+WARNING 2025-06-03 19:30:49,504 log 39244 14384 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-03 19:30:49,575 log 39244 37660 Not Found: /favicon.ico
+INFO 2025-06-04 06:30:16,821 autoreload 53304 37596 Watching for file changes with StatReloader
+INFO 2025-06-04 07:17:13,065 autoreload 53304 37596 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-06-04 07:17:14,127 autoreload 13832 40036 Watching for file changes with StatReloader
+INFO 2025-06-04 07:23:03,235 autoreload 13832 40036 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-06-04 07:23:04,319 autoreload 53496 28968 Watching for file changes with StatReloader
+WARNING 2025-06-04 07:51:25,549 log 53496 13964 Not Found: /favicon.ico
+INFO 2025-06-04 08:03:30,137 autoreload 53496 28968 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\templatetags\react_bundle.py changed, reloading.
+INFO 2025-06-04 08:03:32,157 autoreload 53876 34372 Watching for file changes with StatReloader
+INFO 2025-06-04 08:05:35,482 autoreload 25068 34264 Watching for file changes with StatReloader
+INFO 2025-06-04 08:50:15,873 autoreload 25068 34264 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-04 08:50:17,198 autoreload 53300 41020 Watching for file changes with StatReloader
+INFO 2025-06-04 08:53:36,551 autoreload 53300 41020 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-04 08:53:37,747 autoreload 24916 54704 Watching for file changes with StatReloader
+INFO 2025-06-04 08:58:55,629 autoreload 24916 54704 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-04 08:58:56,968 autoreload 39076 44660 Watching for file changes with StatReloader
+INFO 2025-06-04 10:11:56,282 autoreload 17848 43084 Watching for file changes with StatReloader
+INFO 2025-06-04 10:34:55,390 autoreload 15496 19276 Watching for file changes with StatReloader

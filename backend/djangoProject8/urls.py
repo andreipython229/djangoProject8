@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import os
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
@@ -51,7 +52,7 @@ urlpatterns = [
     # Редирект со старого пути
     path('api/places/', redirect_places),
 
-    # Страницы для React (если они рендерятся на клиенте)
+    # Страницы React
     path('contacts', index_view),
     path('about', index_view),
 
@@ -65,6 +66,6 @@ urlpatterns = [
     path('.well-known/appspecific/com.chrome.devtools.json', devtools_json),
 ]
 
-# В режиме разработки Django отдает статические файлы из STATIC_ROOT по STATIC_URL
+# В режиме разработки Django отдаёт статику из папки React build/static
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=os.path.join(settings.BASE_DIR, 'frontend', 'build', 'static'))
