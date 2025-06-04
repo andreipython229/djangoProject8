@@ -13562,3 +13562,4 @@ WARNING 2025-06-04 19:20:35,293 log 15640 32840 Not Found: /places
 WARNING 2025-06-04 19:20:35,458 log 15640 32840 Not Found: /favicon.ico
 WARNING 2025-06-04 19:20:49,519 log 15640 32840 Not Found: /img/IMG_20231101_220024_kopiya.jpg
 INFO 2025-06-04 19:23:59,804 autoreload 70316 61476 Watching for file changes with StatReloader
+WARNING 2025-06-04 19:24:06,126 log 70316 71264 Not Found: /img/IMG_20231101_220024_kopiya.jpg
