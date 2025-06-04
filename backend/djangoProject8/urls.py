@@ -68,4 +68,5 @@ urlpatterns = [
 
 # В режиме разработки Django отдаёт статику из папки React build/static
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=os.path.join(settings.BASE_DIR, 'frontend', 'build', 'static'))
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

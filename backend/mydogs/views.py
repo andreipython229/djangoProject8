@@ -70,11 +70,9 @@ def csp_report_view(request):
 # -------------------------------
 @with_nonce
 def index_view(request):
-    return render(request, 'mydogs/index.html', {
-        'exception_notes': 'Нет ошибок',
+    return render(request, 'index.html', {
         'nonce': request.nonce
     })
-
 
 @csrf_protect
 @with_nonce

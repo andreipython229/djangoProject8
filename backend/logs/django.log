@@ -13515,3 +13515,50 @@ INFO 2025-06-04 08:58:55,629 autoreload 24916 54704 C:\Users\Andrei2\PycharmProj
 INFO 2025-06-04 08:58:56,968 autoreload 39076 44660 Watching for file changes with StatReloader
 INFO 2025-06-04 10:11:56,282 autoreload 17848 43084 Watching for file changes with StatReloader
 INFO 2025-06-04 10:34:55,390 autoreload 15496 19276 Watching for file changes with StatReloader
+INFO 2025-06-04 15:05:10,921 autoreload 19792 53632 Watching for file changes with StatReloader
+INFO 2025-06-04 15:54:11,605 autoreload 32420 20364 Watching for file changes with StatReloader
+INFO 2025-06-04 16:21:13,374 autoreload 26712 47960 Watching for file changes with StatReloader
+INFO 2025-06-04 16:32:45,377 autoreload 26712 47960 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-04 16:32:46,307 autoreload 12060 68168 Watching for file changes with StatReloader
+INFO 2025-06-04 17:00:33,303 autoreload 16684 26572 Watching for file changes with StatReloader
+WARNING 2025-06-04 17:00:41,171 log 16684 47984 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 17:01:11,202 log 16684 47984 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 17:03:13,889 log 16684 47984 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+INFO 2025-06-04 17:25:16,381 autoreload 16684 26572 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-04 17:25:19,113 autoreload 35856 56668 Watching for file changes with StatReloader
+INFO 2025-06-04 17:28:10,366 autoreload 62748 67636 Watching for file changes with StatReloader
+WARNING 2025-06-04 17:29:47,589 log 62748 72208 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 17:30:32,089 log 62748 72208 Not Found: /favicon.ico
+WARNING 2025-06-04 18:04:18,809 log 62748 33636 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 18:05:07,819 log 62748 45384 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 18:32:09,720 log 62748 7060 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 18:42:05,010 log 62748 8940 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 18:43:25,976 log 62748 8940 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 18:43:39,658 log 62748 8940 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 18:43:54,786 log 62748 48092 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+INFO 2025-06-04 18:53:25,049 autoreload 61176 66636 Watching for file changes with StatReloader
+WARNING 2025-06-04 18:53:35,631 log 61176 53120 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 18:59:28,096 log 61176 11272 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:00:42,302 log 61176 11272 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:00:44,377 log 61176 11272 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:00:45,607 log 61176 11272 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:00:45,887 log 61176 11272 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:00:46,116 log 61176 11272 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:01:05,219 log 61176 11272 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+INFO 2025-06-04 19:02:41,769 autoreload 31296 67816 Watching for file changes with StatReloader
+WARNING 2025-06-04 19:02:54,838 log 31296 62504 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+INFO 2025-06-04 19:19:04,908 autoreload 15640 38008 Watching for file changes with StatReloader
+WARNING 2025-06-04 19:19:10,649 log 15640 32840 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:19:23,190 log 15640 32840 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:19:24,489 log 15640 32840 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:19:24,867 log 15640 32840 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:19:25,140 log 15640 32840 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:19:25,421 log 15640 32840 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:19:25,794 log 15640 32840 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:19:25,995 log 15640 32840 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:19:55,813 log 15640 32840 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:20:14,044 log 15640 32840 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-04 19:20:35,293 log 15640 32840 Not Found: /places
+WARNING 2025-06-04 19:20:35,458 log 15640 32840 Not Found: /favicon.ico
+WARNING 2025-06-04 19:20:49,519 log 15640 32840 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+INFO 2025-06-04 19:23:59,804 autoreload 70316 61476 Watching for file changes with StatReloader
