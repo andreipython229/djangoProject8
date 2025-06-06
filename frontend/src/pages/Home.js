@@ -1,29 +1,19 @@
-import React from 'react';
+import React from "react";
 
 function Home() {
-  return (
-    <div className="container text-center mt-5">
-      <h1 className="mb-4">Добро пожаловать в <strong>Bestdogs</strong>! 🐶</h1>
+  const imageUrl = window.staticUrl + "img/IMG_20231101_220024_kopiya.jpg";
 
-      <div className="card mx-auto shadow-lg" style={{ maxWidth: '500px' }}>
+  return (
+    <div className="container mt-4">
+      <div className="card shadow-sm">
         <img
-          src="/img/IMG_20231101_220024_kopiya.jpg"
+          src={imageUrl}
           className="card-img-top rounded-top"
           alt="Ni hao"
         />
         <div className="card-body">
-          <h5 className="card-title">Ni hao 🐾</h5>
-          <p className="card-text">
-            Это моя собака — <strong>Ni hao</strong>. Она всегда встречает гостей первой!
-          </p>
-          <a
-            href="https://github.com/andreipython229"
-            className="btn btn-outline-dark"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub проекта
-          </a>
+          <h5 className="card-title">Добро пожаловать в Bestdogs! 🐶</h5>
+          <p className="card-text">Это моя собака — Ni hao. Она всегда встречает гостей первой!</p>
         </div>
       </div>
     </div>
@@ -31,4 +21,3 @@ function Home() {
 }
 
 export default Home;
-
