@@ -13631,3 +13631,38 @@ INFO 2025-06-06 16:49:37,321 autoreload 65864 66804 Watching for file changes wi
 WARNING 2025-06-06 16:49:44,037 log 65864 49796 Not Found: /img/IMG_20231101_220024_kopiya.jpg
 WARNING 2025-06-06 16:50:01,215 log 65864 49796 Not Found: /img/IMG_20231101_220024_kopiya.jpg
 INFO 2025-06-06 17:03:41,977 autoreload 45612 44376 Watching for file changes with StatReloader
+WARNING 2025-06-06 17:03:52,638 log 45612 21264 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-06 17:03:58,363 log 45612 21264 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-06 17:05:07,529 log 45612 21264 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-06 17:09:02,309 log 45612 35104 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-06 17:09:31,078 log 45612 35104 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-06 17:18:01,595 log 45612 40896 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-06 17:18:09,938 log 45612 40896 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-06 17:21:23,991 log 45612 40896 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-06 17:23:35,662 log 45612 40896 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-06 17:24:42,115 log 45612 40896 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-06 17:27:35,259 log 45612 40896 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-06 17:36:56,312 log 45612 62844 Not Found: /img/IMG_20231101_220024_kopiya.jpg
+INFO 2025-06-07 07:15:57,817 autoreload 68508 16708 Watching for file changes with StatReloader
+WARNING 2025-06-07 07:17:58,603 log 68508 70936 Not Found: /favicon.ico
+INFO 2025-06-07 07:44:05,016 autoreload 34096 46536 Watching for file changes with StatReloader
+INFO 2025-06-07 07:56:22,487 autoreload 34096 46536 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-06-07 07:56:23,911 autoreload 18512 19772 Watching for file changes with StatReloader
+INFO 2025-06-07 08:05:01,078 autoreload 59012 18160 Watching for file changes with StatReloader
+INFO 2025-06-07 09:26:34,539 autoreload 59012 18160 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\templatetags\react_bundle.py changed, reloading.
+INFO 2025-06-07 09:26:36,974 autoreload 74980 71628 Watching for file changes with StatReloader
+INFO 2025-06-07 10:02:08,202 autoreload 38256 16352 Watching for file changes with StatReloader
+INFO 2025-06-07 10:06:00,579 autoreload 38256 16352 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\templatetags\react_bundle.py changed, reloading.
+INFO 2025-06-07 10:06:02,717 autoreload 70188 24760 Watching for file changes with StatReloader
+INFO 2025-06-07 10:10:35,548 autoreload 15940 21056 Watching for file changes with StatReloader
+INFO 2025-06-07 10:58:55,909 autoreload 17220 14476 Watching for file changes with StatReloader
+INFO 2025-06-07 11:04:59,116 autoreload 15964 6848 Watching for file changes with StatReloader
+WARNING 2025-06-07 11:09:28,427 log 15964 18608 Not Found: /undefinedimg/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-07 11:09:28,472 log 15964 25380 Not Found: /favicon.ico
+WARNING 2025-06-07 11:13:09,316 log 15964 27716 Not Found: /undefinedimg/IMG_20231101_220024_kopiya.jpg
+WARNING 2025-06-07 11:13:09,361 log 15964 20108 Not Found: /favicon.ico
+WARNING 2025-06-07 11:13:40,491 log 15964 12668 Not Found: /undefinedimg/IMG_20231101_220024_kopiya.jpg
+INFO 2025-06-07 11:18:00,645 autoreload 17564 39272 Watching for file changes with StatReloader
+INFO 2025-06-07 11:55:30,605 autoreload 9696 16796 Watching for file changes with StatReloader
+INFO 2025-06-07 12:02:38,532 autoreload 26296 53876 Watching for file changes with StatReloader
+INFO 2025-06-07 12:07:28,539 autoreload 25556 70840 Watching for file changes with StatReloader
