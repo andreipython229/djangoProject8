@@ -28,7 +28,7 @@ from rest_framework_simplejwt.views import (
     TokenVerifyView,
 )
 
-from mydogs.views import index_view, register
+from mydogs.views import index_view
 
 # Заглушка для DevTools
 def devtools_json(request):
@@ -46,18 +46,19 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 
-    # Регистрация
-    path('api/register/', register, name='register'),
+    # Регистрация — подключаем из mydogs.urls (там есть свой register)
+    # Но можно оставить и тут, если хочешь прям отдельный API путь для регистрации:
+    # path('api/register/', register, name='register'),
 
     # Редирект со старого пути
     path('api/places/', redirect_places),
 
-    # Страницы React
+    # Весь API v1 из mydogs
+    path('api/v1/', include('mydogs.urls')),
+
+    # React-страницы
     path('contacts', index_view),
     path('about', index_view),
-
-    # Основной API
-    path('api/v1/', include('mydogs.urls')),
 
     # Главная страница
     path('', index_view, name='home'),
@@ -66,7 +67,5 @@ urlpatterns = [
     path('.well-known/appspecific/com.chrome.devtools.json', devtools_json),
 ]
 
-# В режиме разработки Django отдаёт статику из папки React build/static
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-

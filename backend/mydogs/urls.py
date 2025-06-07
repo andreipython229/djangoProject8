@@ -26,18 +26,25 @@ router.register(r'mydogs', MydogsViewSet)
 router.register(r'places', PlaceViewSet)
 
 urlpatterns = [
+    # Защищённый API текущего пользователя
     path('mydogs-protected/', MydogsProtectedView.as_view(), name='mydogs-protected'),
+
+    # Регистрация, вход и выход
     path('register/', register, name='register'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
+
+    # Получение данных для страницы с собаками
     path('fetch-dogs/', fetch_dogs, name='fetch_dogs'),
+
+    # CSP report endpoint
     path('csp-report/', csp_report_view, name='csp_report'),
 
-    # API на основе generics
+    # API с generics
     path('mydogslist/', MydogsAPIList.as_view(), name='mydogs_list'),
     path('mydogs/<int:pk>/', MydogsAPIView.as_view(), name='mydogs_detail'),
 
-    # Автоматически подключаем viewsets
+    # ViewSet router
     path('', include(router.urls)),
 
     # favicon перенаправление

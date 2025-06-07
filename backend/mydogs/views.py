@@ -1,19 +1,20 @@
 import logging
-import requests
+import json
 from functools import wraps
 
 from django.conf import settings
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.utils.crypto import get_random_string
-from django.views.decorators.csrf import csrf_protect
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 from rest_framework import generics, viewsets
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.permissions import IsAuthenticated
 
 from .models import Mydogs, Client, Category, Place
 from .serializers import (
@@ -25,9 +26,7 @@ from .serializers import (
 
 logger = logging.getLogger(__name__)
 
-# -------------------------------
 # CSP middleware helpers
-# -------------------------------
 def add_csp_header(response, nonce):
     response['Content-Security-Policy'] = (
         f"default-src 'self'; "
@@ -45,18 +44,13 @@ def with_nonce(view_func):
 
         response = view_func(request, *args, **kwargs)
 
-        # Если response это рендер шаблона (HttpResponse с context_data), добавим nonce в контекст
         if hasattr(response, 'context_data') and response.context_data is not None:
             response.context_data['nonce'] = nonce
 
-        # Добавим CSP заголовок с nonce
         return add_csp_header(response, nonce)
     return _wrapped_view
 
-
-# -------------------------------
 # CSP report endpoint
-# -------------------------------
 @csrf_protect
 def csp_report_view(request):
     if request.method == 'POST':
@@ -64,17 +58,15 @@ def csp_report_view(request):
         return JsonResponse({'status': 'CSP report received'}, status=200)
     return JsonResponse({'error': 'Invalid request'}, status=405)
 
-
-# -------------------------------
-# Main pages
-# -------------------------------
+# Главная страница
 @with_nonce
 def index_view(request):
     return render(request, 'index.html', {
         'nonce': request.nonce
     })
 
-@csrf_protect
+# Регистрация пользователя
+@csrf_exempt
 @with_nonce
 def register(request):
     if request.method == "GET":
@@ -82,15 +74,30 @@ def register(request):
             'exception_notes': 'Нет ошибок',
             'nonce': request.nonce
         })
+
     elif request.method == "POST":
-        # Здесь надо добавить логику регистрации
-        # Например, создание пользователя
-        # Пока заглушка
-        return JsonResponse({'message': 'User registered successfully'})
+        try:
+            data = json.loads(request.body)
+            username = data.get('username')
+            password = data.get('password')
+            email = data.get('email', '')
+
+            if not username or not password:
+                return JsonResponse({'error': 'Имя пользователя и пароль обязательны'}, status=400)
+
+            if User.objects.filter(username=username).exists():
+                return JsonResponse({'error': 'Пользователь с таким именем уже существует'}, status=400)
+
+            user = User.objects.create_user(username=username, password=password, email=email)
+            user.save()
+
+            return JsonResponse({'message': 'Пользователь успешно зарегистрирован'}, status=201)
+        except Exception as e:
+            return JsonResponse({'error': f'Ошибка: {str(e)}'}, status=400)
     else:
-        return JsonResponse({'error': 'Invalid request method'}, status=405)
+        return JsonResponse({'error': 'Недопустимый метод'}, status=405)
 
-
+# Вход пользователя
 @csrf_protect
 @with_nonce
 def login_view(request):
@@ -114,23 +121,20 @@ def login_view(request):
                 'nonce': request.nonce
             })
     else:
-        return JsonResponse({'error': 'Invalid request method'}, status=405)
+        return JsonResponse({'error': 'Недопустимый метод'}, status=405)
 
-
+# Выход пользователя
 @login_required
 def logout_view(request):
     logout(request)
     return JsonResponse({'message': 'Вы вышли из системы'}, status=200)
 
-
-# -------------------------------
-# DRF: Open API
-# -------------------------------
+# API для списка собак (общий)
 class MydogsAPIList(generics.ListCreateAPIView):
     queryset = Mydogs.objects.all()
     serializer_class = MydogsSerializer
 
-
+# API с разными методами
 class MydogsAPIView(APIView):
     def get(self, request):
         dogs = Mydogs.objects.all()
@@ -163,10 +167,7 @@ class MydogsAPIView(APIView):
         instance.delete()
         return Response({'deleted': True})
 
-
-# -------------------------------
-# 🔒 Защищённый API для текущего пользователя
-# -------------------------------
+# Защищённый API текущего пользователя
 class MydogsProtectedView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -175,34 +176,25 @@ class MydogsProtectedView(APIView):
         serializer = MydogsSerializer(dogs, many=True)
         return Response(serializer.data)
 
-
-# -------------------------------
-# ViewSets (для router)
-# -------------------------------
+# ViewSets
 class ClientViewSet(viewsets.ModelViewSet):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
     permission_classes = [IsAuthenticated]
 
-
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-
 
 class MydogsViewSet(viewsets.ModelViewSet):
     queryset = Mydogs.objects.all()
     serializer_class = MydogsSerializer
 
-
 class PlaceViewSet(viewsets.ModelViewSet):
     queryset = Place.objects.all()
     serializer_class = PlaceSerializer
 
-
-# -------------------------------
-# Страница с собаками
-# -------------------------------
+# Страница с собаками (рендер через запрос API)
 @with_nonce
 def fetch_dogs(request):
     try:
@@ -215,7 +207,6 @@ def fetch_dogs(request):
             data = []
             exception_notes = f"Ошибка: {api_response.status_code}"
 
-        # Путь к шаблону под твой проект
         return render(request, 'mydogs/dogs.html', {
             'dogs': data,
             'exception_notes': exception_notes,
