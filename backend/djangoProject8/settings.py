@@ -17,6 +17,9 @@ from pathlib import Path
 import environ
 from datetime import timedelta
 
+LOGIN_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/'
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 env = environ.Env(DEBUG=(bool, False))
 env.read_env(BASE_DIR / '.env')  # без 'backend' — файл .env лежит прямо в BASE_DIR

@@ -21,6 +21,9 @@ function Header() {
           <Link to="/" className="text-white text-decoration-none fw-bold">Главная</Link>
           <Link to="/mydogs" className="text-white text-decoration-none">Мои Собаки</Link>
           <Link to="/favorite-places" className="text-white text-decoration-none">Любимые места</Link>
+          {token && (
+            <Link to="/cart" className="text-white text-decoration-none">Корзина</Link>
+          )}
         </nav>
 
         <div className="d-flex gap-2 align-items-center">

@@ -13677,3 +13677,28 @@ INFO 2025-06-07 21:16:33,908 autoreload 23968 5716 C:\Users\Andrei2\PycharmProje
 INFO 2025-06-07 21:16:36,597 autoreload 14628 7692 Watching for file changes with StatReloader
 INFO 2025-06-07 21:18:05,661 autoreload 14628 7692 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
 INFO 2025-06-07 21:18:07,142 autoreload 69492 24864 Watching for file changes with StatReloader
+INFO 2025-06-08 11:12:47,139 autoreload 72120 68956 Watching for file changes with StatReloader
+INFO 2025-06-08 11:41:12,989 autoreload 72120 68956 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-08 11:41:14,467 autoreload 52336 38376 Watching for file changes with StatReloader
+INFO 2025-06-08 12:16:13,362 autoreload 52336 38376 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-08 12:16:15,409 autoreload 66496 18944 Watching for file changes with StatReloader
+INFO 2025-06-08 12:18:02,297 autoreload 66496 18944 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-08 12:18:03,625 autoreload 40632 63256 Watching for file changes with StatReloader
+WARNING 2025-06-08 12:19:54,994 log 40632 23288 Not Found: /login/
+WARNING 2025-06-08 12:19:55,394 log 40632 23288 Not Found: /favicon.ico
+WARNING 2025-06-08 12:23:39,367 log 40632 8400 Not Found: /login/
+WARNING 2025-06-08 12:23:39,743 log 40632 8400 Not Found: /favicon.ico
+INFO 2025-06-08 12:40:01,303 autoreload 40632 63256 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-08 12:40:03,086 autoreload 27916 26968 Watching for file changes with StatReloader
+INFO 2025-06-08 12:41:36,198 autoreload 27916 26968 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-08 12:41:37,892 autoreload 23624 31484 Watching for file changes with StatReloader
+INFO 2025-06-08 12:45:02,726 autoreload 23624 31484 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-08 12:45:04,362 autoreload 38748 30700 Watching for file changes with StatReloader
+INFO 2025-06-08 12:45:19,279 autoreload 8616 72532 Watching for file changes with StatReloader
+WARNING 2025-06-08 12:47:31,613 log 8616 34768 Not Found: /accounts/login/
+WARNING 2025-06-08 12:47:31,796 log 8616 34768 Not Found: /favicon.ico
+INFO 2025-06-08 12:54:58,724 autoreload 8616 72532 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-06-08 12:55:00,378 autoreload 34748 34592 Watching for file changes with StatReloader
+INFO 2025-06-08 13:24:51,353 autoreload 53596 51012 Watching for file changes with StatReloader
+INFO 2025-06-08 13:27:25,462 autoreload 62424 37292 Watching for file changes with StatReloader
+INFO 2025-06-08 13:48:18,395 autoreload 57284 25292 Watching for file changes with StatReloader

@@ -21,7 +21,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.conf import settings
 from django.conf.urls.static import static
-
+from mydogs.views import register, login_view, logout_view
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -65,6 +65,12 @@ urlpatterns = [
 
     # DevTools путь
     path('.well-known/appspecific/com.chrome.devtools.json', devtools_json),
+]
+# Страница регистрации (отдаёт HTML через шаблон)
+urlpatterns += [
+    path('register/', register, name='register_page'),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
 ]
 
 if settings.DEBUG:

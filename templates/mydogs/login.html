@@ -1,42 +1,63 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ru">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
+    <title>Вход в систему</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-{{ nonce }}' https://cdn.jsdelivr.net; style-src 'self' 'nonce-{{ nonce }}' https://cdn.jsdelivr.net; img-src 'self' data:;">
-    <title>Вход</title>
-    <!-- Стили -->
-    <link rel="stylesheet" href="{% static 'rest_framework/css/bootstrap.min.css' %}" nonce="{{ nonce }}">
-    <link rel="stylesheet" href="{% static 'styles.css' %}" nonce="{{ nonce }}">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'nonce-{{ nonce }}' https://cdn.jsdelivr.net;
+        style-src 'self' 'nonce-{{ nonce }}' https://cdn.jsdelivr.net;
+        img-src 'self' data:;">
+    <link rel="icon" href="{% static 'img/icons8-favicon-50.png' %}" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style nonce="{{ nonce }}">
+        .form-container {
+            max-width: 400px;
+            margin: 5rem auto;
+            padding: 2rem;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h2>Вход в систему</h2>
+    <div class="container form-container">
+        <h2 class="text-center mb-4">Вход</h2>
 
-        {% if exception_notes %}
-            <div class="alert alert-danger">{{ exception_notes }}</div>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрыть"></button>
+                </div>
+            {% endfor %}
         {% endif %}
 
-        <form method="post" action="">
+        <form method="POST" novalidate>
             {% csrf_token %}
             <div class="mb-3">
-                <label for="username">Имя пользователя:</label>
-                <input type="text" id="username" name="username" class="form-control" required>
+                <label for="username" class="form-label">Имя пользователя</label>
+                <input type="text" class="form-control" id="username" name="username" required>
             </div>
             <div class="mb-3">
-                <label for="password">Пароль:</label>
-                <input type="password" id="password" name="password" class="form-control" required>
+                <label for="password" class="form-label">Пароль</label>
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary" id="login-btn">Войти</button>
+            <button type="submit" class="btn btn-primary w-100" id="login-btn">Войти</button>
         </form>
 
-        <script nonce="{{ nonce }}">
-            document.getElementById('login-btn').addEventListener('click', function() {
-                console.log("Форма логина отправлена.");
-            });
-        </script>
+        <div class="text-center mt-3">
+            <a href="{% url 'register_page' %}">Ещё нет аккаунта? Зарегистрируйтесь</a>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoZ3HTDkS7MsXGJcMZlQeRRSQQqUKGkN3p9FATYjF1fFJdL"
+            crossorigin="anonymous" nonce="{{ nonce }}"></script>
 </body>
 </html>
-

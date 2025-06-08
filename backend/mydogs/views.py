@@ -1,13 +1,15 @@
 import logging
 import json
+import requests
 from functools import wraps
 
 from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.crypto import get_random_string
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
@@ -41,12 +43,9 @@ def with_nonce(view_func):
     def _wrapped_view(request, *args, **kwargs):
         nonce = get_random_string(16)
         request.nonce = nonce
-
         response = view_func(request, *args, **kwargs)
-
         if hasattr(response, 'context_data') and response.context_data is not None:
             response.context_data['nonce'] = nonce
-
         return add_csp_header(response, nonce)
     return _wrapped_view
 
@@ -74,7 +73,6 @@ def register(request):
             'exception_notes': 'Нет ошибок',
             'nonce': request.nonce
         })
-
     elif request.method == "POST":
         try:
             data = json.loads(request.body)
@@ -97,44 +95,38 @@ def register(request):
     else:
         return JsonResponse({'error': 'Недопустимый метод'}, status=405)
 
-# Вход пользователя
+# Вход пользователя — с поддержкой messages и nonce
 @csrf_protect
 @with_nonce
 def login_view(request):
-    if request.method == "GET":
-        return render(request, 'mydogs/login.html', {
-            'exception_notes': '',
-            'nonce': request.nonce
-        })
-
-    elif request.method == "POST":
+    if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
             login(request, user)
-            return JsonResponse({'message': 'Успешный вход'}, status=200)
+            return redirect('mydogs-protected')  # или другой нужный URL name
         else:
-            return render(request, 'mydogs/login.html', {
-                'exception_notes': 'Неверное имя пользователя или пароль',
-                'nonce': request.nonce
-            })
-    else:
-        return JsonResponse({'error': 'Недопустимый метод'}, status=405)
+            messages.error(request, 'Неправильное имя пользователя или пароль.')
+            return redirect('mydogs-protected')
+    messages.info(request, 'Тестовое сообщение: всё работает!')
+    return render(request, 'mydogs/login.html', {
+        'nonce': request.nonce
+    })
 
-# Выход пользователя
+# Выход
 @login_required
 def logout_view(request):
     logout(request)
     return JsonResponse({'message': 'Вы вышли из системы'}, status=200)
 
-# API для списка собак (общий)
+# API для списка собак
 class MydogsAPIList(generics.ListCreateAPIView):
     queryset = Mydogs.objects.all()
     serializer_class = MydogsSerializer
 
-# API с разными методами
+# Полноценный CRUD через APIView
 class MydogsAPIView(APIView):
     def get(self, request):
         dogs = Mydogs.objects.all()
@@ -167,7 +159,7 @@ class MydogsAPIView(APIView):
         instance.delete()
         return Response({'deleted': True})
 
-# Защищённый API текущего пользователя
+# Только для авторизованных
 class MydogsProtectedView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -194,12 +186,13 @@ class PlaceViewSet(viewsets.ModelViewSet):
     queryset = Place.objects.all()
     serializer_class = PlaceSerializer
 
-# Страница с собаками (рендер через запрос API)
+# Страница с собаками (через API-запрос)
 @with_nonce
 def fetch_dogs(request):
     try:
         api_url = f"{settings.API_BASE_URL}/api/v1/mydogslist/"
         api_response = requests.get(api_url, timeout=5)
+
         if api_response.status_code == 200:
             data = api_response.json()
             exception_notes = 'OK'
@@ -212,6 +205,7 @@ def fetch_dogs(request):
             'exception_notes': exception_notes,
             'nonce': request.nonce
         })
+
     except Exception as e:
         logger.error(f"Exception in fetch_dogs: {str(e)}")
         return JsonResponse({'error': 'Ошибка при получении данных'}, status=500)
