@@ -209,3 +209,10 @@ def fetch_dogs(request):
     except Exception as e:
         logger.error(f"Exception in fetch_dogs: {str(e)}")
         return JsonResponse({'error': 'Ошибка при получении данных'}, status=500)
+
+# --- ДОБАВЛЕНО: страница places ---
+@with_nonce
+def places_view(request):
+    return render(request, 'mydogs/places.html', {
+        'nonce': request.nonce
+    })

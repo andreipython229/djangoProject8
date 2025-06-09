@@ -17,6 +17,7 @@ from .views import (
     CategoryViewSet,
     MydogsViewSet,
     PlaceViewSet,
+    places_view,  # <--- добавили импорт
 )
 
 router = DefaultRouter()
@@ -26,6 +27,9 @@ router.register(r'mydogs', MydogsViewSet)
 router.register(r'places', PlaceViewSet)
 
 urlpatterns = [
+    # HTML-страница с любимыми местами (собаки)
+    path('places/', places_view, name='places_page'),
+
     # Защищённый API текущего пользователя
     path('mydogs-protected/', MydogsProtectedView.as_view(), name='mydogs-protected'),
 

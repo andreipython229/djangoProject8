@@ -46,10 +46,6 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 
-    # Регистрация — подключаем из mydogs.urls (там есть свой register)
-    # Но можно оставить и тут, если хочешь прям отдельный API путь для регистрации:
-    # path('api/register/', register, name='register'),
-
     # Редирект со старого пути
     path('api/places/', redirect_places),
 
@@ -65,12 +61,14 @@ urlpatterns = [
 
     # DevTools путь
     path('.well-known/appspecific/com.chrome.devtools.json', devtools_json),
-]
-# Страница регистрации (отдаёт HTML через шаблон)
-urlpatterns += [
+
+    # Страница регистрации (отдаёт HTML через шаблон)
     path('register/', register, name='register_page'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
+
+    # ВАЖНО: подключаем все страничные маршруты из mydogs.urls (в том числе /places/)
+    path('', include('mydogs.urls')),
 ]
 
 if settings.DEBUG:

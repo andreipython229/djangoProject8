@@ -13702,3 +13702,13 @@ INFO 2025-06-08 12:55:00,378 autoreload 34748 34592 Watching for file changes wi
 INFO 2025-06-08 13:24:51,353 autoreload 53596 51012 Watching for file changes with StatReloader
 INFO 2025-06-08 13:27:25,462 autoreload 62424 37292 Watching for file changes with StatReloader
 INFO 2025-06-08 13:48:18,395 autoreload 57284 25292 Watching for file changes with StatReloader
+INFO 2025-06-09 11:45:01,087 autoreload 65648 4120 Watching for file changes with StatReloader
+INFO 2025-06-09 13:18:22,820 autoreload 33384 61712 Watching for file changes with StatReloader
+WARNING 2025-06-09 13:19:28,144 log 33384 43308 Not Found: /places/
+WARNING 2025-06-09 13:19:28,513 log 33384 43308 Not Found: /favicon.ico
+INFO 2025-06-09 13:27:39,932 autoreload 33384 61712 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-09 13:27:41,564 autoreload 38432 35304 Watching for file changes with StatReloader
+INFO 2025-06-09 13:29:28,404 autoreload 38432 35304 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-06-09 13:29:29,912 autoreload 54872 74848 Watching for file changes with StatReloader
+INFO 2025-06-09 13:39:14,770 autoreload 54872 74848 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-09 13:39:17,488 autoreload 71572 69104 Watching for file changes with StatReloader
