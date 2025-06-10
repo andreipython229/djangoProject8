@@ -17,7 +17,10 @@ from .views import (
     CategoryViewSet,
     MydogsViewSet,
     PlaceViewSet,
-    places_view,  # <--- добавили импорт
+    places_view,
+    dog_list,
+    dog_detail,
+    dogs_by_category,
 )
 
 router = DefaultRouter()
@@ -27,6 +30,11 @@ router.register(r'mydogs', MydogsViewSet)
 router.register(r'places', PlaceViewSet)
 
 urlpatterns = [
+    # HTML-страницы для просмотра собак
+    path('dogs/', dog_list, name='dog_list'),
+    path('dogs/<int:dog_id>/', dog_detail, name='dog_detail'),
+    path('dogs/category/<str:category>/', dogs_by_category, name='dogs_by_category'),
+
     # HTML-страница с любимыми местами (собаки)
     path('places/', places_view, name='places_page'),
 
@@ -49,7 +57,7 @@ urlpatterns = [
     path('mydogs/<int:pk>/', MydogsAPIView.as_view(), name='mydogs_detail'),
 
     # ViewSet router
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
 
     # favicon перенаправление
     path('favicon.ico', RedirectView.as_view(url=static('img/icons8-favicon-50.png'), permanent=True)),

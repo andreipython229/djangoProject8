@@ -39,6 +39,7 @@ def redirect_places(request):
     return redirect('/api/v1/places/')
 
 urlpatterns = [
+    # Админка
     path('admin/', admin.site.urls),
 
     # JWT аутентификация
@@ -49,12 +50,12 @@ urlpatterns = [
     # Редирект со старого пути
     path('api/places/', redirect_places),
 
-    # Весь API v1 из mydogs
+    # API v1
     path('api/v1/', include('mydogs.urls')),
 
     # React-страницы
-    path('contacts', index_view),
-    path('about', index_view),
+    path('contacts/', index_view, name='contacts'),
+    path('about/', index_view, name='about'),
 
     # Главная страница
     path('', index_view, name='home'),
@@ -62,13 +63,10 @@ urlpatterns = [
     # DevTools путь
     path('.well-known/appspecific/com.chrome.devtools.json', devtools_json),
 
-    # Страница регистрации (отдаёт HTML через шаблон)
+    # Аутентификация
     path('register/', register, name='register_page'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
-
-    # ВАЖНО: подключаем все страничные маршруты из mydogs.urls (в том числе /places/)
-    path('', include('mydogs.urls')),
 ]
 
 if settings.DEBUG:

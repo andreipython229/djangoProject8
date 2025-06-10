@@ -13712,3 +13712,13 @@ INFO 2025-06-09 13:29:28,404 autoreload 38432 35304 C:\Users\Andrei2\PycharmProj
 INFO 2025-06-09 13:29:29,912 autoreload 54872 74848 Watching for file changes with StatReloader
 INFO 2025-06-09 13:39:14,770 autoreload 54872 74848 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
 INFO 2025-06-09 13:39:17,488 autoreload 71572 69104 Watching for file changes with StatReloader
+WARNING 2025-06-09 13:39:58,909 log 71572 73348 Not Found: /places/places.html
+INFO 2025-06-10 14:57:07,405 autoreload 14252 10864 Watching for file changes with StatReloader
+WARNING 2025-06-10 14:57:28,503 log 14252 19476 Bad Request: /register/
+WARNING 2025-06-10 14:57:42,668 log 14252 19476 Bad Request: /register/
+WARNING 2025-06-10 14:58:19,903 log 14252 19476 Bad Request: /register/
+WARNING 2025-06-10 14:59:12,303 log 14252 3864 Bad Request: /register/
+WARNING 2025-06-10 15:02:08,841 log 14252 70256 Not Found: /api/v1/places/places.html
+WARNING 2025-06-10 15:02:16,132 log 14252 70256 Not Found: /api/v1/places/index.html
+WARNING 2025-06-10 15:02:19,158 log 14252 70256 Not Found: /api/v1/places/index.html
+INFO 2025-06-10 16:57:18,630 autoreload 67348 44996 Watching for file changes with StatReloader
