@@ -1,0 +1,28 @@
+{% extends 'base_django.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>{% if category %}Собаки категории "{{ category }}"{% else %}Все собаки{% endif %}</h1>
+
+    <div class="row">
+        {% for dog in dogs %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                {% if dog.photo %}
+                <img src="{{ dog.photo.url }}" class="card-img-top" alt="{{ dog.name }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ dog.name }}</h5>
+                    <p class="card-text">{{ dog.description|truncatewords:20 }}</p>
+                    <a href="{% url 'dog_detail' dog.id %}" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <p>Собак не найдено.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

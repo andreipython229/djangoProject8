@@ -216,3 +216,30 @@ def places_view(request):
     return render(request, 'mydogs/places.html', {
         'nonce': request.nonce
     })
+
+# Функции для отображения списка собак
+@with_nonce
+def dog_list(request):
+    print("--- Функция dog_list вызвана! ---")
+    dogs = Mydogs.objects.all()
+    return render(request, 'mydogs/dog_list.html', {
+        'dogs': dogs,
+        'nonce': request.nonce
+    })
+
+@with_nonce
+def dog_detail(request, dog_id):
+    dog = get_object_or_404(Mydogs, id=dog_id)
+    return render(request, 'mydogs/dog_detail.html', {
+        'dog': dog,
+        'nonce': request.nonce
+    })
+
+@with_nonce
+def dogs_by_category(request, category):
+    dogs = Mydogs.objects.filter(category__name=category)
+    return render(request, 'mydogs/dog_list.html', {
+        'dogs': dogs,
+        'category': category,
+        'nonce': request.nonce
+    })
