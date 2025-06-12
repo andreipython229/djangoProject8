@@ -56,6 +56,7 @@ urlpatterns = [
     # React-страницы
     path('contacts/', index_view, name='contacts'),
     path('about/', index_view, name='about'),
+    path('favorite-places/', index_view, name='favorite_places'),  # Добавлен новый маршрут
 
     # Главная страница
     path('', index_view, name='home'),

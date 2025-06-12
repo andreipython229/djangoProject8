@@ -13734,3 +13734,60 @@ INFO 2025-06-11 14:57:27,305 autoreload 56744 50656 C:\Users\Andrei2\PycharmProj
 INFO 2025-06-11 14:57:29,052 autoreload 18268 49296 Watching for file changes with StatReloader
 INFO 2025-06-11 14:59:21,317 autoreload 29624 54812 Watching for file changes with StatReloader
 INFO 2025-06-11 15:27:27,046 autoreload 67996 58468 Watching for file changes with StatReloader
+INFO 2025-06-12 17:54:06,677 autoreload 52888 40636 Watching for file changes with StatReloader
+WARNING 2025-06-12 17:54:41,581 log 52888 2972 Not Found: /favorite-places
+WARNING 2025-06-12 17:56:10,362 log 52888 73808 Not Found: /favorite-places
+INFO 2025-06-12 17:58:02,521 autoreload 52888 40636 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-12 17:58:07,637 autoreload 59716 43180 Watching for file changes with StatReloader
+WARNING 2025-06-12 18:02:20,325 log 59716 39504 Not Found: /favorite-places
+INFO 2025-06-12 18:09:01,757 autoreload 59716 43180 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-12 18:09:03,812 autoreload 8532 12384 Watching for file changes with StatReloader
+INFO 2025-06-12 18:10:29,783 autoreload 44404 19316 Watching for file changes with StatReloader
+INFO 2025-06-12 18:14:04,670 autoreload 36240 32360 Watching for file changes with StatReloader
+WARNING 2025-06-12 18:15:44,795 log 36240 15980 Method Not Allowed: /api/token/
+WARNING 2025-06-12 18:17:08,229 log 36240 45212 Method Not Allowed: /api/token/
+WARNING 2025-06-12 18:17:09,099 log 36240 45212 Method Not Allowed: /api/token/
+WARNING 2025-06-12 18:21:25,302 log 36240 45212 Bad Request: /api/token/
+INFO 2025-06-12 18:28:00,367 autoreload 70868 56488 Watching for file changes with StatReloader
+WARNING 2025-06-12 18:28:08,139 log 70868 41216 Bad Request: /api/token/refresh/
+WARNING 2025-06-12 18:31:06,153 log 70868 31412 Unauthorized: /api/token/
+INFO 2025-06-12 18:35:18,952 autoreload 35484 25456 Watching for file changes with StatReloader
+WARNING 2025-06-12 18:36:22,210 log 35484 50120 Unauthorized: /api/token/
+WARNING 2025-06-12 18:55:04,295 log 35484 44780 Method Not Allowed: /api/token/verify/
+WARNING 2025-06-12 18:55:26,030 log 35484 44780 Method Not Allowed: /api/token/
+WARNING 2025-06-12 19:01:33,751 log 35484 48944 Bad Request: /api/token/verify/
+WARNING 2025-06-12 19:03:52,723 log 35484 35972 Bad Request: /api/token/verify/
+ERROR 2025-06-12 19:06:49,214 log 35484 64756 Internal Server Error: /api/token/verify
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\utils\deprecation.py", line 131, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/token/verify/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+WARNING 2025-06-12 19:07:00,274 log 35484 70244 Bad Request: /api/token/verify/
+WARNING 2025-06-12 19:08:24,928 log 35484 12592 Bad Request: /api/token/verify/
+WARNING 2025-06-12 19:08:44,941 log 35484 12592 Bad Request: /api/token/verify/
+WARNING 2025-06-12 19:18:03,952 log 35484 39844 Bad Request: /api/token/verify/
+WARNING 2025-06-12 19:18:47,334 log 35484 39844 Bad Request: /api/token/verify/
+WARNING 2025-06-12 19:30:20,433 log 35484 40888 Bad Request: /api/token/verify/
+WARNING 2025-06-12 19:30:32,431 log 35484 40888 Bad Request: /api/token/verify/
+WARNING 2025-06-12 19:30:46,729 log 35484 40888 Bad Request: /api/token/verify/
+INFO 2025-06-12 19:50:48,889 autoreload 55684 50232 Watching for file changes with StatReloader
+WARNING 2025-06-12 20:11:31,978 log 55684 83516 Not Found: /api/v1/
+WARNING 2025-06-12 20:21:32,816 log 55684 48944 Not Found: /api/v1/dogs/<id>/
+WARNING 2025-06-12 20:23:59,424 log 55684 56444 Unauthorized: /api/v1/mydogs-protected/
+ERROR 2025-06-12 20:24:45,647 log 55684 56444 Internal Server Error: /api/v1/fetch-dogs/
+WARNING 2025-06-12 20:26:10,473 log 55684 56444 Not Found: /api/v1/mydogs/<pk>/
+WARNING 2025-06-12 20:27:17,848 log 55684 56444 Not Found: /api/v1/clients/
+WARNING 2025-06-12 20:27:52,176 log 55684 56444 Not Found: /api/v1/categories/
+WARNING 2025-06-12 20:28:30,210 log 55684 56444 Not Found: /api/v1/mydogs/
+WARNING 2025-06-12 20:29:33,655 log 55684 52656 Method Not Allowed: /api/v1/csp-report/
+WARNING 2025-06-12 20:34:02,428 log 55684 81016 Not Found: /api/v1/mydogs/
+WARNING 2025-06-12 20:34:33,288 log 55684 81016 Not Found: /api/v1/categories/
