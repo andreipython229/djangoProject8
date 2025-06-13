@@ -95,7 +95,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'djangoProject8.urls'
+ROOT_URLCONF = 'backend.djangoProject8.urls'
 
 TEMPLATES = [
     {
@@ -117,7 +117,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'djangoProject8.wsgi.application'
+WSGI_APPLICATION = 'backend.djangoProject8.wsgi.application'
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
@@ -171,6 +171,10 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend', 'build')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Media files (for uploaded content)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Content Security Policy (CSP) settings
 CSP_DEFAULT_SRC = ("'self'",)

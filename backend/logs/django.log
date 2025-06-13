@@ -13791,3 +13791,26 @@ WARNING 2025-06-12 20:28:30,210 log 55684 56444 Not Found: /api/v1/mydogs/
 WARNING 2025-06-12 20:29:33,655 log 55684 52656 Method Not Allowed: /api/v1/csp-report/
 WARNING 2025-06-12 20:34:02,428 log 55684 81016 Not Found: /api/v1/mydogs/
 WARNING 2025-06-12 20:34:33,288 log 55684 81016 Not Found: /api/v1/categories/
+INFO 2025-06-13 15:47:28,215 autoreload 63856 47840 Watching for file changes with StatReloader
+WARNING 2025-06-13 15:50:05,580 log 63856 17540 Not Found: /dogs/ - список всех собак
+INFO 2025-06-13 15:51:56,980 autoreload 63856 47840 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-13 15:51:58,789 autoreload 5584 37880 Watching for file changes with StatReloader
+INFO 2025-06-13 15:56:09,087 autoreload 53540 42772 Watching for file changes with StatReloader
+WARNING 2025-06-13 15:56:36,937 log 53540 15564 Not Found: /dogs/ - список всех собак
+WARNING 2025-06-13 15:56:38,567 log 53540 15564 Not Found: /dogs/ - список всех собак
+WARNING 2025-06-13 16:02:04,716 log 53540 37832 Not Found: /api/v1/mydogs/
+INFO 2025-06-13 16:03:43,237 autoreload 53540 42772 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-06-13 16:03:44,992 autoreload 3224 64108 Watching for file changes with StatReloader
+INFO 2025-06-13 16:09:30,033 autoreload 3224 64108 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-06-13 16:09:31,562 autoreload 53684 33112 Watching for file changes with StatReloader
+INFO 2025-06-13 16:12:57,509 autoreload 27372 71620 Watching for file changes with StatReloader
+INFO 2025-06-13 16:37:34,365 autoreload 27372 71620 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\models.py changed, reloading.
+INFO 2025-06-13 16:37:36,480 autoreload 11256 67760 Watching for file changes with StatReloader
+INFO 2025-06-13 16:53:14,639 autoreload 11256 67760 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-06-13 16:53:16,126 autoreload 42624 69048 Watching for file changes with StatReloader
+INFO 2025-06-13 16:53:22,480 autoreload 42624 69048 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-13 16:53:24,070 autoreload 15308 11636 Watching for file changes with StatReloader
+INFO 2025-06-13 16:58:19,525 autoreload 15308 11636 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\serializers.py changed, reloading.
+INFO 2025-06-13 16:58:20,657 autoreload 29372 56556 Watching for file changes with StatReloader
+INFO 2025-06-13 17:13:45,760 autoreload 29372 56556 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\models.py changed, reloading.
+INFO 2025-06-13 17:13:47,715 autoreload 71272 40852 Watching for file changes with StatReloader

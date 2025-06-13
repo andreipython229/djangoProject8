@@ -23,13 +23,17 @@ from .views import (
     dogs_by_category,
 )
 
+# Создаем роутер для API endpoints
 router = DefaultRouter()
-router.register(r'clients', ClientViewSet)
-router.register(r'categories', CategoryViewSet)
-router.register(r'mydogs', MydogsViewSet)
-router.register(r'places', PlaceViewSet)
+router.register(r'clients', ClientViewSet, basename='client')
+router.register(r'categories', CategoryViewSet, basename='category')
+router.register(r'mydogs', MydogsViewSet, basename='mydog')
+router.register(r'places', PlaceViewSet, basename='place')
 
 urlpatterns = [
+    # API endpoints (ViewSets)
+    path('api/', include(router.urls)),
+
     # HTML-страницы для просмотра собак
     path('dogs/', dog_list, name='dog_list'),
     path('dogs/<int:dog_id>/', dog_detail, name='dog_detail'),
@@ -55,9 +59,6 @@ urlpatterns = [
     # API с generics
     path('mydogslist/', MydogsAPIList.as_view(), name='mydogs_list'),
     path('mydogs/<int:pk>/', MydogsAPIView.as_view(), name='mydogs_detail'),
-
-    # ViewSet router
-    path('api/', include(router.urls)),
 
     # favicon перенаправление
     path('favicon.ico', RedirectView.as_view(url=static('img/icons8-favicon-50.png'), permanent=True)),

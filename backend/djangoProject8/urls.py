@@ -21,7 +21,14 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.conf import settings
 from django.conf.urls.static import static
-from mydogs.views import register, login_view, logout_view
+from mydogs.views import (
+    register, 
+    login_view, 
+    logout_view,
+    dog_list,
+    dog_detail,
+    dogs_by_category
+)
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -53,10 +60,15 @@ urlpatterns = [
     # API v1
     path('api/v1/', include('mydogs.urls')),
 
+    # Страницы с собаками
+    path('dogs/', dog_list, name='dog_list'),
+    path('dogs/<int:dog_id>/', dog_detail, name='dog_detail'),
+    path('dogs/category/<str:category>/', dogs_by_category, name='dogs_by_category'),
+
     # React-страницы
     path('contacts/', index_view, name='contacts'),
     path('about/', index_view, name='about'),
-    path('favorite-places/', index_view, name='favorite_places'),  # Добавлен новый маршрут
+    path('favorite-places/', index_view, name='favorite_places'),
 
     # Главная страница
     path('', index_view, name='home'),
@@ -72,3 +84,4 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

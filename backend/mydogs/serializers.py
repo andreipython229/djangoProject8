@@ -22,6 +22,7 @@ class MydogsSerializer(serializers.ModelSerializer):
     )
     category_data = CategorySerializer(source='category', read_only=True)
     owner = serializers.ReadOnlyField(source='owner.username')
+    image = serializers.ImageField(read_only=True)
 
     class Meta:
         model = Mydogs
@@ -34,8 +35,9 @@ class MydogsSerializer(serializers.ModelSerializer):
             'category',
             'category_data',
             'owner',
+            'image',
         ]
-        read_only_fields = ['id', 'category_data', 'owner']
+        read_only_fields = ['id', 'category_data', 'owner', 'image']
 
     def validate_age(self, value):
         if value < 0:
