@@ -1,14 +1,10 @@
-// Home.js
-import React from "react";
+import React from 'react';
+import WelcomeSection from '../components/WelcomeSection';
 
-function Home() {
+const Home = () => {
   return (
-    <div className="text-center mt-4">
-      <p className="text-muted fs-5">
-        Это главная страница. Навигация доступна сверху.
-      </p>
-    </div>
+    <WelcomeSection />
   );
-}
+};
 
 export default Home;

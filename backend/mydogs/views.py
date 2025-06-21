@@ -57,23 +57,26 @@ def csp_report_view(request):
         return JsonResponse({'status': 'CSP report received'}, status=200)
     return JsonResponse({'error': 'Invalid request'}, status=405)
 
-# Главная страница
-@with_nonce
+import secrets
+
+def generate_nonce():
+    return secrets.token_hex(12)
+
 def index_view(request):
-    return render(request, 'index.html', {
-        'nonce': request.nonce
-    })
+    # Используем nonce из CSPMiddleware
+    nonce = getattr(request, 'csp_nonce', '')
+    
+    if request.path == '/':
+        template_name = 'index.html'
+    else:
+        template_name = 'base_react.html'
+        
+    return render(request, template_name, {'nonce': nonce})
 
 # Регистрация пользователя
 @csrf_exempt
-@with_nonce
 def register(request):
-    if request.method == "GET":
-        return render(request, 'mydogs/register.html', {
-            'exception_notes': 'Нет ошибок',
-            'nonce': request.nonce
-        })
-    elif request.method == "POST":
+    if request.method == "POST":
         try:
             data = json.loads(request.body)
             username = data.get('username')
@@ -90,10 +93,14 @@ def register(request):
             user.save()
 
             return JsonResponse({'message': 'Пользователь успешно зарегистрирован'}, status=201)
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Неверный формат JSON'}, status=400)
         except Exception as e:
-            return JsonResponse({'error': f'Ошибка: {str(e)}'}, status=400)
-    else:
-        return JsonResponse({'error': 'Недопустимый метод'}, status=405)
+            return JsonResponse({'error': f'Ошибка: {str(e)}'}, status=500)
+
+    # Для GET-запросов и всех остальных случаев
+    nonce = getattr(request, 'csp_nonce', '')
+    return render(request, 'mydogs/register.html', {'nonce': nonce})
 
 # Вход пользователя — с поддержкой messages и nonce
 @csrf_protect
@@ -172,7 +179,7 @@ class MydogsProtectedView(APIView):
 class ClientViewSet(viewsets.ModelViewSet):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()

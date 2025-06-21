@@ -1,27 +1,33 @@
-
 .about {
-  min-height: 100vh;
-  padding: 2rem;
-  background-color: #000; /* Фон, если нужно */
+  padding: 2rem 1rem; /* Уменьшил боковые отступы */
+  background-color: #f8f9fa; /* Сделал фон светлым для контраста */
+  color: #333;
+  text-align: center; /* Центрируем весь контент */
 }
 
 .about-title {
-  font-size: 2rem; /* стандартный размер */
-  color: white;
+  font-size: 2.5rem; /* Увеличил заголовок */
+  color: #343a40; /* Темный цвет для заголовка */
   margin-bottom: 2rem;
 }
 
 .about-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
+  margin-bottom: 2rem; /* Добавил отступ снизу */
 }
 
 .about-image {
   max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  max-height: 500px; /* Ограничил максимальную высоту */
+  border-radius: 0.5rem; /* Сделал скругление более стандартным */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  object-fit: cover; /* Чтобы изображение заполняло область, сохраняя пропорции */
+}
+
+/* Добавим контейнер для текста, чтобы он не растягивался на всю ширину */
+.about-text-container {
+  max-width: 800px;
+  margin: 0 auto; /* Центрирование */
+  text-align: left; /* Текст внутри контейнера - по левому краю */
+  font-size: 1.1rem;
+  line-height: 1.6;
 }

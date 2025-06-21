@@ -13814,3 +13814,193 @@ INFO 2025-06-13 16:58:19,525 autoreload 15308 11636 C:\Users\Andrei2\PycharmProj
 INFO 2025-06-13 16:58:20,657 autoreload 29372 56556 Watching for file changes with StatReloader
 INFO 2025-06-13 17:13:45,760 autoreload 29372 56556 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\models.py changed, reloading.
 INFO 2025-06-13 17:13:47,715 autoreload 71272 40852 Watching for file changes with StatReloader
+INFO 2025-06-16 18:05:51,383 autoreload 13684 5068 Watching for file changes with StatReloader
+INFO 2025-06-16 18:47:44,721 autoreload 10012 9844 Watching for file changes with StatReloader
+WARNING 2025-06-16 18:50:58,596 log 10012 8848 Not Found: /api/clients/
+WARNING 2025-06-16 18:51:05,960 log 10012 8848 Not Found: /api/clients/
+INFO 2025-06-16 18:52:01,589 autoreload 18956 6444 Watching for file changes with StatReloader
+WARNING 2025-06-16 18:52:47,348 log 18956 17796 Not Found: /api/clients/
+WARNING 2025-06-16 19:04:09,999 log 18956 7736 Not Found: /api/v1/clients/
+INFO 2025-06-16 19:05:44,081 autoreload 18956 6444 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-06-16 19:05:45,199 autoreload 12388 7932 Watching for file changes with StatReloader
+WARNING 2025-06-16 19:07:41,309 log 12388 18204 Unauthorized: /api/v1/clients/
+INFO 2025-06-16 19:21:02,591 autoreload 12388 7932 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-16 19:21:03,707 autoreload 16584 9876 Watching for file changes with StatReloader
+INFO 2025-06-16 19:44:17,515 autoreload 13608 13668 Watching for file changes with StatReloader
+INFO 2025-06-16 20:05:00,707 autoreload 19920 19956 Watching for file changes with StatReloader
+INFO 2025-06-21 09:44:54,732 autoreload 65432 23708 Watching for file changes with StatReloader
+INFO 2025-06-21 10:04:57,844 autoreload 46084 26924 Watching for file changes with StatReloader
+INFO 2025-06-21 10:18:59,089 autoreload 63092 55440 Watching for file changes with StatReloader
+INFO 2025-06-21 10:35:31,271 autoreload 19072 21256 Watching for file changes with StatReloader
+INFO 2025-06-21 10:41:49,917 autoreload 19072 21256 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-21 10:41:51,894 autoreload 61524 26460 Watching for file changes with StatReloader
+INFO 2025-06-21 10:55:00,575 autoreload 25632 29736 Watching for file changes with StatReloader
+INFO 2025-06-21 11:00:18,985 autoreload 59040 45688 Watching for file changes with StatReloader
+INFO 2025-06-21 11:19:29,468 autoreload 42176 66180 Watching for file changes with StatReloader
+INFO 2025-06-21 11:23:59,299 autoreload 42176 66180 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-21 11:24:01,008 autoreload 28064 50916 Watching for file changes with StatReloader
+INFO 2025-06-21 11:26:53,198 autoreload 40940 43576 Watching for file changes with StatReloader
+INFO 2025-06-21 11:30:58,936 autoreload 40940 43576 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-06-21 11:31:01,374 autoreload 14984 19380 Watching for file changes with StatReloader
+INFO 2025-06-21 11:57:23,042 autoreload 40628 21380 Watching for file changes with StatReloader
+INFO 2025-06-21 12:12:43,950 autoreload 52536 56292 Watching for file changes with StatReloader
+INFO 2025-06-21 12:13:28,342 autoreload 31032 63008 Watching for file changes with StatReloader
+INFO 2025-06-21 12:20:29,863 autoreload 63976 53708 Watching for file changes with StatReloader
+INFO 2025-06-21 12:26:40,321 autoreload 39396 55548 Watching for file changes with StatReloader
+INFO 2025-06-21 12:36:56,373 autoreload 58232 59964 Watching for file changes with StatReloader
+WARNING 2025-06-21 12:38:40,496 log 58232 13360 Not Found: /favicon.ico
+INFO 2025-06-21 13:05:24,145 autoreload 60908 49292 Watching for file changes with StatReloader
+WARNING 2025-06-21 13:25:34,373 log 60908 55580 Bad Request: /register/
+WARNING 2025-06-21 13:25:34,441 log 60908 55580 Not Found: /favicon.ico
+INFO 2025-06-21 13:27:58,604 autoreload 60908 49292 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-21 13:28:00,923 autoreload 28900 41480 Watching for file changes with StatReloader
+INFO 2025-06-21 13:30:10,542 autoreload 24396 66720 Watching for file changes with StatReloader
+WARNING 2025-06-21 13:31:44,626 log 24396 4164 Bad Request: /register/
+WARNING 2025-06-21 13:33:13,165 log 24396 23172 Not Found: /favicon.ico
+INFO 2025-06-21 13:40:41,923 autoreload 57428 8320 Watching for file changes with StatReloader
+INFO 2025-06-21 13:46:48,287 autoreload 36812 11700 Watching for file changes with StatReloader
+INFO 2025-06-21 13:57:21,771 autoreload 46684 60688 Watching for file changes with StatReloader
+INFO 2025-06-21 14:00:36,354 autoreload 46684 60688 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\templatetags\react_bundle.py changed, reloading.
+INFO 2025-06-21 14:00:37,489 autoreload 13724 12856 Watching for file changes with StatReloader
+WARNING 2025-06-21 14:25:47,101 log 13724 22372 Not Found: /favicon.ico
+INFO 2025-06-21 14:29:31,354 autoreload 26656 37360 Watching for file changes with StatReloader
+INFO 2025-06-21 14:33:16,131 autoreload 54228 27968 Watching for file changes with StatReloader
+ERROR 2025-06-21 14:33:21,588 log 54228 31836 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\library.py", line 352, in parse_bits
+    unhandled_params.pop(0)
+    ~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py", line 74, in index_view
+    return render(request, template_name, {'nonce': nonce})
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+                   ~~~~~~~~~~^
+        parser,
+        ^^^^^^^
+    ...<8 lines>...
+        function_name,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\library.py", line 355, in parse_bits
+    raise TemplateSyntaxError(
+        "'%s' received too many positional arguments" % name
+    )
+django.template.exceptions.TemplateSyntaxError: 'get_react_bundle' received too many positional arguments
+WARNING 2025-06-21 14:33:21,983 log 54228 31836 Not Found: /favicon.ico
+ERROR 2025-06-21 14:33:31,825 log 54228 31836 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\library.py", line 352, in parse_bits
+    unhandled_params.pop(0)
+    ~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py", line 74, in index_view
+    return render(request, template_name, {'nonce': nonce})
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+                   ~~~~~~~~~~^
+        parser,
+        ^^^^^^^
+    ...<8 lines>...
+        function_name,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\template\library.py", line 355, in parse_bits
+    raise TemplateSyntaxError(
+        "'%s' received too many positional arguments" % name
+    )
+django.template.exceptions.TemplateSyntaxError: 'get_react_bundle' received too many positional arguments
+INFO 2025-06-21 14:35:48,226 autoreload 24668 61372 Watching for file changes with StatReloader
+INFO 2025-06-21 14:39:56,473 autoreload 39536 61132 Watching for file changes with StatReloader
+INFO 2025-06-21 14:41:49,349 autoreload 39536 61132 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-21 14:41:50,702 autoreload 72624 5456 Watching for file changes with StatReloader
+INFO 2025-06-21 14:42:22,728 autoreload 72624 5456 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-21 14:42:23,739 autoreload 25672 69596 Watching for file changes with StatReloader
+INFO 2025-06-21 14:43:22,543 autoreload 64180 33956 Watching for file changes with StatReloader
+INFO 2025-06-21 14:45:41,391 autoreload 64180 33956 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-06-21 14:45:42,411 autoreload 33016 43828 Watching for file changes with StatReloader
+INFO 2025-06-21 14:45:56,272 autoreload 33016 43828 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-06-21 14:45:58,972 autoreload 61236 10332 Watching for file changes with StatReloader
+INFO 2025-06-21 14:49:20,978 autoreload 60052 24036 Watching for file changes with StatReloader

@@ -183,15 +183,11 @@ CSP_SCRIPT_SRC = (
     "'self'",
     "https://cdn.jsdelivr.net",
     "http://localhost:3000",
-    "'nonce'",
-    # "'unsafe-inline'",  # Убрал для безопасности и чтобы nonce работал правильно
 )
 
 CSP_STYLE_SRC = (
     "'self'",
     "https://cdn.jsdelivr.net",
-    "'nonce'",
-    # "'unsafe-inline'",
 )
 
 CSP_IMG_SRC = (
@@ -211,7 +207,7 @@ CSP_CONNECT_SRC = (
     "http://127.0.0.1:8000",
 )
 
-CSP_INCLUDE_NONE_IN = ['script-src', 'style-src']
+CSP_INCLUDE_NONCE_IN = ['script-src', 'style-src']
 
 API_BASE_URL = "http://127.0.0.1:8000"
 

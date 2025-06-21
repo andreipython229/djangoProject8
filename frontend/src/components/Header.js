@@ -1,47 +1,63 @@
 // src/components/Header.js
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
-function Header() {
-  const navigate = useNavigate();
-  const token = localStorage.getItem('access');
-  const username = localStorage.getItem('username');
-
-  const handleLogout = () => {
-    localStorage.removeItem('access');
-    localStorage.removeItem('refresh');
-    localStorage.removeItem('username');
-    navigate('/login');
-  };
-
+const Header = () => {
   return (
-    <header className="bg-dark text-white py-3 shadow">
-      <div className="container d-flex justify-content-between align-items-center">
-        <nav className="d-flex gap-3">
-          <Link to="/" className="text-white text-decoration-none fw-bold">Главная</Link>
-          <Link to="/mydogs" className="text-white text-decoration-none">Мои Собаки</Link>
-          <Link to="/favorite-places" className="text-white text-decoration-none">Любимые места</Link>
-          {token && (
-            <Link to="/cart" className="text-white text-decoration-none">Корзина</Link>
-          )}
-        </nav>
-
-        <div className="d-flex gap-2 align-items-center">
-          {token ? (
-            <>
-              <span className="small">Привет, {username || 'пользователь'}!</span>
-              <button onClick={handleLogout} className="btn btn-sm btn-danger">Выйти</button>
-            </>
-          ) : (
-            <>
-              <Link to="/login" className="btn btn-sm btn-primary">Войти</Link>
-              <Link to="/register" className="btn btn-sm btn-success">Регистрация</Link>
-            </>
-          )}
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">BestDogs</Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/">
+                Главная
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/mydogs">
+                Мои Собаки
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/favorite-places">
+                Любимые места
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/about">
+                О нас
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/contacts">
+                Контакты
+              </NavLink>
+            </li>
+          </ul>
+          <div className="d-flex">
+            <Link to="/login" className="btn btn-primary me-2">
+              Войти
+            </Link>
+            <Link to="/register" className="btn btn-success">
+              Регистрация
+            </Link>
+          </div>
         </div>
       </div>
-    </header>
+    </nav>
   );
-}
+};
 
 export default Header;

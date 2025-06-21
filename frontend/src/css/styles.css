@@ -102,3 +102,13 @@ details code {
     padding: 1rem;
     flex-wrap: wrap;
 }
+
+/* Стили для навигации, кнопок и т.д. */
+.navbar {
+    background-color: #333;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}

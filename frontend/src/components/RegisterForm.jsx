@@ -1,59 +1,79 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const RegisterForm = ({ onLogin }) => {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = async () => {
-    if (!name || !phone) {
-      setError('Пожалуйста, заполните все поля');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!username || !password) {
+      setError('Имя пользователя и пароль обязательны');
       return;
     }
+    setError('');
 
     try {
-      const response = await fetch('/api/clients/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ name, phone })
+      await axios.post('/api/register/', {
+        username,
+        password,
+        email
       });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log('Успешно зарегистрирован клиент:', data);
-        onLogin(); // вход после успешной регистрации
-      } else {
-        const errorData = await response.json();
-        setError(`Ошибка: ${errorData.detail || 'не удалось зарегистрировать'}`);
-      }
-    } catch (error) {
-      console.error('Ошибка при отправке запроса:', error);
-      setError('Сервер недоступен');
+      // Опционально: автоматический вход после регистрации или редирект на страницу входа
+      alert('Регистрация прошла успешно! Теперь вы можете войти.');
+    } catch (err) {
+      setError(err.response?.data?.error || 'Ошибка при регистрации');
     }
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        className="form-control my-2"
-        placeholder="Client name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="text"
-        className="form-control my-2"
-        placeholder="Client phone"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-      />
-      <button className="btn btn-success" onClick={handleLogin}>
-        Login
-      </button>
-      {error && <div className="alert alert-danger mt-2">{error}</div>}
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="card">
+            <div className="card-body">
+              <h3 className="card-title text-center">Регистрация</h3>
+              <form onSubmit={handleSubmit}>
+                {error && <div className="alert alert-danger">{error}</div>}
+                <div className="mb-3">
+                  <label className="form-label">Имя пользователя</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Email</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Пароль</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary w-100">
+                  Зарегистрироваться
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
