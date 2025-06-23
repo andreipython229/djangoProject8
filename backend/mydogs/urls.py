@@ -17,7 +17,8 @@ router.register(r'categories', CategoryViewSet)
 router.register(r'mydogs', MydogsViewSet)
 router.register(r'places', PlaceViewSet)
 
-urlpatterns = [
+# Собираем URL-паттерны для API v1
+api_v1_patterns = [
     # ViewSets
     path('', include(router.urls)),
 
@@ -28,3 +29,5 @@ urlpatterns = [
     # Другие API-эндпоинты
     path('mydogslist/', MydogsAPIList.as_view(), name='mydogs_list'),
 ]
+
+urlpatterns = api_v1_patterns

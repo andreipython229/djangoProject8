@@ -31,7 +31,7 @@ const Header = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/favorite-places">
+              <NavLink className="nav-link" to="/places">
                 Любимые места
               </NavLink>
             </li>

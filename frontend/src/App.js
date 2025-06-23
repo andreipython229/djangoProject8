@@ -2,6 +2,7 @@
 import React from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer'; // <-- добавили импорт
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -10,8 +11,9 @@ import MyDogs from './pages/MyDogs';
 import FavoritePlaces from './pages/FavoritePlaces';
 import NotFound from './pages/NotFound';
 import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
 import Profile from './pages/Profile';
-import Cart from './components/Cart'; // ✅ добавили
+import Cart from './components/Cart';
 
 function App() {
   const navigate = useNavigate();
@@ -30,13 +32,15 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/mydogs" element={<MyDogs />} />
-          <Route path="/favorite-places" element={<FavoritePlaces />} />
+          <Route path="/places" element={<FavoritePlaces />} />
           <Route path="/login" element={<LoginForm onLoginSuccess={handleLoginSuccess} />} />
+          <Route path="/register" element={<RegisterForm />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/cart" element={<Cart />} /> {/* ✅ добавили */}
+          <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
+      <Footer /> {/* <-- Footer теперь будет отображаться на всех страницах */}
     </>
   );
 }

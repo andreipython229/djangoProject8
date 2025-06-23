@@ -14004,3 +14004,354 @@ INFO 2025-06-21 14:45:42,411 autoreload 33016 43828 Watching for file changes wi
 INFO 2025-06-21 14:45:56,272 autoreload 33016 43828 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
 INFO 2025-06-21 14:45:58,972 autoreload 61236 10332 Watching for file changes with StatReloader
 INFO 2025-06-21 14:49:20,978 autoreload 60052 24036 Watching for file changes with StatReloader
+INFO 2025-06-21 18:00:25,088 autoreload 6208 53596 Watching for file changes with StatReloader
+INFO 2025-06-21 18:18:36,255 autoreload 28992 18884 Watching for file changes with StatReloader
+WARNING 2025-06-21 18:22:16,367 log 28992 24160 Not Found: /api/token/
+WARNING 2025-06-21 18:22:58,743 log 28992 24160 Not Found: /api/token/
+WARNING 2025-06-21 18:22:59,932 log 28992 24160 Not Found: /api/token/
+WARNING 2025-06-21 18:23:00,286 log 28992 24160 Not Found: /api/token/
+WARNING 2025-06-21 18:23:00,542 log 28992 24160 Not Found: /api/token/
+INFO 2025-06-21 18:51:42,357 autoreload 25108 53132 Watching for file changes with StatReloader
+WARNING 2025-06-21 18:54:13,109 log 25108 69192 Not Found: /api/v1/places/
+WARNING 2025-06-21 18:54:22,541 log 25108 69192 Not Found: /api/v1/places/
+INFO 2025-06-21 19:25:09,295 autoreload 19668 68724 Watching for file changes with StatReloader
+WARNING 2025-06-21 19:25:37,374 log 19668 60092 Not Found: /api/v1/places/
+INFO 2025-06-21 19:39:03,500 autoreload 19868 20688 Watching for file changes with StatReloader
+WARNING 2025-06-21 19:47:11,633 log 19868 21332 Not Found: /api/v1/places/
+INFO 2025-06-21 19:52:23,455 autoreload 19868 20688 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-06-21 19:53:06,156 autoreload 38004 25380 Watching for file changes with StatReloader
+INFO 2025-06-22 10:11:37,868 autoreload 22276 6412 Watching for file changes with StatReloader
+INFO 2025-06-22 10:20:46,931 autoreload 22276 6412 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-22 10:20:53,099 autoreload 8640 9480 Watching for file changes with StatReloader
+INFO 2025-06-22 10:22:25,868 autoreload 8640 9480 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-22 10:22:31,255 autoreload 28492 26800 Watching for file changes with StatReloader
+WARNING 2025-06-22 10:26:44,740 log 28492 10600 Not Found: /favicon.ico
+INFO 2025-06-22 10:39:06,024 autoreload 12432 43684 Watching for file changes with StatReloader
+WARNING 2025-06-22 10:39:39,713 log 12432 40392 Not Found: /api/v1/places/
+WARNING 2025-06-22 10:43:01,891 log 12432 40392 Not Found: /api/v1/places/
+WARNING 2025-06-22 10:44:20,913 log 12432 40392 Not Found: /api/v1/places/
+INFO 2025-06-22 10:53:27,839 autoreload 35328 31636 Watching for file changes with StatReloader
+INFO 2025-06-22 11:03:47,245 autoreload 51852 6312 Watching for file changes with StatReloader
+WARNING 2025-06-22 11:04:15,387 log 51852 7500 Not Found: /api/v1/places/
+WARNING 2025-06-22 11:04:32,883 log 51852 1476 Not Found: /api/v1/places/
+INFO 2025-06-22 11:11:05,824 autoreload 47696 46472 Watching for file changes with StatReloader
+INFO 2025-06-22 11:22:33,570 autoreload 29516 908 Watching for file changes with StatReloader
+INFO 2025-06-22 11:30:09,166 autoreload 34484 4948 Watching for file changes with StatReloader
+WARNING 2025-06-22 11:31:20,850 log 34484 38484 Not Found: /favicon.ico
+WARNING 2025-06-22 11:32:54,442 log 34484 23508 Not Found: /api/clients/
+WARNING 2025-06-22 11:35:04,822 log 34484 23508 Not Found: /api/clients/
+INFO 2025-06-22 12:06:32,592 autoreload 56872 60252 Watching for file changes with StatReloader
+WARNING 2025-06-22 12:08:38,213 log 56872 33848 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:38,379 log 56872 52952 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:38,382 log 56872 23232 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:39,655 log 56872 33848 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:40,035 log 56872 60792 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:39,989 log 56872 52952 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:40,308 log 56872 47936 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:40,339 log 56872 45584 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:40,452 log 56872 23232 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:40,876 log 56872 33848 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:41,036 log 56872 60792 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:41,163 log 56872 52952 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:41,339 log 56872 47936 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:41,426 log 56872 23232 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:41,540 log 56872 45584 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:41,867 log 56872 45584 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:42,014 log 56872 60792 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:42,080 log 56872 47936 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:42,174 log 56872 52952 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:42,279 log 56872 23232 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:42,348 log 56872 33848 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:42,522 log 56872 45584 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:43,298 log 56872 45584 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:44,410 log 56872 45584 Not Found: /api/v1/register/
+WARNING 2025-06-22 12:08:47,721 log 56872 45584 Not Found: /api/v1/register/
+INFO 2025-06-22 12:18:31,282 autoreload 56872 60252 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-06-22 12:18:39,267 autoreload 62836 71532 Watching for file changes with StatReloader
+INFO 2025-06-22 12:20:21,097 autoreload 21564 62484 Watching for file changes with StatReloader
+WARNING 2025-06-22 12:21:27,807 log 21564 22736 Bad Request: /api/v1/register/
+INFO 2025-06-22 12:24:26,684 autoreload 21564 62484 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-22 12:24:27,760 autoreload 49224 70100 Watching for file changes with StatReloader
+INFO 2025-06-22 12:33:59,761 autoreload 49224 70100 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-22 12:34:00,727 autoreload 67276 26568 Watching for file changes with StatReloader
+ERROR 2025-06-22 12:35:50,798 log 67276 15800 Internal Server Error: /api/v1/places/
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py", line 202, in get_queryset
+    return Place.objects.filter(user=self.request.user)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1768, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: address, created_at, description, id, name
+INFO 2025-06-22 12:40:10,407 autoreload 67768 52388 Watching for file changes with StatReloader
+ERROR 2025-06-22 12:40:21,265 log 67768 16104 Internal Server Error: /api/v1/places/
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py", line 202, in get_queryset
+    return Place.objects.filter(user=self.request.user)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1768, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: address, created_at, description, id, name
+ERROR 2025-06-22 12:40:50,861 log 67768 16104 Internal Server Error: /api/v1/places/
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py", line 202, in get_queryset
+    return Place.objects.filter(user=self.request.user)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1768, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: address, created_at, description, id, name
+ERROR 2025-06-22 12:41:36,436 log 67768 16104 Internal Server Error: /api/v1/places/
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py", line 202, in get_queryset
+    return Place.objects.filter(user=self.request.user)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1303, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1768, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: address, created_at, description, id, name
+INFO 2025-06-22 12:45:00,614 autoreload 67768 52388 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\models.py changed, reloading.
+INFO 2025-06-22 12:45:01,702 autoreload 32496 51852 Watching for file changes with StatReloader
+INFO 2025-06-23 14:06:21,793 autoreload 34408 28356 Watching for file changes with StatReloader
+WARNING 2025-06-23 14:06:34,927 log 34408 19744 Unauthorized: /api/v1/places/
+WARNING 2025-06-23 14:19:34,346 log 34408 50364 Not Found: /favicon.ico
+INFO 2025-06-23 15:43:53,768 autoreload 34408 28356 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\models.py changed, reloading.
+INFO 2025-06-23 15:43:56,933 autoreload 70236 52552 Watching for file changes with StatReloader
+WARNING 2025-06-23 16:07:00,238 log 70236 61004 Unauthorized: /api/v1/places/
+INFO 2025-06-23 16:23:41,724 autoreload 70236 52552 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-23 16:23:44,234 autoreload 67444 42564 Watching for file changes with StatReloader
+WARNING 2025-06-23 16:25:58,568 log 67444 48524 Unauthorized: /api/token/
+INFO 2025-06-23 16:27:44,673 autoreload 67444 42564 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-23 16:27:46,818 autoreload 9168 16096 Watching for file changes with StatReloader
+INFO 2025-06-23 16:28:05,339 autoreload 9168 16096 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-06-23 16:28:07,054 autoreload 4624 11196 Watching for file changes with StatReloader
+INFO 2025-06-23 16:28:22,721 autoreload 4624 11196 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-23 16:28:24,620 autoreload 34288 47980 Watching for file changes with StatReloader
+INFO 2025-06-23 16:31:19,733 autoreload 34288 47980 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-06-23 16:31:21,042 autoreload 36736 22124 Watching for file changes with StatReloader
+INFO 2025-06-23 16:47:54,247 autoreload 30100 53952 Watching for file changes with StatReloader
+INFO 2025-06-23 16:53:09,372 autoreload 30100 53952 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-06-23 16:53:10,621 autoreload 30668 44344 Watching for file changes with StatReloader
+INFO 2025-06-23 16:53:30,905 autoreload 30668 44344 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-06-23 16:53:31,936 autoreload 30208 36148 Watching for file changes with StatReloader
+INFO 2025-06-23 16:54:42,132 autoreload 30208 36148 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-23 16:54:43,222 autoreload 67184 68988 Watching for file changes with StatReloader
+INFO 2025-06-23 16:54:57,210 autoreload 67184 68988 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-06-23 16:54:58,383 autoreload 6444 57356 Watching for file changes with StatReloader
+INFO 2025-06-23 17:02:21,162 autoreload 18076 45388 Watching for file changes with StatReloader
+WARNING 2025-06-23 17:11:40,924 log 18076 58016 Not Found: /media/static/images/a629a148751349305bee9c1864120902_cropped
+WARNING 2025-06-23 17:51:40,478 log 18076 58968 Unauthorized: /api/v1/places/
+WARNING 2025-06-23 18:05:21,650 log 18076 23296 Unauthorized: /api/v1/places/

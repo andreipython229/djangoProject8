@@ -162,17 +162,13 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'frontend', 'build', 'static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend', 'build')
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Media files (for uploaded content)
+# Добавляем настройки для медиа-файлов
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -194,6 +190,8 @@ CSP_IMG_SRC = (
     "'self'",
     "data:",
     "http://localhost:3000",
+    "http://127.0.0.1:8000",
+    "*"
 )
 
 CSP_FONT_SRC = (

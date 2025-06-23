@@ -110,3 +110,14 @@ class DogParser:
                 continue
 
         logger.info(f"Всего сохранено собак: {saved_count}")
+
+if __name__ == "__main__":
+    import django
+    import os
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.djangoProject8.settings")
+    django.setup()
+
+    parser = DogParser()
+    dogs_data = parser.parse_dogs()
+    parser.save_dogs(dogs_data)
+    print("Парсинг завершён!")

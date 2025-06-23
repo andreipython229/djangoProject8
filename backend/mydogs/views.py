@@ -14,7 +14,7 @@ from django.utils.crypto import get_random_string
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 from rest_framework import generics, viewsets
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, BasePermission, SAFE_METHODS
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -189,9 +189,20 @@ class MydogsViewSet(viewsets.ModelViewSet):
     queryset = Mydogs.objects.all()
     serializer_class = MydogsSerializer
 
+class IsAdminOrReadOnly(BasePermission):
+    """
+    Разрешает чтение всем аутентифицированным пользователям,
+    а изменение только админам.
+    """
+    def has_permission(self, request, view):
+        if request.method in SAFE_METHODS:  # GET, HEAD, OPTIONS
+            return request.user and request.user.is_authenticated
+        return request.user and request.user.is_staff
+
 class PlaceViewSet(viewsets.ModelViewSet):
     queryset = Place.objects.all()
     serializer_class = PlaceSerializer
+    permission_classes = [IsAuthenticated, IsAdminOrReadOnly]
 
 # Страница с собаками (через API-запрос)
 @with_nonce

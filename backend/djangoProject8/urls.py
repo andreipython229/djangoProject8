@@ -16,7 +16,7 @@ Including another URLconf
 """
 import os
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.conf import settings
@@ -27,7 +27,8 @@ from mydogs.views import (
     logout_view,
     dog_list,
     dog_detail,
-    dogs_by_category
+    dogs_by_category,
+    places_view
 )
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -46,17 +47,43 @@ def redirect_places(request):
     return redirect('/api/v1/places/')
 
 urlpatterns = [
-    # 1. Админка
+    # Админка
     path('admin/', admin.site.urls),
 
-    # 2. API: все, что начинается с /api/, будет искаться в mydogs.urls
-    path('api/', include('mydogs.urls')),
-    
-    # 3. JWT-токены (если они вам еще нужны отдельно)
-    # path('api/token/', ...), 
+    # JWT аутентификация
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 
-    # 4. Все остальные запросы отправляются в React
-    re_path(r'^(?!api/|admin/).*$', index_view, name='index'),
+    # Редирект со старого пути
+    path('api/places/', redirect_places),
+
+    # API v1
+    path('api/v1/', include('mydogs.urls')),
+
+    # Страницы с собаками
+    path('dogs/', dog_list, name='dog_list'),
+    path('dogs/<int:dog_id>/', dog_detail, name='dog_detail'),
+    path('dogs/category/<str:category>/', dogs_by_category, name='dogs_by_category'),
+
+    # Страница Places
+    path('places/', places_view, name='places'),
+
+    # React-страницы
+    path('contacts/', index_view, name='contacts'),
+    path('about/', index_view, name='about'),
+    path('favorite-places/', index_view, name='favorite_places'),
+
+    # Главная страница
+    path('', index_view, name='home'),
+
+    # DevTools путь
+    path('.well-known/appspecific/com.chrome.devtools.json', devtools_json),
+
+    # Аутентификация
+    path('register/', register, name='register_page'),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
 ]
 
 if settings.DEBUG:

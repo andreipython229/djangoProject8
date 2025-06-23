@@ -18,7 +18,7 @@ import '../css/WelcomeSection.css'; // Будет создан позже
 // Либо будем использовать заглушку. Давайте предположим, что `window.staticUrl` будет доступен.
 
 function WelcomeSection() {
-  const niHaoDogImage = window.staticUrl ? `${window.staticUrl}img/IMG_20231101_220024_kopiya.jpg` : '/static/img/IMG_20231101_220024_kopiya.jpg';
+  const niHaoDogImage = '/static/img/IMG_20231101_220024_kopiya.jpg';
 
   return (
     <div className="welcome-container">
