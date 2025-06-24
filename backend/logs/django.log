@@ -14355,3 +14355,4 @@ INFO 2025-06-23 17:02:21,162 autoreload 18076 45388 Watching for file changes wi
 WARNING 2025-06-23 17:11:40,924 log 18076 58016 Not Found: /media/static/images/a629a148751349305bee9c1864120902_cropped
 WARNING 2025-06-23 17:51:40,478 log 18076 58968 Unauthorized: /api/v1/places/
 WARNING 2025-06-23 18:05:21,650 log 18076 23296 Unauthorized: /api/v1/places/
+INFO 2025-06-24 17:25:24,463 autoreload 44264 18236 Watching for file changes with StatReloader
