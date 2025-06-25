@@ -56,6 +56,10 @@ class MydogsSerializer(serializers.ModelSerializer):
 
 
 class PlaceSerializer(serializers.ModelSerializer):
+    mydog_name = serializers.CharField(source='mydog.name', read_only=True)
+    mydog_age = serializers.IntegerField(source='mydog.age', read_only=True)
+    mydog_image = serializers.ImageField(source='mydog.image', read_only=True)
+
     class Meta:
         model = Place
         fields = '__all__'

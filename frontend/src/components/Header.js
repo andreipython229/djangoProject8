@@ -26,31 +26,31 @@ const Header = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/mydogs">
+              <NavLink className="nav-link" to="/mydogs/">
                 Мои Собаки
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/places">
+              <NavLink className="nav-link" to="/places/">
                 Любимые места
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
+              <NavLink className="nav-link" to="/about/">
                 О нас
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/contacts">
+              <NavLink className="nav-link" to="/contacts/">
                 Контакты
               </NavLink>
             </li>
           </ul>
           <div className="d-flex">
-            <Link to="/login" className="btn btn-primary me-2">
+            <Link to="/login/" className="btn btn-primary me-2">
               Войти
             </Link>
-            <Link to="/register" className="btn btn-success">
+            <Link to="/register/" className="btn btn-success">
               Регистрация
             </Link>
           </div>

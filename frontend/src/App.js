@@ -29,14 +29,14 @@ function App() {
       <div className="container mt-4">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/mydogs" element={<MyDogs />} />
-          <Route path="/places" element={<FavoritePlaces />} />
-          <Route path="/login" element={<LoginForm onLoginSuccess={handleLoginSuccess} />} />
-          <Route path="/register" element={<RegisterForm />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/about/" element={<About />} />
+          <Route path="/contacts/" element={<Contacts />} />
+          <Route path="/mydogs/" element={<MyDogs />} />
+          <Route path="/places/" element={<FavoritePlaces />} />
+          <Route path="/login/" element={<LoginForm onLoginSuccess={handleLoginSuccess} />} />
+          <Route path="/register/" element={<RegisterForm />} />
+          <Route path="/profile/" element={<Profile />} />
+          <Route path="/cart/" element={<Cart />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

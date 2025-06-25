@@ -30,11 +30,13 @@ logger = logging.getLogger(__name__)
 
 # CSP middleware helpers
 def add_csp_header(response, nonce):
+    # Упрощенная политика для разработки, разрешающая 'unsafe-inline' для стилей и скриптов,
+    # что необходимо для React. Nonce больше не используется, чтобы избежать конфликтов.
     response['Content-Security-Policy'] = (
-        f"default-src 'self'; "
-        f"script-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
-        f"style-src 'self' 'nonce-{nonce}' https://cdn.jsdelivr.net; "
-        f"img-src 'self' data:;"
+        "default-src 'self'; "
+        "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+        "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+        "img-src 'self' data: http://127.0.0.1:8000;"
     )
     return response
 
@@ -231,9 +233,57 @@ def fetch_dogs(request):
 # --- ДОБАВЛЕНО: страница places ---
 @with_nonce
 def places_view(request):
-    return render(request, 'mydogs/places.html', {
-        'nonce': request.nonce
-    })
+    dogs = [
+        {
+            "name": "Motlik",
+            "age": 2,
+            "gender": "мальчик",
+            "image": "/media/static/images/photo_2024-10-28_23-03-43.jpg",
+            "place": "Парк Дружбы",
+            "description": "Большой парк для прогулок с собаками."
+        },
+        {
+            "name": "Djek",
+            "age": 2,
+            "gender": "мальчик",
+            "image": "/media/static/images/pexels-charlesdeluvio-1851164.jpg",
+            "place": "Кафе 'Лапка'",
+            "description": "Дружелюбное кафе, куда можно с питомцем."
+        },
+        {
+            "name": "Stomik",
+            "age": 1,
+            "gender": "мальчик",
+            "image": "/media/static/images/istockphoto-1482199015-1024x1024.jpg",
+            "place": "Площадка для выгула",
+            "description": "Огороженная площадка для активных игр."
+        },
+        {
+            "name": "Gerda",
+            "age": 3,
+            "gender": "девочка",
+            "image": "/media/static/images/a629a148751349305bee9c1864120902_cropped_510x340.webp",
+            "place": "Зоомагазин",
+            "description": "Магазин товаров для животных."
+        },
+        {
+            "name": "Greta",
+            "age": 1,
+            "gender": "девочка",
+            "image": "/media/static/images/cbbe299229e7d5c49d378287632d4deb_cropped_666x444.webp",
+            "place": "Ветклиника",
+            "description": "Современная ветеринарная клиника."
+        },
+        {
+            "name": "Djuai",
+            "age": 1,
+            "gender": "девочка",
+            "image": "/media/static/images/d5a2bde913a14c179a94c172e5afbbb5.jpg",
+            "place": "Озеро Счастья",
+            "description": "Живописное озеро для прогулок."
+        }
+    ]
+    return render(request, 'mydogs/places.html', {'dogs': dogs, 'nonce': getattr(request, 'csp_nonce', '')})
 
 # Функции для отображения списка собак
 @with_nonce

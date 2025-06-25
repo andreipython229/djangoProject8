@@ -26,7 +26,7 @@ const Navbar = ({ loggedIn, onRegisterClick, onLogoutClick }) => {
               <a className="nav-link active text-light" href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" href="/api/places/">Favorite places</a>
+              <a className="nav-link text-light" href="/places/">Favorite places</a>
             </li>
           </ul>
           <ul className="navbar-nav">

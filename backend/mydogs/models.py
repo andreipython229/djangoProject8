@@ -28,6 +28,7 @@ class Mydogs(models.Model):
 
 class Place(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='places')
+    mydog = models.ForeignKey('Mydogs', on_delete=models.CASCADE, related_name='favorite_places', null=True, blank=True)
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=255, blank=True)
     description = models.TextField(blank=True)

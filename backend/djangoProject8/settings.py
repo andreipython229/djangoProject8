@@ -32,7 +32,8 @@ INTERNAL_IPS = ['127.0.0.1']
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "http://127.0.0.1:8000",
+    "http://127.0.0.1:3000",
+    "http://192.168.100.20:3000",
 ]
 CORS_ALLOW_CREDENTIALS = True
 
@@ -252,3 +253,5 @@ LOGGING = {
 }
 
 print(f"BASE_DIR: {BASE_DIR}")
+
+APPEND_SLASH = True
