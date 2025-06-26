@@ -8,8 +8,10 @@ const Contacts = () => {
         Свяжитесь с нами по любым вопросам, связанным с нашими собаками.
       </p>
       <div className="text-md text-gray-600 space-y-2">
-        <p>📞 Телефон: +7 (999) 123-45-67</p>
-        <p>📧 Email: info@dogshop.ru</p>
+        <p>📞 Телефон: +375291272646</p>
+        <p>
+          📧 Email: <a href="mailto:panbbbqv@gmail.com" className="text-blue-600 underline">panbbbqv@gmail.com</a>
+        </p>
         <p>📍 Адрес: г. Москва, ул. Лапкина, д. 42</p>
       </div>
     </div>
@@ -17,4 +19,3 @@ const Contacts = () => {
 };
 
 export default Contacts;
-

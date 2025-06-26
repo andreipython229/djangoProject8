@@ -8,26 +8,24 @@ export default function Footer() {
     <footer className="bg-dark text-white py-4 mt-5">
       <div className="container d-flex flex-column flex-sm-row justify-content-between align-items-center text-center text-sm-start">
         <p className="mb-2 mb-sm-0">© 2025 DogShop. Все права защищены.</p>
-
         <div className="d-flex flex-column flex-sm-row align-items-center gap-3">
           <div>
             <Link to="/contacts" className="text-white text-decoration-none me-2">Контакты</Link>
             <Link to="/about" className="text-white text-decoration-none me-2">О нас</Link>
             <Link to="/policy" className="text-white text-decoration-none">Политика</Link>
           </div>
-
           <div className="d-flex align-items-center gap-3">
-            <a href="tel:+79991234567" className="text-white" title="Позвонить">
-              <FaPhoneAlt />
+            <a href="tel:+375291272646" className="text-white" title="Позвонить">
+              <FaPhoneAlt style={{ color: 'white' }} />
             </a>
-            <a href="mailto:info@dogshop.ru" className="text-white" title="Email">
-              <FaEnvelope />
+            <a href="mailto:panbbbqv@gmail.com" className="text-white" title="Написать на Email">
+              <FaEnvelope style={{ color: 'white' }} />
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white" title="Instagram">
-              <FaInstagram />
+              <FaInstagram style={{ color: 'white' }} />
             </a>
             <a href="https://t.me/dogshop" target="_blank" rel="noopener noreferrer" className="text-white" title="Telegram">
-              <FaTelegramPlane />
+              <FaTelegramPlane style={{ color: 'white' }} />
             </a>
           </div>
         </div>

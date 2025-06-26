@@ -65,15 +65,8 @@ def generate_nonce():
     return secrets.token_hex(12)
 
 def index_view(request):
-    # Используем nonce из CSPMiddleware
     nonce = getattr(request, 'csp_nonce', '')
-    
-    if request.path == '/':
-        template_name = 'index.html'
-    else:
-        template_name = 'base_react.html'
-        
-    return render(request, template_name, {'nonce': nonce})
+    return render(request, 'base_react.html', {'nonce': nonce})
 
 # Регистрация пользователя
 @csrf_exempt

@@ -15745,3 +15745,56 @@ INFO 2025-06-25 17:05:49,826 autoreload 13708 25668 Watching for file changes wi
 INFO 2025-06-25 17:07:54,345 autoreload 75036 53052 Watching for file changes with StatReloader
 WARNING 2025-06-25 17:12:43,317 log 75036 62864 Not Found: /favicon.ico
 INFO 2025-06-25 17:21:38,198 autoreload 21492 82012 Watching for file changes with StatReloader
+INFO 2025-06-26 10:15:36,392 autoreload 75240 30488 Watching for file changes with StatReloader
+WARNING 2025-06-26 10:15:51,030 log 75240 78720 Unauthorized: /api/v1/places/
+WARNING 2025-06-26 10:16:20,149 log 75240 67848 Not Found: /favicon.ico
+WARNING 2025-06-26 10:16:55,836 log 75240 67848 Not Found: /places/index.html
+WARNING 2025-06-26 10:35:42,386 log 75240 48460 Not Found: /places/index.html
+WARNING 2025-06-26 10:35:47,974 log 75240 48460 Not Found: /places/index.html
+INFO 2025-06-26 10:36:25,103 autoreload 54208 2060 Watching for file changes with StatReloader
+WARNING 2025-06-26 10:36:35,862 log 54208 25160 Not Found: /favicon.ico
+WARNING 2025-06-26 10:36:40,330 log 54208 25160 Not Found: /places/index.html
+WARNING 2025-06-26 10:36:45,611 log 54208 25160 Not Found: /places/index.html
+INFO 2025-06-26 10:40:45,338 autoreload 54208 2060 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-26 10:40:47,108 autoreload 63868 74944 Watching for file changes with StatReloader
+INFO 2025-06-26 10:42:50,202 autoreload 21260 62476 Watching for file changes with StatReloader
+WARNING 2025-06-26 11:24:38,040 log 21260 75704 Unauthorized: /api/v1/places/
+INFO 2025-06-26 11:30:13,554 autoreload 12528 32832 Watching for file changes with StatReloader
+WARNING 2025-06-26 11:32:49,702 log 12528 62364 Not Found: /favicon.ico
+WARNING 2025-06-26 11:35:02,804 log 12528 47784 Unauthorized: /api/token/
+INFO 2025-06-26 11:37:25,083 autoreload 64108 81880 Watching for file changes with StatReloader
+WARNING 2025-06-26 11:44:52,666 log 64108 69732 Not Found: /favicon.ico
+WARNING 2025-06-26 11:47:06,899 log 64108 69732 Not Found: /mydogs/
+WARNING 2025-06-26 11:47:37,548 log 64108 49692 Not Found: /mydogs
+WARNING 2025-06-26 11:47:40,855 log 64108 49692 Not Found: /mydogs
+WARNING 2025-06-26 11:47:42,210 log 64108 49692 Not Found: /mydogs
+INFO 2025-06-26 12:19:57,166 autoreload 70524 10732 Watching for file changes with StatReloader
+WARNING 2025-06-26 12:22:03,252 log 70524 58764 Not Found: /favicon.ico
+WARNING 2025-06-26 12:22:38,804 log 70524 9768 Bad Request: /api/v1/register/
+WARNING 2025-06-26 12:23:13,160 log 70524 51684 Unauthorized: /api/token/
+INFO 2025-06-26 12:26:41,000 autoreload 3064 59508 Watching for file changes with StatReloader
+WARNING 2025-06-26 12:39:28,427 log 3064 10748 Not Found: /favicon.ico
+WARNING 2025-06-26 12:40:23,351 log 3064 69024 Not Found: /favicon.ico
+INFO 2025-06-26 12:41:06,436 autoreload 71856 8328 Watching for file changes with StatReloader
+INFO 2025-06-26 13:15:10,611 autoreload 77892 72300 Watching for file changes with StatReloader
+WARNING 2025-06-26 13:15:44,061 log 77892 61228 Not Found: /favicon.ico
+INFO 2025-06-26 13:21:11,819 autoreload 77892 72300 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-26 13:21:12,741 autoreload 44780 42028 Watching for file changes with StatReloader
+INFO 2025-06-26 13:22:14,019 autoreload 15024 24140 Watching for file changes with StatReloader
+WARNING 2025-06-26 13:22:40,102 log 15024 68328 Unauthorized: /api/v1/places/
+WARNING 2025-06-26 13:23:27,757 log 15024 68328 Not Found: /favicon.ico
+INFO 2025-06-26 13:37:07,540 autoreload 9144 36832 Watching for file changes with StatReloader
+INFO 2025-06-26 14:23:58,115 autoreload 16276 31324 Watching for file changes with StatReloader
+WARNING 2025-06-26 14:24:46,178 log 16276 15500 Unauthorized: /api/v1/places/
+WARNING 2025-06-26 14:25:26,883 log 16276 15500 Not Found: /favicon.ico
+INFO 2025-06-26 14:28:38,664 autoreload 68004 31004 Watching for file changes with StatReloader
+INFO 2025-06-26 14:46:11,672 autoreload 66272 20812 Watching for file changes with StatReloader
+INFO 2025-06-26 14:50:36,833 autoreload 21188 25104 Watching for file changes with StatReloader
+WARNING 2025-06-26 14:51:34,261 log 21188 35508 Not Found: /favicon.ico
+INFO 2025-06-26 14:55:19,865 autoreload 82268 16960 Watching for file changes with StatReloader
+WARNING 2025-06-26 14:56:35,730 log 82268 61056 Not Found: /favicon.ico
+INFO 2025-06-26 15:27:20,136 autoreload 68716 65744 Watching for file changes with StatReloader
+INFO 2025-06-26 15:47:59,166 autoreload 17128 32400 Watching for file changes with StatReloader
+WARNING 2025-06-26 15:48:18,909 log 17128 62280 Unauthorized: /api/v1/places/
+WARNING 2025-06-26 15:49:01,094 log 17128 62280 Not Found: /favicon.ico
+INFO 2025-06-26 16:04:13,500 autoreload 43644 80360 Watching for file changes with StatReloader
