@@ -16,16 +16,16 @@ export default function Footer() {
           </div>
           <div className="d-flex align-items-center gap-3">
             <a href="tel:+375291272646" className="text-white" title="Позвонить">
-              <FaPhoneAlt style={{ color: 'white' }} />
+              <FaPhoneAlt className="footer-icon" />
             </a>
             <a href="mailto:panbbbqv@gmail.com" className="text-white" title="Написать на Email">
-              <FaEnvelope style={{ color: 'white' }} />
+              <FaEnvelope className="footer-icon" />
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white" title="Instagram">
-              <FaInstagram style={{ color: 'white' }} />
+              <FaInstagram className="footer-icon" />
             </a>
             <a href="https://t.me/dogshop" target="_blank" rel="noopener noreferrer" className="text-white" title="Telegram">
-              <FaTelegramPlane style={{ color: 'white' }} />
+              <FaTelegramPlane className="footer-icon" />
             </a>
           </div>
         </div>
