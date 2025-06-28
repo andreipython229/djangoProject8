@@ -16,27 +16,26 @@ Including another URLconf
 """
 import os
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.conf import settings
 from django.conf.urls.static import static
 from mydogs.views import (
-    register, 
-    login_view, 
+    register,
+    login_view,
     logout_view,
     dog_list,
     dog_detail,
     dogs_by_category,
-    places_view
+    places_view,
+    index_view
 )
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
     TokenVerifyView,
 )
-
-from mydogs.views import index_view
 
 # Заглушка для DevTools
 def devtools_json(request):
@@ -91,3 +90,8 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# === CATCH-ALL для React SPA ===
+urlpatterns += [
+    re_path(r'^(?:.*)/?$', index_view),
+]

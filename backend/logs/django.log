@@ -15829,3 +15829,16 @@ WARNING 2025-06-27 14:28:54,611 log 50296 37520 Unauthorized: /api/v1/places/
 WARNING 2025-06-27 14:29:46,287 log 50296 37520 Not Found: /favicon.ico
 WARNING 2025-06-27 14:32:13,996 log 50296 60692 Not Found: /main.2fd5733e6f1f7ec54147.hot-update.json
 WARNING 2025-06-27 14:34:11,114 log 50296 47792 Not Found: /favicon.ico
+INFO 2025-06-28 09:53:43,087 autoreload 51752 28836 Watching for file changes with StatReloader
+WARNING 2025-06-28 10:08:21,483 log 51752 49176 Unauthorized: /api/v1/places/
+WARNING 2025-06-28 10:08:50,492 log 51752 49176 Not Found: /favicon.ico
+INFO 2025-06-28 12:18:20,451 autoreload 26172 80916 Watching for file changes with StatReloader
+WARNING 2025-06-28 12:34:18,035 log 26172 48068 Unauthorized: /api/v1/places/
+WARNING 2025-06-28 12:34:47,388 log 26172 48068 Not Found: /favicon.ico
+INFO 2025-06-28 13:22:01,590 autoreload 83372 26508 Watching for file changes with StatReloader
+WARNING 2025-06-28 13:22:25,513 log 83372 46264 Not Found: /mydogs/
+INFO 2025-06-28 13:35:18,926 autoreload 83372 26508 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-28 13:35:20,261 autoreload 40600 68364 Watching for file changes with StatReloader
+INFO 2025-06-28 14:07:46,071 autoreload 13416 77900 Watching for file changes with StatReloader
+WARNING 2025-06-28 14:09:16,959 log 13416 14440 Unauthorized: /api/v1/places/
+INFO 2025-06-28 14:10:14,479 autoreload 70836 14420 Watching for file changes with StatReloader

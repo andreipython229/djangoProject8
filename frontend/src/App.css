@@ -1,11 +1,9 @@
 .footer-icon {
   color: #fff !important;
   font-size: 1.5em;
-  opacity: 0.9;
   transition: color 0.2s;
   vertical-align: middle;
 }
 .footer-icon:hover {
   color: #ffd700 !important;
-  opacity: 1;
 } 
