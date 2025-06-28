@@ -15842,3 +15842,18 @@ INFO 2025-06-28 13:35:20,261 autoreload 40600 68364 Watching for file changes wi
 INFO 2025-06-28 14:07:46,071 autoreload 13416 77900 Watching for file changes with StatReloader
 WARNING 2025-06-28 14:09:16,959 log 13416 14440 Unauthorized: /api/v1/places/
 INFO 2025-06-28 14:10:14,479 autoreload 70836 14420 Watching for file changes with StatReloader
+INFO 2025-06-28 17:58:27,550 autoreload 38456 86064 Watching for file changes with StatReloader
+WARNING 2025-06-28 17:58:43,632 log 38456 15740 Unauthorized: /api/v1/places/
+INFO 2025-06-28 18:47:36,747 autoreload 42036 40624 Watching for file changes with StatReloader
+WARNING 2025-06-28 18:49:11,932 log 42036 54764 Unauthorized: /api/v1/places/
+INFO 2025-06-28 19:11:00,411 autoreload 6560 1224 Watching for file changes with StatReloader
+WARNING 2025-06-28 19:11:26,301 log 6560 36920 Unauthorized: /api/v1/places/
+INFO 2025-06-28 19:41:09,017 autoreload 22328 37872 Watching for file changes with StatReloader
+INFO 2025-06-28 20:29:04,785 autoreload 22328 37872 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\urls.py changed, reloading.
+INFO 2025-06-28 20:29:05,898 autoreload 57196 6452 Watching for file changes with StatReloader
+WARNING 2025-06-28 20:29:43,320 log 57196 3572 Unauthorized: /api/v1/places/
+WARNING 2025-06-28 20:32:29,294 log 57196 3572 Unauthorized: /api/v1/places/
+INFO 2025-06-28 20:39:50,899 autoreload 25328 53888 Watching for file changes with StatReloader
+WARNING 2025-06-28 20:47:44,171 log 25328 5604 Not Found: /media/static/images/טלÿ_פאיכא.jpg
+WARNING 2025-06-28 20:47:55,405 log 25328 5604 Not Found: /media/static/images/טלÿ_פאיכא.jpg
+INFO 2025-06-28 21:30:56,201 autoreload 7928 32732 Watching for file changes with StatReloader

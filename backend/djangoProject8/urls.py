@@ -21,6 +21,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve
 from mydogs.views import (
     register,
     login_view,
@@ -66,7 +67,7 @@ urlpatterns = [
     path('dogs/category/<str:category>/', dogs_by_category, name='dogs_by_category'),
 
     # Страница Places
-    path('places/', places_view, name='places'),
+    #path('places/', places_view, name='places'),
 
     # React-страницы
     path('contacts/', index_view, name='contacts'),
@@ -90,6 +91,12 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Явные маршруты для media и static (важно: до catch-all!)
+urlpatterns += [
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+]
 
 # === CATCH-ALL для React SPA ===
 urlpatterns += [
