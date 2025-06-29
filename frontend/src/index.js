@@ -5,7 +5,8 @@ import App from "./App";
 
 // Глобальные стили
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./index.css";
+import './index.css';
+import './css/styles.css';
 
 const container = document.getElementById("root");
 const root = createRoot(container);

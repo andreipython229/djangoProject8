@@ -104,11 +104,11 @@ export default function FavoritePlaces() {
             <div key={place.id || idx} className="col-md-4 mb-4">
               <div className="card h-100">
                 <img
-                  src={dogData[idx] ? dogData[idx].image : '/static/img/placeholder.jpg'}
+                  src={dogData[idx] ? dogData[idx].image : '/static/img/IMG_20231101_220024_kopiya.jpg'}
                   className="card-img-top"
                   alt={dogData[idx] ? dogData[idx].name : 'Dog'}
                   style={{ height: '200px', objectFit: 'cover' }}
-                  onError={e => { e.target.onerror = null; e.target.src = '/static/img/placeholder.jpg'; }}
+                  onError={e => { e.target.onerror = null; e.target.src = '/static/img/IMG_20231101_220024_kopiya.jpg'; }}
                 />
                 <div className="card-body">
                   <h5 className="card-title">

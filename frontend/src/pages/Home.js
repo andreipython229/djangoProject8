@@ -32,12 +32,15 @@ const Home = () => {
           {dogs.map((dog, idx) => (
             <div key={dog.id || idx} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center">
               <div className="card h-100 shadow-sm" style={{ width: '18rem', minHeight: '350px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <img
-                  src={dog.image || '/static/img/placeholder.jpg'}
-                  className="card-img-top"
-                  alt={dog.name}
-                  style={{ objectFit: 'cover', height: '220px', width: '100%', borderTopLeftRadius: '0.5rem', borderTopRightRadius: '0.5rem' }}
-                />
+                {/* Показываем картинку только если есть dog.image */}
+                {dog.image && dog.image.trim() !== '' && (
+                  <img
+                    src={dog.image}
+                    className="card-img-top"
+                    alt={dog.name}
+                    style={{ objectFit: 'cover', height: '220px', width: '100%', borderTopLeftRadius: '0.5rem', borderTopRightRadius: '0.5rem' }}
+                  />
+                )}
                 <div className="card-body text-center" style={{ padding: '1rem' }}>
                   <h5 className="card-title" style={{ margin: 0, wordBreak: 'break-word' }}>{dog.name}</h5>
                   <p className="card-text mb-1">Порода: {dog.breed}</p>

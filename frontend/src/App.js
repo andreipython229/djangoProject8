@@ -14,6 +14,7 @@ import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import Profile from './pages/Profile';
 import Cart from './components/Cart';
+import Policy from './pages/Policy';
 
 function App() {
   const navigate = useNavigate();
@@ -37,6 +38,7 @@ function App() {
           <Route path="/register/" element={<RegisterForm />} />
           <Route path="/profile/" element={<Profile />} />
           <Route path="/cart/" element={<Cart />} />
+          <Route path="/policy" element={<Policy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
