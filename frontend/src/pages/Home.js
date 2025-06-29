@@ -8,6 +8,8 @@ const Home = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
+    console.log('Home компонент отрисован!');
+    console.log('Попытка загрузить собак...');
     fetchMyDogs()
       .then(data => {
         setDogs(data);
