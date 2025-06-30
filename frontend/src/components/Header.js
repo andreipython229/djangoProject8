@@ -3,6 +3,7 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 const Header = () => {
+  const isAuthenticated = Boolean(localStorage.getItem('access'));
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -45,14 +46,32 @@ const Header = () => {
                 Контакты
               </NavLink>
             </li>
+            {isAuthenticated && (
+              <>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/cabinet/">
+                    Личный кабинет
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/cart/">
+                    Корзина
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
           <div className="d-flex">
-            <Link to="/login/" className="btn btn-primary me-2">
-              Войти
-            </Link>
-            <Link to="/register/" className="btn btn-success">
-              Регистрация
-            </Link>
+            {!isAuthenticated ? (
+              <>
+                <Link to="/login/" className="btn btn-primary me-2">
+                  Войти
+                </Link>
+                <Link to="/register/" className="btn btn-success">
+                  Регистрация
+                </Link>
+              </>
+            ) : null}
           </div>
         </div>
       </div>

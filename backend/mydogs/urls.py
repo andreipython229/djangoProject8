@@ -9,6 +9,7 @@ from .views import (
     MydogsViewSet,
     PlaceViewSet,
     MydogsAPIList,
+    OrderViewSet,
 )
 
 router = DefaultRouter()
@@ -16,6 +17,7 @@ router.register(r'clients', ClientViewSet)
 router.register(r'categories', CategoryViewSet)
 router.register(r'mydogs', MydogsViewSet)
 router.register(r'places', PlaceViewSet)
+router.register(r'orders', OrderViewSet, basename='order')
 
 # Собираем URL-паттерны для API v1
 api_v1_patterns = [

@@ -22,6 +22,16 @@ class Mydogs(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='mydogs', null=True, blank=True)
     image = models.ImageField(upload_to='dogs_images/', blank=True, null=True)
+    GENDER_CHOICES = [
+        ('male', 'Мальчик'),
+        ('female', 'Девочка'),
+    ]
+    gender = models.CharField(
+        max_length=6,
+        choices=GENDER_CHOICES,
+        default='male',
+        verbose_name='Пол'
+    )
 
     def __str__(self):
         return self.name
@@ -37,3 +47,12 @@ class Place(models.Model):
 
     def __str__(self):
         return self.name
+
+class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
+    dogs = models.ManyToManyField(Mydogs, related_name='orders')
+    created_at = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=32, default='pending')  # pending, paid, cancelled и т.д.
+
+    def __str__(self):
+        return f'Order #{self.id} by {self.user.username}'

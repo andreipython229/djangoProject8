@@ -3,6 +3,7 @@ import React from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer'; // <-- добавили импорт
+import Cabinet from './components/Cabinet';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -39,6 +40,7 @@ function App() {
           <Route path="/profile/" element={<Profile />} />
           <Route path="/cart/" element={<Cart />} />
           <Route path="/policy" element={<Policy />} />
+          <Route path="/cabinet/" element={<Cabinet />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

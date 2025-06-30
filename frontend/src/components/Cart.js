@@ -15,6 +15,36 @@ function Cart() {
     setCart(updated);
   };
 
+  const handleOrder = async () => {
+    const token = localStorage.getItem('access');
+    if (!token) {
+      alert('Сначала войдите в аккаунт!');
+      return;
+    }
+    const dogIds = cart.map(dog => dog.id);
+
+    try {
+      const response = await fetch('/api/v1/orders/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ dogs_ids: dogIds })
+      });
+
+      if (response.ok) {
+        alert('Заказ успешно оформлен!');
+        localStorage.removeItem('cart');
+        setCart([]);
+      } else {
+        alert('Ошибка при оформлении заказа');
+      }
+    } catch (e) {
+      alert('Ошибка сети');
+    }
+  };
+
   return (
     <div className="container mt-4">
       <h2>🛒 Моя корзина</h2>
@@ -42,6 +72,11 @@ function Cart() {
             </div>
           ))}
         </div>
+      )}
+      {cart.length > 0 && (
+        <button className="btn btn-success mt-3" onClick={handleOrder}>
+          Оформить заказ
+        </button>
       )}
     </div>
   );

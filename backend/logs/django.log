@@ -15875,3 +15875,204 @@ WARNING 2025-06-29 22:58:09,281 log 18196 24324 Unauthorized: /api/token/
 WARNING 2025-06-30 00:06:10,356 log 18196 22944 Unauthorized: /api/v1/mydogs/
 INFO 2025-06-30 00:25:19,151 autoreload 18936 26880 Watching for file changes with StatReloader
 WARNING 2025-06-30 00:31:44,516 log 18936 28420 Unauthorized: /api/v1/mydogs/
+INFO 2025-06-30 09:52:31,844 autoreload 10752 12484 Watching for file changes with StatReloader
+WARNING 2025-06-30 09:55:34,481 log 10752 25456 Unauthorized: /api/v1/mydogs/
+WARNING 2025-06-30 09:56:14,049 log 10752 18872 Unauthorized: /api/v1/places/
+WARNING 2025-06-30 10:29:00,818 log 10752 24420 Unauthorized: /api/v1/mydogs/
+INFO 2025-06-30 23:37:27,126 autoreload 63332 62432 Watching for file changes with StatReloader
+WARNING 2025-06-30 23:38:09,655 log 63332 17448 Unauthorized: /api/v1/mydogs/
+INFO 2025-06-30 23:56:28,776 autoreload 63332 62432 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\models.py changed, reloading.
+INFO 2025-06-30 23:56:32,297 autoreload 9228 54932 Watching for file changes with StatReloader
+INFO 2025-06-30 23:57:04,025 autoreload 9228 54932 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\serializers.py changed, reloading.
+INFO 2025-06-30 23:57:05,914 autoreload 18744 18984 Watching for file changes with StatReloader
+INFO 2025-06-30 23:57:09,622 autoreload 18744 18984 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-06-30 23:57:11,215 autoreload 33896 26788 Watching for file changes with StatReloader
+INFO 2025-06-30 23:57:16,072 autoreload 33896 26788 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-06-30 23:57:18,045 autoreload 63156 11328 Watching for file changes with StatReloader
+INFO 2025-07-01 00:30:49,627 autoreload 37932 46944 Watching for file changes with StatReloader
+INFO 2025-07-01 00:33:37,692 autoreload 9692 23016 Watching for file changes with StatReloader
+INFO 2025-07-01 00:39:15,501 autoreload 44256 26496 Watching for file changes with StatReloader
+INFO 2025-07-01 00:41:03,233 autoreload 25124 62976 Watching for file changes with StatReloader
+WARNING 2025-07-01 00:43:40,662 log 25124 51376 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-01 01:28:46,753 autoreload 25124 62976 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\models.py changed, reloading.
+INFO 2025-07-01 01:28:47,814 autoreload 61692 64456 Watching for file changes with StatReloader
+ERROR 2025-07-01 01:32:19,220 log 61692 38532 Internal Server Error: /api/v1/mydogs/
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\psycopg\cursor.py", line 97, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: столбец mydogs_mydogs.gender не существует
+LINE 1: ...dogs_mydogs"."owner_id", "mydogs_mydogs"."image", "mydogs_my...
+                                                             ^
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+                                                   ^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\psycopg\cursor.py", line 97, in execute
+    raise ex.with_traceback(None)
+django.db.utils.ProgrammingError: столбец mydogs_mydogs.gender не существует
+LINE 1: ...dogs_mydogs"."owner_id", "mydogs_mydogs"."image", "mydogs_my...
+                                                             ^
+ERROR 2025-07-01 01:32:31,351 log 61692 59044 Internal Server Error: /api/v1/orders/
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\psycopg\cursor.py", line 97, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: столбец mydogs_mydogs.gender не существует
+LINE 1: ...dogs_mydogs"."owner_id", "mydogs_mydogs"."image", "mydogs_my...
+                                                             ^
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+                                                   ^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Andrei2\PycharmProjects\djangoProject8\.venv\Lib\site-packages\psycopg\cursor.py", line 97, in execute
+    raise ex.with_traceback(None)
+django.db.utils.ProgrammingError: столбец mydogs_mydogs.gender не существует
+LINE 1: ...dogs_mydogs"."owner_id", "mydogs_mydogs"."image", "mydogs_my...
+                                                             ^
+INFO 2025-07-01 01:32:50,543 autoreload 61692 64456 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\serializers.py changed, reloading.
+INFO 2025-07-01 01:32:51,849 autoreload 52656 46600 Watching for file changes with StatReloader
+INFO 2025-07-01 01:35:56,830 autoreload 38996 50860 Watching for file changes with StatReloader
+WARNING 2025-07-01 01:43:21,890 log 38996 38156 Unauthorized: /api/v1/mydogs/
+WARNING 2025-07-01 01:45:06,039 log 38996 37676 Unauthorized: /api/v1/orders/
+WARNING 2025-07-01 01:45:33,764 log 38996 44512 Unauthorized: /api/v1/orders/
+WARNING 2025-07-01 01:45:36,130 log 38996 3956 Unauthorized: /api/v1/orders/
+WARNING 2025-07-01 01:45:56,219 log 38996 29164 Unauthorized: /api/v1/places/
+WARNING 2025-07-01 01:46:06,188 log 38996 48068 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-01 02:05:01,623 autoreload 38192 43800 Watching for file changes with StatReloader

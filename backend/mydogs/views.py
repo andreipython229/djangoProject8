@@ -18,12 +18,13 @@ from rest_framework.permissions import IsAuthenticated, BasePermission, SAFE_MET
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Mydogs, Client, Category, Place
+from .models import Mydogs, Client, Category, Place, Order
 from .serializers import (
     MydogsSerializer,
     ClientSerializer,
     CategorySerializer,
     PlaceSerializer,
+    OrderSerializer,
 )
 
 logger = logging.getLogger(__name__)
@@ -304,3 +305,13 @@ def dogs_by_category(request, category):
         'category': category,
         'nonce': request.nonce
     })
+
+class OrderViewSet(viewsets.ModelViewSet):
+    serializer_class = OrderSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Order.objects.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Mydogs, Category, Client, Place
+from .models import Mydogs, Category, Client, Place, Order
 from django.contrib.auth.models import User
 
 
@@ -36,6 +36,7 @@ class MydogsSerializer(serializers.ModelSerializer):
             'category_data',
             'owner',
             'image',
+            'gender',
         ]
         read_only_fields = ['id', 'category_data', 'owner', 'image']
 
@@ -63,3 +64,22 @@ class PlaceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Place
         fields = '__all__'
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    dogs = MydogsSerializer(many=True, read_only=True)
+    dogs_ids = serializers.PrimaryKeyRelatedField(
+        queryset=Mydogs.objects.all(), many=True, write_only=True, source='dogs'
+    )
+
+    class Meta:
+        model = Order
+        fields = ['id', 'user', 'dogs', 'dogs_ids', 'created_at', 'status']
+        read_only_fields = ['id', 'user', 'dogs', 'created_at', 'status']
+
+    def create(self, validated_data):
+        user = self.context['request'].user
+        dogs = validated_data.pop('dogs')
+        order = Order.objects.create(user=user)
+        order.dogs.set(dogs)
+        return order

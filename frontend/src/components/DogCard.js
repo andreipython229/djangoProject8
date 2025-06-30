@@ -1,7 +1,7 @@
 // src/components/DogCard.js
 import React, { useEffect, useState } from "react";
 
-function DogCard({ id, name, breed, age, photo }) {
+function DogCard({ id, name, breed, age, photo, price, gender }) {
   const [inCart, setInCart] = useState(false);
 
   // Проверка при загрузке компонента
@@ -30,24 +30,45 @@ function DogCard({ id, name, breed, age, photo }) {
   };
 
   return (
-    <div className="dog-card border p-4 rounded shadow mb-4 max-w-sm">
+    <div
+      className="card h-100 shadow-sm"
+      style={{
+        width: '18rem',
+        minHeight: '370px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        background: '#fff',
+        borderRadius: '0.5rem',
+      }}
+    >
       <img
         src={photo || "/images/default-dog.jpg"}
         alt={name}
-        className="w-full h-48 object-cover rounded"
+        className="card-img-top"
+        style={{
+          objectFit: 'cover',
+          height: '220px',
+          width: '100%',
+          borderTopLeftRadius: '0.5rem',
+          borderTopRightRadius: '0.5rem',
+        }}
       />
-      <h3 className="mt-2 text-lg font-bold">{name}</h3>
-      <p>Порода: {breed}</p>
-      <p>Возраст: {age} {age === 1 ? "год" : "лет"}</p>
-
-      <button
-        onClick={handleCartToggle}
-        className={`mt-2 px-3 py-1 rounded text-white ${
-          inCart ? "bg-danger hover:bg-dark" : "bg-blue-500 hover:bg-blue-600"
-        }`}
-      >
-        {inCart ? "Удалить из корзины" : "Добавить в корзину"}
-      </button>
+      <div className="card-body text-center" style={{ padding: '1rem' }}>
+        <h5 className="card-title" style={{ margin: 0, wordBreak: 'break-word' }}>{name}</h5>
+        <p className="card-text mb-1">Порода: {breed}</p>
+        <p className="card-text mb-1">Возраст: {age} {age === 1 ? "год" : "лет"}</p>
+        {gender && (
+          <p className="card-text mb-1">Пол: {gender === 'male' ? 'мальчик' : 'девочка'}</p>
+        )}
+        {price !== undefined && <p className="card-text mb-1">Цена: {price}</p>}
+        <button
+          onClick={handleCartToggle}
+          className={`mt-2 btn ${inCart ? "btn-danger" : "btn-primary"}`}
+        >
+          {inCart ? "Удалить из корзины" : "Добавить в корзину"}
+        </button>
+      </div>
     </div>
   );
 }
