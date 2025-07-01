@@ -28,6 +28,16 @@ const Navbar = ({ loggedIn, onRegisterClick, onLogoutClick }) => {
             <li className="nav-item">
               <a className="nav-link text-light" href="/places/">Favorite places</a>
             </li>
+            {loggedIn && (
+              <>
+                <li className="nav-item">
+                  <a className="nav-link text-light" href="/cabinet/">Личный кабинет</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link text-light" href="/cart/">Корзина</a>
+                </li>
+              </>
+            )}
           </ul>
           <ul className="navbar-nav">
             {!loggedIn ? (

@@ -16083,3 +16083,4 @@ INFO 2025-07-01 13:41:23,372 autoreload 63584 4332 Watching for file changes wit
 WARNING 2025-07-01 13:41:45,717 log 63584 3860 Unauthorized: /api/v1/mydogs/
 WARNING 2025-07-01 13:41:53,536 log 63584 28244 Unauthorized: /api/v1/mydogs/
 INFO 2025-07-01 14:08:08,970 autoreload 16280 34864 Watching for file changes with StatReloader
+INFO 2025-07-01 16:11:18,232 autoreload 4600 4944 Watching for file changes with StatReloader

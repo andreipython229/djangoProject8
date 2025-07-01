@@ -1,52 +1,49 @@
 import React, { useEffect, useState } from 'react';
+import { fetchOrders } from '../api';
 
 function Cabinet() {
+  const username = localStorage.getItem('username') || 'пользователь';
   const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const token = localStorage.getItem('access');
-    if (!token) return;
-    fetch('/api/v1/orders/', {
-      headers: { 'Authorization': `Bearer ${token}` }
-    })
-      .then(res => res.json())
-      .then(data => setOrders(data));
+    fetchOrders()
+      .then(data => {
+        setOrders(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
   }, []);
-
-  const username = localStorage.getItem('username') || 'пользователь';
-
-  // Функция для форматирования даты
-  const formatDate = (dateStr) => {
-    if (!dateStr) return '';
-    const date = new Date(dateStr);
-    return date.toLocaleString('ru-RU');
-  };
-
-  // Функция для подсчёта суммы заказа
-  const getOrderTotal = (dogs) => {
-    return dogs.reduce((sum, dog) => {
-      const price = parseFloat((dog.price || '0').toString().replace(/[^\d.]/g, ''));
-      return sum + (isNaN(price) ? 0 : price);
-    }, 0);
-  };
 
   return (
     <div className="container mt-4">
       <h2>Личный кабинет</h2>
       <p>Добро пожаловать, <strong>{username}</strong>!</p>
-      <h4>Мои заказы:</h4>
-      <ul>
-        {orders.map(order => (
-          <li key={order.id}>
-            <div>
-              <strong>Заказ #{order.id}</strong> — {formatDate(order.created_at)}<br/>
-              Собаки: {order.dogs.map(d => d.name).join(', ')}<br/>
-              Сумма: {getOrderTotal(order.dogs).toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}<br/>
-              Статус: {order.status}
+      <h4 className="mt-4">История заказов</h4>
+      {loading && <p>Загрузка заказов...</p>}
+      {error && <p className="text-danger">Ошибка: {error}</p>}
+      {!loading && !error && orders.length === 0 && <p>У вас пока нет заказов.</p>}
+      {!loading && !error && orders.length > 0 && (
+        <div className="mt-3">
+          {orders.map(order => (
+            <div key={order.id} className="border rounded p-3 mb-3 bg-light">
+              <div><strong>Заказ №{order.id}</strong> от {new Date(order.created_at).toLocaleString()}</div>
+              <div>Статус: {order.status}</div>
+              <div>Собаки в заказе:
+                <ul>
+                  {order.dogs && order.dogs.length > 0 ? order.dogs.map(dog => (
+                    <li key={dog.id || dog}>{dog.name || dog}</li>
+                  )) : <li>Нет данных</li>}
+                </ul>
+              </div>
             </div>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
