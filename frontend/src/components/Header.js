@@ -1,9 +1,16 @@
 // src/components/Header.js
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
-  const isAuthenticated = Boolean(localStorage.getItem('access'));
+  const navigate = useNavigate();
+  const isLoggedIn = !!localStorage.getItem('access');
+
+  const handleLogout = () => {
+    localStorage.removeItem('access');
+    navigate('/login/');
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -46,7 +53,7 @@ const Header = () => {
                 Контакты
               </NavLink>
             </li>
-            {isAuthenticated && (
+            {isLoggedIn && (
               <>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/cabinet/">
@@ -62,7 +69,7 @@ const Header = () => {
             )}
           </ul>
           <div className="d-flex">
-            {!isAuthenticated ? (
+            {!isLoggedIn ? (
               <>
                 <Link to="/login/" className="btn btn-primary me-2">
                   Войти
@@ -71,7 +78,11 @@ const Header = () => {
                   Регистрация
                 </Link>
               </>
-            ) : null}
+            ) : (
+              <button className="btn btn-outline-light" onClick={handleLogout}>
+                Выйти
+              </button>
+            )}
           </div>
         </div>
       </div>

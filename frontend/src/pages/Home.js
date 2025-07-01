@@ -39,6 +39,7 @@ const Home = () => {
                 age={dog.age}
                 photo={dog.image}
                 price={dog.price}
+                gender={dog.gender}
               />
             </div>
           ))}

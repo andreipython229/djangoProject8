@@ -16076,3 +16076,10 @@ WARNING 2025-07-01 01:45:36,130 log 38996 3956 Unauthorized: /api/v1/orders/
 WARNING 2025-07-01 01:45:56,219 log 38996 29164 Unauthorized: /api/v1/places/
 WARNING 2025-07-01 01:46:06,188 log 38996 48068 Unauthorized: /api/v1/mydogs/
 INFO 2025-07-01 02:05:01,623 autoreload 38192 43800 Watching for file changes with StatReloader
+INFO 2025-07-01 12:14:25,219 autoreload 26292 26492 Watching for file changes with StatReloader
+INFO 2025-07-01 12:19:44,443 autoreload 26292 26492 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\views.py changed, reloading.
+INFO 2025-07-01 12:19:47,148 autoreload 4092 8652 Watching for file changes with StatReloader
+INFO 2025-07-01 13:41:23,372 autoreload 63584 4332 Watching for file changes with StatReloader
+WARNING 2025-07-01 13:41:45,717 log 63584 3860 Unauthorized: /api/v1/mydogs/
+WARNING 2025-07-01 13:41:53,536 log 63584 28244 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-01 14:08:08,970 autoreload 16280 34864 Watching for file changes with StatReloader
