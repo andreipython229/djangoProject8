@@ -82,4 +82,8 @@ class OrderSerializer(serializers.ModelSerializer):
         dogs = validated_data.pop('dogs')
         order = Order.objects.create(user=user)
         order.dogs.set(dogs)
+        # Устанавливаем владельца для каждой собаки
+        for dog in dogs:
+            dog.owner = user
+            dog.save()
         return order

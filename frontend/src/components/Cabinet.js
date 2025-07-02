@@ -36,7 +36,12 @@ function Cabinet() {
               <div>Собаки в заказе:
                 <ul>
                   {order.dogs && order.dogs.length > 0 ? order.dogs.map(dog => (
-                    <li key={dog.id || dog}>{dog.name || dog}</li>
+                    <li key={dog.id || dog}>
+                      {dog.name || dog}
+                      {dog.owner ? (
+                        <span className="text-muted ms-2">(Владелец: {dog.owner})</span>
+                      ) : null}
+                    </li>
                   )) : <li>Нет данных</li>}
                 </ul>
               </div>

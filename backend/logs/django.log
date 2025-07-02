@@ -16084,3 +16084,26 @@ WARNING 2025-07-01 13:41:45,717 log 63584 3860 Unauthorized: /api/v1/mydogs/
 WARNING 2025-07-01 13:41:53,536 log 63584 28244 Unauthorized: /api/v1/mydogs/
 INFO 2025-07-01 14:08:08,970 autoreload 16280 34864 Watching for file changes with StatReloader
 INFO 2025-07-01 16:11:18,232 autoreload 4600 4944 Watching for file changes with StatReloader
+WARNING 2025-07-01 16:58:52,405 log 4600 5984 Unauthorized: /api/v1/mydogs/
+WARNING 2025-07-01 16:59:00,106 log 4600 7316 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-02 12:26:40,118 autoreload 11684 11680 Watching for file changes with StatReloader
+INFO 2025-07-02 12:59:52,034 autoreload 11684 11680 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\serializers.py changed, reloading.
+INFO 2025-07-02 12:59:53,665 autoreload 22620 33608 Watching for file changes with StatReloader
+INFO 2025-07-02 13:02:08,607 autoreload 22408 32956 Watching for file changes with StatReloader
+WARNING 2025-07-02 13:06:25,347 log 22408 37648 Unauthorized: /api/v1/mydogs/
+WARNING 2025-07-02 13:06:33,384 log 22408 24808 Unauthorized: /api/v1/orders/
+WARNING 2025-07-02 13:06:40,514 log 22408 12360 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-02 13:21:08,377 autoreload 36992 12308 Watching for file changes with StatReloader
+INFO 2025-07-02 14:06:08,094 autoreload 36992 12308 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\admin.py changed, reloading.
+INFO 2025-07-02 14:06:10,242 autoreload 7388 10644 Watching for file changes with StatReloader
+WARNING 2025-07-02 14:06:36,066 log 7388 25076 Unauthorized: /api/v1/orders/
+WARNING 2025-07-02 14:15:07,986 log 7388 20988 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-02 14:34:42,374 autoreload 32044 11028 Watching for file changes with StatReloader
+WARNING 2025-07-02 14:45:37,876 log 32044 22444 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-02 14:50:08,766 autoreload 22080 11260 Watching for file changes with StatReloader
+INFO 2025-07-02 15:07:03,849 autoreload 4012 14284 Watching for file changes with StatReloader
+INFO 2025-07-02 15:10:29,628 autoreload 4012 14284 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\admin.py changed, reloading.
+INFO 2025-07-02 15:10:31,612 autoreload 7560 3280 Watching for file changes with StatReloader
+INFO 2025-07-02 15:37:34,596 autoreload 3916 8444 Watching for file changes with StatReloader
+WARNING 2025-07-02 16:04:59,862 log 3916 20104 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-02 17:02:30,531 autoreload 15280 4872 Watching for file changes with StatReloader

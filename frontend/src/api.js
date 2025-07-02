@@ -18,3 +18,21 @@ export async function fetchMyDogs() {
 
   return await response.json();
 }
+
+export async function fetchOrders() {
+  const token = localStorage.getItem('access');
+  if (!token) throw new Error('Нет токена авторизации');
+
+  const response = await fetch(`${API_BASE_URL}/orders/`, {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error('Ошибка при загрузке заказов');
+  }
+
+  return await response.json();
+}
