@@ -16114,3 +16114,4 @@ INFO 2025-07-03 18:07:41,145 autoreload 17508 7664 C:\Users\Andrei2\PycharmProje
 INFO 2025-07-03 18:07:43,064 autoreload 20076 30268 Watching for file changes with StatReloader
 INFO 2025-07-03 18:13:20,110 autoreload 20076 30268 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
 INFO 2025-07-03 18:13:43,698 autoreload 38968 41648 Watching for file changes with StatReloader
+WARNING 2025-07-03 20:48:02,705 log 38968 29232 Unauthorized: /api/v1/mydogs/
