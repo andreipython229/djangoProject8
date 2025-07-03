@@ -10,6 +10,7 @@ from .views import (
     PlaceViewSet,
     MydogsAPIList,
     OrderViewSet,
+    dog_list,
 )
 
 router = DefaultRouter()
@@ -33,3 +34,8 @@ api_v1_patterns = [
 ]
 
 urlpatterns = api_v1_patterns
+
+# Добавляем маршрут для обычной Django-страницы списка собак
+urlpatterns += [
+    path('list/', dog_list, name='dog_list'),
+]

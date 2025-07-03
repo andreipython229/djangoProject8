@@ -16107,3 +16107,10 @@ INFO 2025-07-02 15:10:31,612 autoreload 7560 3280 Watching for file changes with
 INFO 2025-07-02 15:37:34,596 autoreload 3916 8444 Watching for file changes with StatReloader
 WARNING 2025-07-02 16:04:59,862 log 3916 20104 Unauthorized: /api/v1/mydogs/
 INFO 2025-07-02 17:02:30,531 autoreload 15280 4872 Watching for file changes with StatReloader
+INFO 2025-07-03 15:56:00,309 autoreload 24132 27356 Watching for file changes with StatReloader
+INFO 2025-07-03 16:10:21,091 autoreload 17508 7664 Watching for file changes with StatReloader
+WARNING 2025-07-03 16:16:28,581 log 17508 9656 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-03 18:07:41,145 autoreload 17508 7664 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-07-03 18:07:43,064 autoreload 20076 30268 Watching for file changes with StatReloader
+INFO 2025-07-03 18:13:20,110 autoreload 20076 30268 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
+INFO 2025-07-03 18:13:43,698 autoreload 38968 41648 Watching for file changes with StatReloader
