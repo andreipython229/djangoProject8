@@ -1,0 +1,32 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.log
+
+# Virtual env
+.venv/
+env/
+venv/
+
+# Django
+/staticfiles/
+media/
+db.sqlite3
+
+# Node/React
+node_modules/
+npm-debug.log
+yarn-error.log
+/build/
+dist/
+
+# VSCode/IDEA
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
