@@ -102,8 +102,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, '..', 'frontend', 'build'),
+            os.path.join(BASE_DIR, 'backend', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -165,13 +164,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'frontend', 'build', 'static'),
+    os.path.join(BASE_DIR, 'backend', 'static'),
+    os.path.join(BASE_DIR, 'frontend', 'build', 'static'),  # обязательно!
 ]
 
-# Добавляем настройки для медиа-файлов
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'backend', 'media')
 
 # Content Security Policy (CSP) settings
 CSP_DEFAULT_SRC = ("'self'",)

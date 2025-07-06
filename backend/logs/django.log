@@ -16123,3 +16123,18 @@ WARNING 2025-07-05 17:37:11,002 log 50700 21580 Unauthorized: /api/v1/mydogs/
 INFO 2025-07-05 20:13:42,630 autoreload 17104 34948 Watching for file changes with StatReloader
 INFO 2025-07-05 20:15:13,967 autoreload 17104 34948 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\mydogs\urls.py changed, reloading.
 INFO 2025-07-05 20:15:16,519 autoreload 16464 25376 Watching for file changes with StatReloader
+INFO 2025-07-06 00:16:46,538 autoreload 47632 18592 Watching for file changes with StatReloader
+INFO 2025-07-06 13:14:23,173 autoreload 32400 7896 Watching for file changes with StatReloader
+INFO 2025-07-06 13:19:11,631 autoreload 58456 8972 Watching for file changes with StatReloader
+WARNING 2025-07-06 13:19:37,613 log 58456 43564 Unauthorized: /api/v1/places/
+INFO 2025-07-06 17:21:19,667 autoreload 22876 57072 Watching for file changes with StatReloader
+WARNING 2025-07-06 17:23:11,963 log 22876 17692 Unauthorized: /api/v1/orders/
+WARNING 2025-07-06 17:23:15,193 log 22876 58104 Unauthorized: /api/v1/mydogs/
+WARNING 2025-07-06 17:23:21,024 log 22876 49476 Unauthorized: /api/v1/places/
+WARNING 2025-07-06 17:23:42,185 log 22876 28780 Unauthorized: /api/v1/orders/
+WARNING 2025-07-06 17:23:47,032 log 22876 44364 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-06 17:26:43,538 autoreload 66364 31640 Watching for file changes with StatReloader
+INFO 2025-07-06 17:29:17,438 autoreload 66364 31640 C:\Users\Andrei2\PycharmProjects\djangoProject8\backend\djangoProject8\settings.py changed, reloading.
+INFO 2025-07-06 17:29:19,326 autoreload 14156 19576 Watching for file changes with StatReloader
+INFO 2025-07-06 17:33:07,321 autoreload 33520 11676 Watching for file changes with StatReloader
+WARNING 2025-07-06 17:33:12,586 log 33520 26600 Unauthorized: /api/v1/mydogs/
