@@ -16138,3 +16138,4 @@ INFO 2025-07-06 17:29:17,438 autoreload 66364 31640 C:\Users\Andrei2\PycharmProj
 INFO 2025-07-06 17:29:19,326 autoreload 14156 19576 Watching for file changes with StatReloader
 INFO 2025-07-06 17:33:07,321 autoreload 33520 11676 Watching for file changes with StatReloader
 WARNING 2025-07-06 17:33:12,586 log 33520 26600 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-07 17:47:03,443 autoreload 1888 43728 Watching for file changes with StatReloader
