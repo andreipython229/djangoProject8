@@ -16141,3 +16141,14 @@ WARNING 2025-07-06 17:33:12,586 log 33520 26600 Unauthorized: /api/v1/mydogs/
 INFO 2025-07-07 17:47:03,443 autoreload 1888 43728 Watching for file changes with StatReloader
 WARNING 2025-07-07 17:47:09,602 log 1888 43772 Unauthorized: /api/v1/mydogs/
 WARNING 2025-07-07 17:54:29,660 log 1888 21892 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-08 19:04:24,466 autoreload 48656 45064 Watching for file changes with StatReloader
+WARNING 2025-07-08 19:04:31,137 log 48656 36148 Unauthorized: /api/v1/mydogs/
+WARNING 2025-07-08 19:05:56,866 log 48656 38180 Unauthorized: /api/v1/mydogs/
+WARNING 2025-07-08 19:14:53,655 log 48656 3244 Unauthorized: /api/v1/mydogs/
+WARNING 2025-07-08 19:15:04,015 log 48656 3244 Unauthorized: /api/v1/mydogs/
+WARNING 2025-07-08 19:15:06,575 log 48656 3244 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-09 01:27:31,559 autoreload 47688 36840 Watching for file changes with StatReloader
+WARNING 2025-07-09 01:27:38,504 log 47688 57008 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-09 01:30:31,452 autoreload 18196 48280 Watching for file changes with StatReloader
+WARNING 2025-07-09 01:32:14,134 log 18196 3308 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-09 01:41:13,153 autoreload 43088 37464 Watching for file changes with StatReloader
