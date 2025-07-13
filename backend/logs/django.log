@@ -16153,3 +16153,11 @@ INFO 2025-07-09 01:30:31,452 autoreload 18196 48280 Watching for file changes wi
 WARNING 2025-07-09 01:32:14,134 log 18196 3308 Unauthorized: /api/v1/mydogs/
 INFO 2025-07-09 01:41:13,153 autoreload 43088 37464 Watching for file changes with StatReloader
 WARNING 2025-07-09 01:41:17,563 log 43088 57316 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-13 20:22:53,721 autoreload 53264 42776 Watching for file changes with StatReloader
+WARNING 2025-07-13 20:23:02,671 log 53264 22264 Unauthorized: /api/v1/mydogs/
+WARNING 2025-07-13 20:23:10,219 log 53264 49036 Unauthorized: /api/v1/orders/
+WARNING 2025-07-13 20:23:18,150 log 53264 49036 Unauthorized: /api/v1/places/
+WARNING 2025-07-13 20:23:23,257 log 53264 25320 Unauthorized: /api/v1/mydogs/
+INFO 2025-07-13 22:25:22,042 autoreload 9260 18152 Watching for file changes with StatReloader
+WARNING 2025-07-13 22:25:28,486 log 9260 9736 Unauthorized: /api/v1/mydogs/
+WARNING 2025-07-13 22:32:39,771 log 9260 17832 Unauthorized: /api/v1/mydogs/

@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from mydogs.models import Order
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangoProject8.settings")
-
 # Тест модели Mydogs
 class MydogsModelTest(TestCase):
     def setUp(self):
