@@ -16,6 +16,7 @@ import RegisterForm from "./components/RegisterForm";
 import Profile from "./pages/Profile";
 import Cart from "./components/Cart";
 import Policy from "./pages/Policy";
+import ClientList from "./components/ClientList";
 
 function App() {
   const navigate = useNavigate();
@@ -45,6 +46,7 @@ function App() {
             <Route path="/cart/" element={<Cart />} />
             <Route path="/policy" element={<Policy />} />
             <Route path="/cabinet/" element={<Cabinet />} />
+            <Route path="/clients/" element={<ClientList />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

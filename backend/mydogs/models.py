@@ -1,7 +1,21 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    is_client = models.BooleanField(default=False)
+
+    @property
+    def username(self):
+        return self.user.username
+
+    def __str__(self):
+        return f"Профиль {self.user.username}"
 
 class Client(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='client_profile', null=True, blank=True)
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=20, blank=True, null=True)
 
@@ -49,10 +63,23 @@ class Place(models.Model):
         return self.name
 
 class Order(models.Model):
+    STATUS_CHOICES = [
+        ('pending', 'В ожидании'),
+        ('paid', 'Оплачен'),
+        ('cancelled', 'Отменён'),
+    ]
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
     dogs = models.ManyToManyField(Mydogs, related_name='orders')
     created_at = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=32, default='pending')  # pending, paid, cancelled и т.д.
+    status = models.CharField(max_length=32, choices=STATUS_CHOICES, default='pending')
 
     def __str__(self):
         return f'Order #{self.id} by {self.user.username}'
+
+@receiver(post_save, sender=Order)
+def make_user_client_on_paid(sender, instance, **kwargs):
+    if instance.status == 'paid':
+        profile, created = UserProfile.objects.get_or_create(user=instance.user)
+        if not profile.is_client:
+            profile.is_client = True
+            profile.save()
